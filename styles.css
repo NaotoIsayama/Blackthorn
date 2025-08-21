@@ -387,7 +387,7 @@ a {
 .profile {
     position: relative;
     z-index: -1;
-    height: 100%;
+    height: max-content;
     background-color: var(--tan);
 }
 
@@ -643,6 +643,7 @@ footer {
     .profile {
         height: max-content;
     }
+
     #profile-overlay {
         width: 100%;
         height: auto;

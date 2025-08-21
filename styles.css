@@ -635,6 +635,10 @@ footer {
         padding: 0rem 1rem;
     }
 
+    .hero {
+        height: max-content;
+    }
+
     .hero__main-content {
         gap: 2rem;
     }

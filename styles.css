@@ -827,6 +827,9 @@ footer {
 
     .footer-top {
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
     }
 
     #footer-logo {

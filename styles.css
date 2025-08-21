@@ -701,6 +701,10 @@ footer {
         text-align: center;
     }
 
+    .award {
+        width: 100%;
+    }
+    
     .contact {
         height: max-content;
     }

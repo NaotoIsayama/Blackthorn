@@ -743,6 +743,7 @@ footer {
     }
 
     footer {
+        height: max-content;
         display: flex;
         flex-direction: column;
         gap: 3rem;

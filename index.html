@@ -35,7 +35,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon.ico">
         <link rel="manifest" href="/site.webmanifest">
 
-        <!--Scripts-->
+        
 </head>
 <body> 
 
@@ -60,41 +60,41 @@
         </div>
     </div>
 
-    <section class="about section-padding" id="about">
+    <section class="about section-padding fade-section" id="about">
         <img id="about__flowers-overlay" src="images/flowers-overlay-1.png" alt="an overlay image of flowers">
         <div class="about__flex-container">
             <div class="about__image-container">
-                <img class="about__tattoo-image about__image-offset" src="images/tattoo-1.png">
-                <img class="about__tattoo-image" src="images/tattoo-2.png">
-                <img class="about__tattoo-image about__image-offset" src="images/tattoo-3.png">
+                <img data-speed="fast" class="fade about__tattoo-image about__image-offset" src="images/tattoo-1.png">
+                <img data-speed="medium" class="fade about__tattoo-image" src="images/tattoo-2.png">
+                <img data-speed="slow" class="fade about__tattoo-image about__image-offset" src="images/tattoo-3.png">
             </div>
             <div class="about__text-container">
-                <h2 class="sc-title header-gap">Where stories <span class="rose">live</span> on skin</h2>
-                <p class="body paragraph-gap">At Blackthorn Ink, every tattoo tells a story. Founded by award-winning artist Evelyn Blackthorn, our Edmonton studio blends the precision of fine art with the bold tradition of classic tattooing.</p>
-                <p class="body">We believe a tattoo should be more than ink on skin — it should be a reflection of who you are, created with care, skill, and a touch of soul. That’s why every design we create is drawn from scratch, shaped through conversation, and refined to perfection before it ever meets a needle.</p>
+                <h2 class="fade sc-title header-gap" data-speed="fast">Where stories <span class="rose">live</span> on skin</h2>
+                <p class="body paragraph-gap fade" data-speed="medium" >At Blackthorn Ink, every tattoo tells a story. Founded by award-winning artist Evelyn Blackthorn, our Edmonton studio blends the precision of fine art with the bold tradition of classic tattooing.</p>
+                <p class="body fade" data-speed="medium">We believe a tattoo should be more than ink on skin — it should be a reflection of who you are, created with care, skill, and a touch of soul. That’s why every design we create is drawn from scratch, shaped through conversation, and refined to perfection before it ever meets a needle.</p>
             </div>
         </div>
     </section>
 
-    <div class="testimonials section-padding" id="testimonial">
+    <div class="testimonials section-padding fade-section" id="testimonial">
         <img id="text-overlay" src="images/textoverlay.png" alt="">
         <img id="testimonials__flowers-overlay" src="images/flowers-overlay-2.png" alt="">
         <img id="quotes" src="images/quotes.svg">
-        <span class="sc-title rose block">Client</span>
-        <span class="sc-title light block">reviews</span>
+        <span class="sc-title rose block fade" data-speed="fast">Client</span>
+        <span class="sc-title light block fade" data-speed="fast">reviews</span>
         <div class="testimonial__flex-container">
             <div class="testimonial__image-container">
-                <img src="images/testimonial-1.jpg" class="testimonial__image" alt="">
+                <img src="images/testimonial-1.jpg" class="fade testimonial__image" data-speed= "medium" alt="">
             </div>
             <div class="testimonial__text-container">
                 <div class="testimonial__text-elements">
-                    <p class="sc-subtitle light testimonial__author paragraph-gap">Emily Smith</p>
-                    <p class="testimonial__body medium light">“Evelyn completely exceeded my expectations. She took my rough idea and transformed it into a stunning piece that feels like it was always meant to be on my skin. The studio is spotless and has such a calm, creative vibe. I’ll definitely be back for my next tattoo.”</p>
+                    <p class="sc-subtitle light testimonial__author paragraph-gap fade" data-speed="medium">Emily Smith</p>
+                    <p class="testimonial__body medium light fade" data-speed="slow">“Evelyn completely exceeded my expectations. She took my rough idea and transformed it into a stunning piece that feels like it was always meant to be on my skin. The studio is spotless and has such a calm, creative vibe. I’ll definitely be back for my next tattoo.”</p>
                 </div>
                 <div class="testimonial__indicator-container">
-                    <div class="testimonial__indicator selected"></div>
-                    <div class="testimonial__indicator"></div>
-                    <div class="testimonial__indicator"></div>
+                    <div class="testimonial__indicator selected fade" data-speed="slow"></div>
+                    <div class="testimonial__indicator fade" data-speed="slow"></div>
+                    <div class="testimonial__indicator fade" data-speed="slow"></div>
                 </div>
                 
             </div>
@@ -102,67 +102,66 @@
         
     </div>
 
-    <section class="profile section-padding" id="profile">
+    <section class="profile section-padding fade-section" id="profile">
         <img id="profile-overlay" src="images/flowers-overlay-1.png" alt="">
         <div class="profile__flex-container">
             <div class="profile__bio-container">
-                <span class="sc-title dark block profile__header-alignment-fix">Evelyn</span>
-                <span class="sc-title rose block header-gap profile__header-alignment-fix">blackthorn</span>
+                <span class="sc-title dark block profile__header-alignment-fix fade" data-speed="fast">Evelyn</span>
+                <span class="sc-title rose block header-gap profile__header-alignment-fix fade" data-speed="fast">blackthorn</span>
                 <div class="profile__bullet-points paragraph-gap">
                     <div class="profile__block">
-                        <span class="sc-medium block">CONTACT</span>
-                        <p class="body">@evelyn.fake.instagram</p>
-                        <p class="body">fake_email@gmail.com</p>
+                        <span class="sc-medium block fade" data-speed="medium">CONTACT</span>
+                        <p class="body fade" data-speed="slow">@evelyn.fake.instagram</p>
+                        <p class="body fade" data-speed="slow">fake_email@gmail.com</p>
                     </div>
                     <div class="profile__block">
-                        <span class="sc-medium block">STYLES</span>
-                        <p class="body">Neo-Traditional</p>
-                        <p class="body">Japanese</p>
-                        <p class="body">Floral</p>
+                        <span class="sc-medium block fade" data-speed="medium">STYLES</span>
+                        <p class="body fade" data-speed="slow">Neo-Traditional</p>
+                        <p class="body fade" data-speed="slow">Japanese</p>
                     </div>
                 </div>
-                <p class="body paragraph-gap">Evelyn Blackthorn is the founder and lead artist at Blackthorn Tattoo. Known for her bold linework and intricate floral designs, Evelyn has spent over a decade refining her craft and building a reputation for tattoos that balance strength and elegance. Her work blends traditional tattooing techniques with modern artistry, resulting in pieces that age beautifully and carry lasting meaning.</p>
-                <p class="body">Beyond the chair, Evelyn is committed to creating a welcoming, professional studio environment where clients feel comfortable expressing their stories through ink.</p>
+                <p class="body paragraph-gap fade" data-speed="medium">Evelyn Blackthorn is the founder and lead artist at Blackthorn Tattoo. Known for her bold linework and intricate floral designs, Evelyn has spent over a decade refining her craft and building a reputation for tattoos that balance strength and elegance. Her work blends traditional tattooing techniques with modern artistry, resulting in pieces that age beautifully and carry lasting meaning.</p>
+                <p class="body fade" data-speed="medium">Beyond the chair, Evelyn is committed to creating a welcoming, professional studio environment where clients feel comfortable expressing their stories through ink.</p>
             </div>
             <div class="profile__image-container">
-                <img id="evelyn-photo" class="paragraph-gap" src="images/Emily-blackthorn.jpg"> 
+                <img id="evelyn-photo" class="paragraph-gap fade" data-speed="fast" src="images/Emily-blackthorn.jpg"> 
                 <div class="profile__awards-block">
-                    <span class="marquee-font">AWARDS</span>
-                    <p class="award body">Artist of the Year – Canadian Tattoo Arts Awards (2020)</p>
-                    <p class="award body">Top Artist, Black & Grey Category – Western Canada Tattoo Show (2023)</p>
-                    <p class="award body">Best Floral Tattoo – Alberta Ink Awards (2022)</p>
+                    <span class="marquee-font fade" data-speed="medium">AWARDS</span>
+                    <p class="award body fade" data-speed="slow">Artist of the Year – Canadian Tattoo Arts Awards (2020)</p>
+                    <p class="award body fade" data-speed="slow">Top Artist, Black & Grey Category – Western Canada Tattoo Show (2023)</p>
+                    <p class="award body fade" data-speed="slow">Best Floral Tattoo – Alberta Ink Awards (2022)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact fade-section" id="contact">
         <div class="form__flex-container">
             <div class="form__image-container">
                 <img id="form-image" src="images/blackthorn-hero.webp">
             </div>
             
             <div class="form__form-container section-padding">
-                <h2 class="sc-subtitle light">Get in touch</h2>
+                <h2 class="sc-subtitle light fade" data-speed="fast">Get in touch</h2>
                 <form>
-                    <div class="form-line">
+                    <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Name</label>
                         <input class="medium">
                     </div>
-                    <div class="form-line">
+                    <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Phone Number</label>
                         <input class="medium">
                     </div>
-                    <div class="form-line">
+                    <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Email</label>
                         <input class="medium">
                     </div>
-                    <div class="form-line">
+                    <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Message</label>
                         <textarea rows="1" class="medium"></textarea>
                     </div>
                 </form>
-                <a class="button sc-medium" href="#contact">BOOK</a>
+                <a class="button sc-medium fade" data-speed="slow" href="#contact">BOOK</a>
             </div>
         </div>
         
@@ -176,5 +175,7 @@
         </div>
     </footer>
     
+    <!--Scripts-->
+    <script src="sectionObserver.js"></script>
 </body>
 </html>

@@ -121,6 +121,22 @@ a {
     }
 }
 
+.fade {
+    opacity: 0;
+}
+
+.fade.visible[data-speed="fast"] {
+    animation: slideUpAndFade 0.75s forwards;
+}
+
+.fade.visible[data-speed="medium"] {
+    animation: slideUpAndFade 1.25s forwards;
+}
+
+.fade.visible[data-speed="slow"] {
+    animation: slideUpAndFade 1.5s forwards;
+}
+
 @keyframes marquee{
     from {transform: translateX(0%);}
     to {transform: translateX(-50%);}

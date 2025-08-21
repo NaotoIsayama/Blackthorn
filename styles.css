@@ -591,6 +591,15 @@ footer {
 .copyright {
     margin: 1rem;
 }
+
+#personal-link {
+    color: var(--black);
+    transition: color 0.3s ease-in-out;
+}
+
+#personal-link:hover {
+    color: var(--rose);
+}
 /*------ END footer ------*/
 
 

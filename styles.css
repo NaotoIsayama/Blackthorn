@@ -379,7 +379,7 @@ a {
 #profile-overlay {
     position: absolute;
     z-index: -1;
-    height: 100%;
+    height: max-content;
     transform: scaleX(-1);
     left: 40%;
 }
@@ -460,7 +460,7 @@ a {
     display: flex;
     height: 100%;
     width: 100%;
-    gap: 2rem;
+    
 }
 
 .form__image-container {
@@ -474,6 +474,7 @@ a {
 }
 
 .form__form-container {
+    gap: 2rem;
     width: 50%;
     background-color: var(--black);
     display: flex;

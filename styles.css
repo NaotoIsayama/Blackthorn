@@ -178,7 +178,7 @@ a {
 
 /*------ hero section ------*/
 .hero {
-    background-image: url('images/blackthorn-hero.jpg');
+    background-image: url('images/blackthorn-hero.webp');
     background-size: cover;
     height: 95%;
     box-sizing: border-box;
@@ -704,7 +704,7 @@ footer {
     .award {
         width: 100%;
     }
-    
+
     .contact {
         height: max-content;
     }

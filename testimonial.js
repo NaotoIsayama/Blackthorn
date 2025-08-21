@@ -28,6 +28,12 @@ const testimonialsArray = [
     }
 ];
 
+// preload images
+testimonialsArray.forEach(i => {
+    const img = new Image();
+    img.src = i.image;
+});
+
 // Function to remove the 'visible' class added by sectionObserver.js
 function removeVisible() {
     image.classList.remove('visible');
@@ -49,7 +55,6 @@ function swapContent(index) {
 }
 
 function main() {
-    
     setInterval(() => {
         currIndex = (currIndex + 1) % testimonialsArray.length;
         removeVisible();

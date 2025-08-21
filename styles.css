@@ -394,12 +394,12 @@ a {
 .testimonial__indicator {
     width: 3rem;
     height: 4px;
-    background-color: white;
+    background-color: grey;
     transition: background-color 0.5s ease;
 }
 
 .selected {
-    background-color: grey;
+    background-color: white;
 }
 
 /*------ profile section ------*/

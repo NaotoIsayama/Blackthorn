@@ -45,7 +45,7 @@ function removeVisible() {
 // Function to switch content. 
 // index is incremented already by the time this func is called
 function swapContent(index) {
-    indicatorsNodeList[(index - 1 + testimonialsArray.length) % testimonialsArray.length].classList.remove('selected');
+    indicatorsNodeList.forEach(i => i.classList.remove('selected'));
     image.classList.add('visible');
     testimonial.textContent = testimonialsArray[index].testimonial;
     testimonial.classList.add('visible');

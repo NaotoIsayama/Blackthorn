@@ -684,6 +684,10 @@ footer {
         width: 45%;
     }
 
+    .profile__block p{
+        font-size: 0.75rem;
+    }
+
     .profile__bio-container p {
         text-align: center;
     }

@@ -686,6 +686,7 @@ footer {
 
     .profile__block p{
         font-size: 0.75rem;
+        text-align: left;
     }
 
     .profile__bio-container p {

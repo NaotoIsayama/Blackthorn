@@ -13,4 +13,9 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.3 });
 
+window.addEventListener('resize', () => {
+    sections.forEach(section => observer.unobserve(section));
+    sections.forEach(section => observer.observe(section));
+});
+
 sections.forEach(sec => observer.observe(sec));

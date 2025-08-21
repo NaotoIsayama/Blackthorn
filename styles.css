@@ -609,7 +609,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
@@ -724,6 +724,7 @@ footer {
     .testimonial__indicator-container {
         display: flex;
         justify-content: center;
+        margin-top: 2rem;
     }
 
     #quotes {

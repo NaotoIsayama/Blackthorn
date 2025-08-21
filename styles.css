@@ -452,7 +452,7 @@ a {
 .contact {
     z-index: -1;
     position: relative;
-    height: 100%;
+    height: max-content;
     width: 100%;
 }
 

@@ -559,14 +559,36 @@ input, textarea {
 /*------ footer ------*/
 footer {
     display:flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--tan);
-    height: 10%;
+    height: max-content;
 }
 
 #footer-logo {
-    height: 100%;
+    height: 5rem;
+}
+
+.footer-top {
+    padding: 0.5rem 0;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.copyright {
+    margin: 1rem;
 }
 /*------ END footer ------*/
 

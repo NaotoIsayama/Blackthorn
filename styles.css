@@ -825,6 +825,10 @@ footer {
         gap: 3rem;
     }
 
+    .footer-top {
+        flex-direction: column;
+    }
+
     #footer-logo {
         width: 100%;
         height: auto;

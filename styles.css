@@ -580,6 +580,7 @@ footer {
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
+        opacity: 0.8;
     }
     
     .about__image-container {

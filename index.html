@@ -137,10 +137,10 @@
             <div class="form__image-container">
                 <img id="form-image" src="images/blackthorn-hero.webp">
             </div>
-            
             <div class="form__form-container section-padding">
                 <h2 class="sc-subtitle light fade" data-speed="fast">Get in touch</h2>
-                <form>
+                <p id="submit-message" class="submit-message sc-medium light">Thanks for Reaching out! <br>(This form is purely decorative)</p>
+                <form method="post">
                     <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Name</label>
                         <input class="medium">
@@ -157,8 +157,10 @@
                         <label class="sc-medium block light">Message</label>
                         <textarea rows="1" class="medium"></textarea>
                     </div>
+                    
+                    <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
                 </form>
-                <a class="button sc-medium fade" data-speed="slow" href="#contact">BOOK</a>
+                
             </div>
         </div>
         
@@ -175,5 +177,6 @@
     <!--Scripts-->
     <script src="sectionObserver.js"></script>
     <script src="testimonial.js"></script>
+    <script src="submithandler.js"></script>
 </body>
 </html>

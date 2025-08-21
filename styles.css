@@ -6,6 +6,7 @@
 
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -143,6 +144,13 @@ a {
     to {transform: translateX(-50%);}
 }
 
+.submit-fade-out {
+    opacity: 0;
+}
+
+.submit-fade-in {
+    opacity: 1 !important;
+}
 /*------ END Animation classes ------*/
 
 
@@ -508,6 +516,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 form input, form textarea {
@@ -528,6 +538,22 @@ input, textarea {
     border-bottom: solid 2px var(--white);
     color: var(--white);
 }
+
+.submit-message {
+    margin-left: 0.6rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: 2;
+    transition: opacity 1.5s ease;
+}
+
+#submit-button {
+    cursor: pointer;
+}
+
 /*------ END form section ------*/
 
 /*------ footer ------*/

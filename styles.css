@@ -551,6 +551,7 @@ input, textarea {
 }
 
 #submit-button {
+    margin-top: 2rem;
     cursor: pointer;
 }
 

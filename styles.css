@@ -180,6 +180,7 @@ a {
 .hero {
     background-image: url('images/blackthorn-hero.webp');
     background-size: cover;
+    filter: brightness(0.8);
     height: 95%;
     box-sizing: border-box;
 }

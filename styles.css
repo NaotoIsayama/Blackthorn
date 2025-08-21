@@ -123,6 +123,7 @@ a {
 
 .fade {
     opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .fade.visible[data-speed="fast"] {
@@ -386,6 +387,7 @@ a {
     width: 3rem;
     height: 4px;
     background-color: white;
+    transition: background-color 0.5s ease;
 }
 
 .selected {

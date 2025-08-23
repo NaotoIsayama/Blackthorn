@@ -5,7 +5,7 @@
 }
 
 section {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 html {

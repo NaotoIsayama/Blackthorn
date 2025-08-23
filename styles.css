@@ -350,7 +350,7 @@ a {
 }
 
 #testimonials__flowers-overlay {
-    width: 100%;
+    width: 50%;
     position: absolute;
     z-index: -1;
     left: 50%;
@@ -412,7 +412,7 @@ a {
 #profile-overlay {
     position: absolute;
     z-index: -1;
-    height: max-content;
+    height: 100%;
     transform: scaleX(-1);
     left: 40%;
 }

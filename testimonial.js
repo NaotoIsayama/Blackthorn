@@ -17,7 +17,7 @@ const testimonialsArray = [
         image: 'images/testimonial-1.webp'
     },
     {
-        author: 'Sarah Banks',
+        author: 'Sarah Miller',
         testimonial: "\"Evelyn is an absolute artist. She listened to exactly what I wanted and brought it to life with incredible detail and creativity. Her studio is welcoming and impeccably clean, making the whole experience so comfortable. I couldn\’t be happier with my tattoo and can\’t wait to book my next session.\"",
         image: 'images/testimonial-2.webp'
     },

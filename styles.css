@@ -38,7 +38,6 @@ a {
 }
 
 .CTA-button {
-    width: 25%;
     box-sizing: border-box;
     margin: 2rem 0;
     padding: 0.5rem 3rem;
@@ -561,20 +560,21 @@ select {
 
 .custom-file-upload {
     box-sizing: border-box;
+    width: 25%;
     margin: 2rem 0;
     padding: 0.5rem 3rem;
     border: 3px solid var(--white);
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
-    background-color:  var(--main-color);
+    background-color:  var(--transparent);
     transition: border var(--animation-speed) ease-in-out,
                 background-color var(--animation-speed) ease-in-out;
 }
 
 .custom-file-upload:hover {
     cursor: pointer;
-    border: 3px solid var(--light-color);
-    background-color: var(--transparent);
+    border: 3px solid var(--rose);
+    background-color: var(--rose);
 }
 
 /*hide native file input*/

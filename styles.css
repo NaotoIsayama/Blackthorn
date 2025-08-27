@@ -563,6 +563,7 @@ input, textarea {
 #submit-button {
     margin-top: 2rem;
     cursor: pointer;
+    animation: slideUpAndFade 0.65s forwards;
 }
 
 /*------ END form section ------*/

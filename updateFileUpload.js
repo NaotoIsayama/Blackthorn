@@ -5,8 +5,8 @@ const button = document.querySelector('.custom-file-upload');
 const hiddenFileInput = document.getElementById('reference-photos');
 
 hiddenFileInput.addEventListener("change", () => {
-    if (input.files.length > 0) {
-        button.textContent = input.files[0].name;
+    if (hiddenFileInput.files.length > 0) {
+        button.textContent = hiddenFileInput.files[0].name;
     } else {
         label.textContent = "UPLOAD REFERENCE PHOTOS";
     }

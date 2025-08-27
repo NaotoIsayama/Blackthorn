@@ -561,6 +561,7 @@ select {
 .custom-file-upload {
     box-sizing: border-box;
     width: max-content;
+    height: max-content;
     margin: 2rem 0;
     padding: 0.5rem 3rem;
     color: #6c757d; /*same as placeholder*/ 

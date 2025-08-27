@@ -555,7 +555,7 @@ select {
     background-color: var(--transparent);
     border-bottom: solid 2px var(--white);
     box-sizing: border-box;
-    margin-bottom: 20rem;
+    margin-bottom: 5rem;
     color: #6c757d; /*same as placeholder*/
 }
 

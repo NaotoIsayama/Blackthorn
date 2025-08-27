@@ -18,7 +18,7 @@ html {
     --rose: #631e08;
     --black: #191717;
     --tan: #FBEED6;
-    --transparent: #ffffff34;
+    --transparent: #e2d6d60e;
 
     --title: clamp(3rem, 7vw, 6.0rem);
     --subtitle: clamp(2rem, 6vw, 4.85rem);

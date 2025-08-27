@@ -38,6 +38,7 @@ a {
 }
 
 .CTA-button {
+    width: 25%;
     box-sizing: border-box;
     margin: 2rem 0;
     padding: 0.5rem 3rem;

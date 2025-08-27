@@ -18,7 +18,7 @@ html {
     --rose: #631e08;
     --black: #191717;
     --tan: #FBEED6;
-    --transparent: #00000000;
+    --transparent: #ffffff34;
 
     --title: clamp(3rem, 7vw, 6.0rem);
     --subtitle: clamp(2rem, 6vw, 4.85rem);
@@ -544,7 +544,7 @@ form input, form textarea {
 input, textarea {
     outline: none;
     border: none;
-    background-color: var(--transparent-white);
+    background-color: var(--transparent);
     border-bottom: solid 2px var(--white);
     color: var(--white);
 }
@@ -556,6 +556,29 @@ select {
     border-bottom: solid 2px var(--white);
     box-sizing: border-box;
     color: #6c757d; /*same as placeholder*/
+}
+
+.custom-file-upload {
+    box-sizing: border-box;
+    margin: 2rem 0;
+    padding: 0.5rem 3rem;
+    border: 3px solid var(--main-color);
+    border-radius: 2px;
+    display: inline-block; /*regular inline elements dont obey top/bottom margin*/
+    background-color:  var(--main-color);
+    color: var(--light-color);
+    transition: border var(--animation-speed) ease-in-out,
+                background-color var(--animation-speed) ease-in-out;
+}
+
+.custom-file-upload:hover {
+    border: 3px solid var(--light-color);
+    background-color: var(--transparent);
+}
+
+/*hide native file input*/
+input[type="file"] {
+    display: none;
 }
 
 .submit-message {

@@ -82,17 +82,24 @@
                         <textarea rows="1" class="medium" placeholder="I want a dragon tattoo..."></textarea>
                     </div>
 
-                    <!--Location Dropdown Menu-->
+                    <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <div class="form-line fade">
                         <label class="sc-medium block light" for="tattoo-location">Tattoo Placement</label>
                         <select class="medium" id="tattoo-location" name="tattoo-location" required>
                             <option value="" disabled selected>Select placement</option>
-                            <option value="arm">Arm</option>
-                            <option value="leg">Leg</option>
-                            <option value="back">Back</option>
-                            <option value="chest">Chest</option>
-                            <option value="shoulder">Shoulder</option>
-                            <option value="other">Other</option>
+                            <option value="shoulder">Shoulder/Upper Arm</option>
+                            <option value="other">Forearm</option>
+                            <option value="other">Upper Back</option>
+                        </select>
+                    </div>
+
+                    <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
+                    <div class="form-line fade">
+                        <label class="sc-medium block light" for="tattoo-location">Your Location</label>
+                        <select class="medium" id="tattoo-location" name="tattoo-location" required>
+                            <option value="" disabled selected>Select City</option>
+                            <option value="arm">Calgary</option>
+                            <option value="leg">Edmonton</option>
                         </select>
                     </div>
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>

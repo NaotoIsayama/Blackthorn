@@ -568,14 +568,12 @@ select {
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
     background-color:  var(--transparent);
-    transition: border 0.2s ease-in-out,
-                background-color 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;;
 }
 
 .custom-file-upload:hover {
     cursor: pointer;
     border: 3px solid var(--rose);
-    background-color: var(--rose);
 }
 
 /*hide native file input*/

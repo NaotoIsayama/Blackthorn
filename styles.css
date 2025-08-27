@@ -563,6 +563,7 @@ select {
     width: max-content;
     margin: 2rem 0;
     padding: 0.5rem 3rem;
+    color: #6c757d; /*same as placeholder*/ 
     border: 3px solid var(--white);
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/

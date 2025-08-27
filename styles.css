@@ -549,6 +549,14 @@ input, textarea {
     color: var(--white);
 }
 
+select {
+    outline: none;
+    border: none;
+    background-color: var(--transparent);
+    border-bottom: solid 2px var(--white);
+    color: var(--white);
+}
+
 .submit-message {
     margin-left: 0.6rem;
     opacity: 0;

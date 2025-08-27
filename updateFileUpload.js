@@ -7,6 +7,7 @@ const hiddenFileInput = document.getElementById('reference-photos');
 hiddenFileInput.addEventListener("change", () => {
     if (hiddenFileInput.files.length > 0) {
         button.textContent = hiddenFileInput.files[0].name;
+        button.style.border = "3px solid var(--rose)";
     } else {
         label.textContent = "UPLOAD REFERENCE PHOTOS";
     }

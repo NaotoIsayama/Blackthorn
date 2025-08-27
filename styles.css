@@ -515,6 +515,10 @@ a {
     justify-content: space-between;
 }
 
+.form__form-container h2 {
+    animation: slideUpAndFade 0.5s forwards;
+}
+
 form {
     width: 100%;
     height: max-content;

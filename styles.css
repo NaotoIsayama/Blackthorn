@@ -572,6 +572,7 @@ select {
 }
 
 .custom-file-upload:hover {
+    cursor: pointer;
     border: 3px solid var(--light-color);
     background-color: var(--transparent);
 }

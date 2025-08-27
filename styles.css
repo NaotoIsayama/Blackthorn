@@ -554,6 +554,8 @@ select {
     border: none;
     background-color: var(--transparent);
     border-bottom: solid 2px var(--white);
+    box-sizing: border-box;
+    padding-bottom: 10rem;
     color: #6c757d; /*same as placeholder*/
 }
 

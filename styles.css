@@ -554,7 +554,7 @@ select {
     border: none;
     background-color: var(--transparent);
     border-bottom: solid 2px var(--white);
-    color: var(--white);
+    color: #6c757d; /*same as placeholder*/
 }
 
 .submit-message {

@@ -569,8 +569,8 @@ select {
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
     background-color:  var(--transparent);
-    transition: border var(--animation-speed) ease-in-out,
-                background-color var(--animation-speed) ease-in-out;
+    transition: border 0.5s ease-in-out,
+                background-color 0.5s ease-in-out;
 }
 
 .custom-file-upload:hover {

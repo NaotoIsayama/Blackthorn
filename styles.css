@@ -41,17 +41,17 @@ a {
     box-sizing: border-box;
     margin: 2rem 0;
     padding: 0.5rem 3rem;
-    border: 3px solid var(--main-color);
+    border: 3px solid var(--rose);
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
-    background-color:  var(--main-color);
+    background-color:  var(--rose);
     color: var(--light-color);
     transition: border var(--animation-speed) ease-in-out,
                 background-color var(--animation-speed) ease-in-out;
 }
 
 .CTA-button:hover {
-    border: 3px solid var(--light-color);
+    border: 3px solid var(--rose);
     background-color: var(--transparent);
 }
 
@@ -566,7 +566,6 @@ select {
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
     background-color:  var(--main-color);
-    color: var(--light-color);
     transition: border var(--animation-speed) ease-in-out,
                 background-color var(--animation-speed) ease-in-out;
 }

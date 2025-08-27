@@ -534,6 +534,7 @@ form input, form textarea {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    animation: slideUpAndFade 0.5s forwards;
 }
 
 input, textarea {

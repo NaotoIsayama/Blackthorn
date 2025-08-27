@@ -544,7 +544,7 @@ form input, form textarea {
 input, textarea {
     outline: none;
     border: none;
-    background-color: var(--transparent);
+    background-color: var(--transparent-white);
     border-bottom: solid 2px var(--white);
     color: var(--white);
 }

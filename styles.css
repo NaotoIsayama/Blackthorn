@@ -292,6 +292,10 @@ a {
     width: 75%;
 }
 
+#form-logo {
+    width: 75%;
+}
+
 #hero-logo {
     width: 75%;
     animation: slideUpAndFade 1.5s forwards;

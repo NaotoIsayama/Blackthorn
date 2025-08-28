@@ -42,7 +42,15 @@
 
         <div class="nav-container-form">
             <nav class="nav-padding desktop-nav-form">
-                <a class="sc-body light left-margin-fix" href="/index.html"><img src="images/navbar-logo-2.svg" id="home-link-logo"></img></a>
+                <a class="sc-body light left-margin-fix" href="/index.html">
+
+                    <picture>
+                        <source srcset="images/Hero-logo.png" media="(min-width: 800px)"/></source>
+                        <source srcset="images/mobile-logo.png" media="(max-width: 800px)"></source>
+                        <img src="images/Hero-logo.png" id="home-link-logo"></img>
+                    </picture>
+                    
+                </a>
                 <a class="sc-body light" href="/form.html">Book</a>
             </nav>
         </div>

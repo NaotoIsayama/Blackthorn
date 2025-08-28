@@ -262,10 +262,6 @@ a {
     gap: 6rem;
 }
 
-#home-link-logo {
-    width: 12rem;
-}
-
 .nav-container-form {
     width: 100%;
     height: max-content;
@@ -274,7 +270,7 @@ a {
 
 .desktop-nav-form {
     display: flex;
-    width: 45%;
+    width: 100%;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
@@ -830,6 +826,12 @@ footer {
         width: 100%;
     }
 
+    #home-link-logo {
+        width: 75%;
+    }
+
+    #form-logo
+
     .hero__paragraph {
         width: 100%;
     }
@@ -858,14 +860,13 @@ footer {
     }
     
     .about__image-container {
-        
         width: 100%;
     }
 
     .about__text-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center;    
         width: 100%;
     }
 

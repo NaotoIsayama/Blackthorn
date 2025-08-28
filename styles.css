@@ -292,6 +292,10 @@ a {
     height: 100%;
 }
 
+#home-link-logo {
+    width: 75%;
+}
+
 #hero-logo {
     width: 75%;
     animation: slideUpAndFade 1.5s forwards;
@@ -810,6 +814,11 @@ footer {
         padding: 1rem;
         display: flex;
         align-items: center;
+        justify-content: center;
+    }
+
+    picture {
+        display: flex;
         justify-content: center;
     }
 

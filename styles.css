@@ -247,6 +247,7 @@ a {
 }
 
 .desktop-nav {
+    padding: 0.25rem;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -269,6 +270,7 @@ a {
 }
 
 .desktop-nav-form {
+    padding: 0.25rem;
     display: flex;
     width: 45%;
     justify-content: flex-start;

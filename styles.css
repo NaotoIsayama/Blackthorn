@@ -310,6 +310,7 @@ a {
     width: 65%;
     text-align: left;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
     animation: slideUpAndFade 2s forwards;
 }
 

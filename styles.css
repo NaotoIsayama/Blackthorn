@@ -72,6 +72,7 @@ a {
     font-size: var(--subtitle);
     font-family: 'Baskervville SC', serif;
     font-weight: 400;
+    line-height: 0.75;
 }
 
 .marquee-font {
@@ -213,6 +214,10 @@ a {
     padding: 7rem 5rem;
 }
 
+.form-padding {
+    padding: 4rem 3rem;
+}
+
 .side-padding {
     padding: 0rem 5rem;
 }
@@ -227,6 +232,10 @@ a {
 
 .block {
     display: block;
+}
+
+.left-margin-fix {
+    margin-left: 0.2rem;
 }
 /*------ end Utility ------*/
 
@@ -245,6 +254,26 @@ a {
     justify-content: flex-start;
     align-items: center;
     height: 10%;
+    animation: slideUpAndFade 0.75s forwards;
+    gap: 6rem;
+}
+
+#home-link-logo {
+    width: 12rem;
+}
+
+.nav-container-form {
+    width: 100%;
+    height: 10%;
+    background-color: var(--black);
+}
+
+.desktop-nav-form {
+    display: flex;
+    width: 45%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
     animation: slideUpAndFade 0.75s forwards;
     gap: 6rem;
 }
@@ -526,8 +555,6 @@ a {
 /*------ form section ------*/
 
 .contact {
-    z-index: -1;
-    position: relative;
     height: max-content;
     width: 100%;
 }
@@ -535,8 +562,7 @@ a {
 .form__flex-container {
     display: flex;
     height: 100%;
-    width: 100%;
-    
+    width: 100%; 
 }
 
 .form__image-container {
@@ -552,22 +578,38 @@ a {
 .form__form-container {
     gap: 2rem;
     width: 50%;
-    background-color: var(--black);
+    background-color: var(--tan);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+#form__flowers-overlay {
+    top: 80%;
+    transform: translateY(-50%);
+    z-index: 0;
+    position: absolute;
+    left: 55%;
+    width: 45%;
+    opacity: 0.5;
+}
+
 .form__form-container h2 {
+    position: relative;
+    z-index: 999;
+    margin-left: -0.5rem;
     animation: slideUpAndFade 0.5s forwards;
+    margin-bottom: 2rem;
 }
 
 form {
+    position: relative;
+    z-index: 999;
     width: 100%;
     height: max-content;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     opacity: 1;
     transition: opacity 1s ease-in-out;
 }
@@ -575,6 +617,7 @@ form {
 form input, form textarea {
     width: 100%;
     resize: vertical;
+    color: var(--black);
 }
 
 .form-line {
@@ -588,7 +631,7 @@ input, textarea {
     outline: none;
     border: none;
     background-color: var(--transparent);
-    border-bottom: solid 2px var(--white);
+    border-bottom: solid 2px var(--rose);
     color: var(--white);
     padding: 0.25rem;
 }
@@ -598,7 +641,7 @@ select {
     outline: none;
     border: none;
     background-color: var(--transparent);
-    border-bottom: solid 2px var(--white);
+    border-bottom: solid 2px var(--rose);
     box-sizing: border-box;
     color: #6c757d; /*same as placeholder*/
 }
@@ -607,18 +650,20 @@ select {
     box-sizing: border-box;
     width: max-content;
     height: max-content;
-    padding: 0.25rem 0.25rem;
+    padding: 0.35rem;
     color: #6c757d; /*same as placeholder*/ 
-    border: 3px solid var(--white);
+    border: 3px solid var(--rose);
     border-radius: 2px;
     display: inline-block; /*regular inline elements dont obey top/bottom margin*/
     background-color:  var(--transparent);
-    transition: border 0.2s ease-in-out;;
+    transition: color 0.2s ease-in-out,
+                background-color 0.2s ease-in-out;
 }
 
 .custom-file-upload:hover {
     cursor: pointer;
-    border: 3px solid var(--rose);
+    color: var(--white);
+    background-color: var(--rose);
 }
 
 /*hide native file input*/
@@ -633,20 +678,30 @@ input[type="file"] {
     top: 50%;
     transform: translateY(-50%);
     text-align: left;
-    z-index: 2;
+    z-index: -1;
     transition: opacity 1.5s ease;
 }
 
 #submit-button {
     margin-top: 2rem;
     cursor: pointer;
+    color: var(--white);
     animation: slideUpAndFade 0.65s forwards;
+    transition: color 0.2s ease-in-out,
+                background-color 0.2s ease-in-out,
+                border 0.2s ease-in-out;
+}
+
+#submit-button:hover {
+    border: solid var(--rose);
+    color: var(--rose);
 }
 
 /*------ END form section ------*/
 
 /*------ footer ------*/
 footer {
+    padding-top: 3rem !important;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -672,8 +727,8 @@ footer {
     width: 100%;
     height: 1px;
     background-color: var(--black);
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .copyright {
@@ -682,7 +737,7 @@ footer {
 
 #personal-link {
     color: var(--black);
-    transition: color 0.3s ease-in-out;
+    transition: color 0.1s ease-in-out;
 }
 
 #personal-link:hover {

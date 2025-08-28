@@ -40,43 +40,52 @@
 </head>
     <body>
 
-        <section class="hero">
-            <nav class="side-padding desktop-nav" id="desktopNav">
-                <a class="sc-body light" href="/index.html">Home</a>
+        <div class="nav-container-form">
+            <nav class="side-padding desktop-nav-form" id="desktopNav">
+                <a class="sc-body light left-margin-fix" href="/index.html"><img src="images/navbar-logo-2.svg" id="home-link-logo"></img></a>
                 <a class="sc-body light" href="/form.html">Book</a>
             </nav>
-        </section>
+        </div>
 
-        <section class="contact" id="contact">
+        <div class="marquee">
+            <div class="marquee__inner-el">
+                <span class="marquee-font span1">BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO •</span>
+                <span class="marquee-font span2">BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO •</span>
+            </div>
+        </div>
+
+        <section class="contact fade-section" id="contact">
         <div class="form__flex-container">
             <div class="form__image-container">
-                <img id="form-image" src="images/blackthorn-hero.webp">
+                <img id="form-image" src="images/form-img.webp">
             </div>
-            <div class="form__form-container section-padding">
-                <h2 class="sc-subtitle light fade" data-speed="fast">Get in touch</h2>
-                <p id="submit-message" class="submit-message sc-medium light">Thanks for Reaching out! <br>(This form is purely decorative)</p>
+            <div class="form__form-container form-padding">
+                <img id="form__flowers-overlay" src="images/flowers-overlay-1.png" alt="an overlay image of flowers">
+                <h2 class="sc-subtitle fade" data-speed="fast">Book an <span class="rose">appointment</span></h2>
+                <p class="medium fade" data-speed="fast">This form is for demonstration purposes only and is not attached to any backend.</p>
+                <p id="submit-message" class="submit-message sc-medium">Thanks for Reaching out! <br>(This form is purely decorative)</p>
                 <form method="post">
                     <!--Name Input-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light">Name</label>
+                        <label class="sc-medium block">Name</label>
                         <input class="sc-body" placeholder="Your Name">
                     </div>
 
                     <!--Phone number Input-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light">Phone Number</label>
+                        <label class="sc-medium block">Phone Number</label>
                         <input class="sc-body" placeholder="Your Phone Number">
                     </div>
 
                     <!--Email Input-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light">Email</label>
+                        <label class="sc-medium block">Email</label>
                         <input class="sc-body" placeholder="Your Email">
                     </div>
 
                     <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <div class="form-line fade">
-                        <label class="sc-medium block light" for="tattoo-location">Tattoo Placement</label>
+                        <label class="sc-medium block" for="tattoo-location">Tattoo Placement</label>
                         <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
                             <option class="sc-body" value="" disabled selected>Select placement</option>
                             <option class="sc-body" value="shoulder">Shoulder/Upper Arm</option>
@@ -87,7 +96,7 @@
 
                     <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <div class="form-line fade">
-                        <label class="sc-medium block light" for="tattoo-location">Your Location</label>
+                        <label class="sc-medium block" for="tattoo-location">Your Location</label>
                         <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
                             <option class="sc-body" value="" disabled selected>Select City</option>
                             <option class="sc-body" value="arm">Calgary</option>
@@ -97,22 +106,22 @@
                     
                     <!--Tattoo Details Input-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light">Brief Description of your tattoo</label>
+                        <label class="sc-medium block">Brief Description of your tattoo</label>
                         <textarea rows="3" class="sc-body" placeholder="I want a dragon tattoo..."></textarea>
                     </div>
                     
                     <!--Reference Photos-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light">Reference Photo</label>
+                        <label class="sc-medium block">Reference Photo</label>
                         <label class="sc-body custom-file-upload" for="reference-photos">
-                            <span class="sc-body custom-file-upload__btn-text">upload reference photos</span>
+                            <span class="sc-body custom-file-upload__btn-text">UPLOAD REFERENCE PHOTO</span>
                             <input type="file" id="reference-photos" name="reference-photos[]" accept="image/*" multiple>
                         </label>
                     </div>
 
                     <!--Date picker-->
                     <div class="form-line fade" data-speed="medium">
-                        <label class="sc-medium block light" for="appointment-date">Appointment Date</label>
+                        <label class="sc-medium block" for="appointment-date">Appointment Date</label>
                         <input class="sc-body" type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
                     </div>
 
@@ -122,8 +131,27 @@
         </div>
     </section>
 
+    <div class="marquee">
+        <div class="marquee__inner-el">
+            <span class="marquee-font span1">BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO •</span>
+            <span class="marquee-font span2">BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO • BOOK NOW • EDMONTON • TATTOO •</span>
+        </div>
+    </div>
+
+    <footer class="side-padding">
+        <div class="footer-top">
+            <img id="footer-logo" src="images/footer-logo-2.png">
+            <span><a id="personal-link" href="https://www.naotoisayama.com">Designed By Naoto Isayama</a></span>
+        </div>
+        <div class="divider"></div>
+        <div>
+            <span class="copyright">© 2025 Blackthorn Tattoo. All rights reserved</span>
+        </div>
+    </footer>
+
     <!--scripts-->
     <script src="updateFileUpload.js"></script>
+    <script src="sectionObserver.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- Flatpickr JS -->
 
     <script>

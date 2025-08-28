@@ -222,6 +222,10 @@ a {
     padding: 0rem 5rem;
 }
 
+.nav-padding {
+    padding: 1rem 5rem;
+}
+
 .paragraph-gap {
     margin-bottom: 2rem;
 }
@@ -259,13 +263,12 @@ a {
 }
 
 #home-link-logo {
-    margin: 1rem 0;
     width: 12rem;
 }
 
 .nav-container-form {
     width: 100%;
-    height: 10%;
+    height: max-content;
     background-color: var(--black);
 }
 

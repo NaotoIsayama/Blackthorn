@@ -219,7 +219,7 @@ a {
     position: absolute;
     z-index: 3;
     display: flex;
-    width: 33.33%;
+    width: 50%;
     justify-content: space-between;
     align-items: center;
     height: 10%;
@@ -250,6 +250,17 @@ a {
 
 .hero__main-content .button {
     animation: slideUpAndFade 1.75s forwards;
+}
+
+.hero_-image-container {
+    width: 33.33%;
+    height: 100%;
+}
+
+#hero-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 /*------END hero ------*/
 

@@ -32,6 +32,11 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/Vector-1.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicons/Vector.png">
         <link rel="icon" type="image/png" sizes="48x48" href="favicons/Vector-2.png">
+
+        <!-- Flatpickr CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+        
 </head>
     <body>
 
@@ -100,7 +105,7 @@
                     <!--Tattoo Details Input-->
                     <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block light">Brief Description of your tattoo</label>
-                        <textarea rows="2" class="sc-body" placeholder="I want a dragon tattoo..."></textarea>
+                        <textarea rows="3" class="sc-body" placeholder="I want a dragon tattoo..."></textarea>
                     </div>
                     
                     <!--Reference Photos-->
@@ -112,6 +117,12 @@
                         </label>
                     </div>
 
+                    <!--Date picker-->
+                    <div class="form-line fade" data-speed="medium">
+                        <label for="appointment-date">Preferred Appointment Date</label>
+                        <input type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
+                    </div>
+
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
                 </form>
             </div>
@@ -120,5 +131,15 @@
 
     <!--scripts-->
     <script src="updateFileUpload.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- Flatpickr JS -->
+
+    <script>
+        flatpickr("#appointment-date", {
+            dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS
+            minDate: "today",     // prevent past dates
+            disable: []           // you can populate blocked dates later
+        });
+    </script>
+
     </body>
 </html>

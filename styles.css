@@ -242,10 +242,11 @@ a {
     z-index: 3;
     display: flex;
     width: 45%;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: 10%;
     animation: slideUpAndFade 0.75s forwards;
+    gap: 6rem;
 }
 
 .hero__main-content {
@@ -699,10 +700,6 @@ footer {
         --marquee: clamp(1.618rem, 2vw, 1.618rem);
         --medium: clamp(1.618rem, 2vw, 1.618rem);
         --body: clamp(1.2rem, 1.5vw, 1.2rem);
-    }
-
-    #desktopNav {
-        display: none;
     }
 
     .section-padding {

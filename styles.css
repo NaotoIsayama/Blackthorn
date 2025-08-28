@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.borderred {
+    border: solid red;
+}
+
 section {
     overflow: hidden;
 }

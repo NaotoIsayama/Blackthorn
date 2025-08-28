@@ -211,6 +211,7 @@ a {
 
 /*------ hero section ------*/
 .hero {
+    display: flex;
     height: 95%;
     box-sizing: border-box;
 }
@@ -230,14 +231,14 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 66.66%;
     background-color: var(--black);
     height: 100%;
 }
 
 #hero-logo {
-    width: 50%;
+    width: 75%;
     animation: slideUpAndFade 0.75s forwards;
 }
 

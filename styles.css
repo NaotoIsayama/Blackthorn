@@ -240,11 +240,12 @@ a {
 #hero-logo {
     width: 75%;
     animation: slideUpAndFade 0.75s forwards;
+    margin-bottom: 3rem;
 }
 
 .hero__paragraph {
-    width: 30%;
-    text-align: center;
+    width: 65%;
+    text-align: left;
     margin-bottom: 1.5rem;
     animation: slideUpAndFade 1.25s forwards;
 }

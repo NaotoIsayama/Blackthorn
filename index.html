@@ -66,8 +66,28 @@
         <img id="about__flowers-overlay" src="images/flowers-overlay-1.png" alt="an overlay image of flowers">
         <div class="about__flex-container">
             <div class="about__image-container">
-                <img data-speed="fast" class="fade about__tattoo-image about__image-offset" src="images/tattoo-1.png">
-                <img data-speed="medium" class="fade about__tattoo-image" src="images/tattoo-2.png">
+
+                <div class="swiper" id="ref-photo-swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <img data-speed="fast" class="fade about__tattoo-image about__image-offset" src="images/tattoo-1.png">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img data-speed="medium" class="fade about__tattoo-image" src="images/tattoo-2.png">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img data-speed="slow" class="fade about__tattoo-image about__image-offset" src="images/tattoo-3.png">
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                
+                
                 <img data-speed="slow" class="fade about__tattoo-image about__image-offset" src="images/tattoo-3.png">
             </div>
             <div class="about__text-container">
@@ -153,6 +173,6 @@
     
     <!-- Swiper --->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
 </body>
 </html>

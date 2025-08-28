@@ -546,6 +546,11 @@ a {
     justify-content: space-between;
 }
 
+.profile__button-container {
+    display: flex;
+    gap: 2rem;
+}
+
 .award {
     width: 50%;
     text-align: right;
@@ -761,6 +766,25 @@ footer {
         --body: clamp(1.2rem, 1.5vw, 1.2rem);
     }
 
+    .nav-container-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #desktopNav {
+        display: none;
+    }
+
+    .desktop-nav-form {
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .section-padding {
         padding: 3rem 1rem;
     }
@@ -774,13 +798,23 @@ footer {
     }
 
     .hero {
+        display: flex;
+        flex-direction: column-reverse;
         height: max-content;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
     }
 
     .hero__main-content {
-        gap: 2rem;
+        width: 100%;
+        gap: 1rem;
+        height: max-content;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__main-content p {
+        text-align: center;
     }
 
     #hero-logo {
@@ -788,6 +822,11 @@ footer {
     }
 
     .hero__paragraph {
+        width: 100%;
+    }
+
+    .hero__image-container {
+        background-color: var(--black);
         width: 100%;
     }
 
@@ -809,10 +848,14 @@ footer {
     }
     
     .about__image-container {
+        
         width: 100%;
     }
 
     .about__text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
@@ -871,6 +914,30 @@ footer {
 
     .profile {
         height: max-content;
+    }
+
+    .profile h2 {
+        text-align: center;
+    }
+
+    .profile p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile__button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #devbutton {
+        font-size: var(--body);
+        margin-bottom: 2rem;
+        padding: 1rem 3rem;
+    }
+
+    .devbutton2 {
+        margin: auto;
     }
 
     #profile-overlay {
@@ -960,6 +1027,10 @@ footer {
         gap: 3rem;
     }
 
+    .dev-message-form {
+        text-align: center;
+    }
+
     .form__form-container h2 {
         text-align: center;
     }   
@@ -983,7 +1054,7 @@ footer {
     }
 
     #footer-logo {
-        width: 100%;
+        width: 75%;
         height: auto;
     }
 }

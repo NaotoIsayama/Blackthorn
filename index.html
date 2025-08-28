@@ -44,7 +44,13 @@
 
     <section class="hero">
         <nav class="nav-padding desktop-nav" id="desktopNav">
-            <a class="sc-body light left-margin-fix" href="/index.html"><img src="images/navbar-logo-2.svg" id="home-link-logo"></img></a>
+            <a class="sc-body light left-margin-fix" href="/index.html">
+                <picture>
+                    <source srcset="images/navbar-logo-2.svg" media="(min-width: 800px)"/></source>
+                    <source srcset="images/mobile-logo.png" media="(max-width: 800px)"></source>
+                    <img src="images/navbar-logo-2.svg" id="home-link-logo"></img>
+                </picture>
+            </a>
             <a class="sc-body light" href="/form.html">Book</a>
         </nav>
         <div class="hero__main-content side-padding">
@@ -130,13 +136,17 @@
         <h2 class="fade sc-title header-gap" data-speed="fast">To Be <span class="rose">Continued... </span></h2>
         <p class="dev-message medium fade" data-speed="slow">This site is just a short demo, just to illustrate my design style. Some other pages / sections that a solo tattoo artist might find useful include an aftercare information page, a gallery page that stores a large quantity of images in a grid, or a dedicated "About me" page. If you're interested in 
             any of these, email me at naotojacob@gmail.com. <br><br> See the "Book" page for a full working demo of the intake form.<br><br></p>
-            <a id="devbutton" class="button sc-medium" href="form.html">GO TO BOOKING FORM</a>
-            <a id="devbutton" class="devbutton2 button sc-medium" href="#desktopNav">BACK TO TOP</a>
+
+        <div class="profile__button-container">
+            <a id="devbutton" class="block button sc-medium" href="form.html">GO TO BOOKING FORM</a>
+            <a id="devbutton" class="block devbutton2 button sc-medium" href="#desktopNav">BACK TO TOP</a>
+        </div>
+        
     </section>
 
     <footer class="side-padding">
         <div class="footer-top">
-            <img id="footer-logo" src="images/blackthorn-footer-logo.png">
+            <img id="footer-logo" src="images/footer-logo-2.png">
             <span><a id="personal-link" href="https://www.naotoisayama.com">Designed By Naoto Isayama</a></span>
         </div>
         <div class="divider"></div>

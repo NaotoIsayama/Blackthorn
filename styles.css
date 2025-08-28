@@ -551,6 +551,7 @@ input, textarea {
 }
 
 select {
+    padding: 0.25rem;
     outline: none;
     border: none;
     background-color: var(--transparent);

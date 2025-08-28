@@ -211,16 +211,15 @@ a {
 
 /*------ hero section ------*/
 .hero {
-    background-image: url('images/blackthorn-hero.webp');
-    background-size: cover;
     height: 95%;
     box-sizing: border-box;
 }
 
 .desktop-nav {
     position: absolute;
+    z-index: 3;
     display: flex;
-    width: 100%;
+    width: 33.33%;
     justify-content: space-between;
     align-items: center;
     height: 10%;
@@ -232,9 +231,9 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 66.66%;
+    background-color: var(--black);
     height: 100%;
-
 }
 
 #hero-logo {

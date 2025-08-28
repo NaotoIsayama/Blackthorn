@@ -7,4 +7,4 @@ form.addEventListener('submit', e => {
     form.classList.add('submit-fade-out');
     setTimeout(()=>{message.classList.add('submit-fade-in');}, 1000);
     
-});
+}); 

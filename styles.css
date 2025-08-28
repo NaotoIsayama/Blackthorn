@@ -292,6 +292,10 @@ a {
     width: 50%;
 }
 
+#form-logo {
+    width: 50%;
+}
+
 #home-link-logo {
     width: 75%;
 }
@@ -783,6 +787,10 @@ footer {
 
     #desktopNav {
         display: none;
+    }
+
+    #form-logo {
+        width: 85%;
     }
 
     .desktop-nav-form {

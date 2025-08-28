@@ -183,6 +183,7 @@
 
             new Swiper('#ref-photo-swiper', {
                 loop: true,                 // only loop if >1 slide
+                speed: 5000,
                 allowTouchMove: hasMultiple,       // disable swipe when single image
                 spaceBetween: 0,
                 slidesPerView: 1,
@@ -190,8 +191,8 @@
                 pagination: hasMultiple ? { el: '.swiper-pagination', clickable: true } : {},
                 navigation: hasMultiple ? { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } : {},
                 autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false
+                    delay: 0,
+                    disableOnInteraction: false,
                 },
             });
 

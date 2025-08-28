@@ -293,15 +293,11 @@ a {
 }
 
 #form-logo {
-    width: 50%;
+    width: 10rem;
 }
 
 #home-link-logo {
     width: 75%;
-}
-
-#form-logo {
-    width: 85%;
 }
 
 #hero-logo {

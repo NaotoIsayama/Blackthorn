@@ -179,6 +179,27 @@ a {
     background-color: var(--transparent);
     border: 2px solid var(--white);
 }
+
+#devbutton {
+    width: max-content;
+    padding: 0.5rem 5rem;
+    background-color: var(--rose);
+    color: var(--white);
+    border: 2px solid var(--rose);
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out,
+                border 0.2s ease-in-out;
+}
+
+#devbutton:hover {
+    background-color: var(--transparent);
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.devbutton2 {
+    margin-left: 2rem;
+}
 /*------ END components ------*/
 
 
@@ -426,6 +447,9 @@ a {
 }
 
 /*------ profile section ------*/
+.dev-message {
+    width: 66.66%;
+}
 
 #profile-overlay {
     position: absolute;

@@ -257,7 +257,7 @@ a {
     width: 45%;
     justify-content: flex-start;
     align-items: center;
-    height: 10%;
+    height: max-content;
     animation: slideUpAndFade 0.75s forwards;
     gap: 6rem;
 }

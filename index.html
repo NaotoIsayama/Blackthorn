@@ -87,7 +87,7 @@
 
 
                 
-                
+                <img data-speed="medium" class="fade about__tattoo-image" src="images/tattoo-2.png">
                 <img data-speed="slow" class="fade about__tattoo-image about__image-offset" src="images/tattoo-3.png">
             </div>
             <div class="about__text-container">
@@ -173,6 +173,32 @@
     
     <!-- Swiper --->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--swiper init-->
+    <script>
+        (function () {
+            const container = document.querySelector('#ref-photo-swiper');
+            const slides = container.querySelectorAll('.swiper-slide');
+            const hasMultiple = slides.length > 1;
+
+            new Swiper('#ref-photo-swiper', {
+                loop: hasMultiple,                 // only loop if >1 slide
+                allowTouchMove: hasMultiple,       // disable swipe when single image
+                spaceBetween: 16,
+                slidesPerView: 1,
+                centeredSlides: false,
+                pagination: hasMultiple ? { el: '.swiper-pagination', clickable: true } : {},
+                navigation: hasMultiple ? { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } : {}
+            });
+
+            // Optionally hide controls when only one slide
+            if (!hasMultiple) {
+                container.querySelector('.swiper-pagination')?.classList.add('hidden');
+                container.querySelector('.swiper-button-prev')?.classList.add('hidden');
+                container.querySelector('.swiper-button-next')?.classList.add('hidden');
+                }
+            })();
+    </script>
 
 </body>
 </html>

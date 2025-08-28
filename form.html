@@ -137,7 +137,10 @@
         flatpickr("#appointment-date", {
             dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS
             minDate: "today",     // prevent past dates
-            disable: []           // you can populate blocked dates later
+            disable: [{
+                from: "2020-08-27",
+                to: "2025-10-25"
+            }]           // you can populate blocked dates later
         });
     </script>
 

@@ -288,6 +288,10 @@ a {
     height: 100%;
 }
 
+#navbar-logo {
+    width: 50%;
+}
+
 #home-link-logo {
     width: 75%;
 }

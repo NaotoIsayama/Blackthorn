@@ -247,7 +247,6 @@ a {
 }
 
 .desktop-nav {
-    padding: 0.25rem;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -260,6 +259,7 @@ a {
 }
 
 #home-link-logo {
+    margin: 0.25rem 0;
     width: 12rem;
 }
 
@@ -270,7 +270,6 @@ a {
 }
 
 .desktop-nav-form {
-    padding: 0.25rem;
     display: flex;
     width: 45%;
     justify-content: flex-start;

@@ -835,6 +835,7 @@ footer {
     }
 
     .hero__image-container {
+        height: 50%;
         background-color: var(--black);
         width: 100%;
     }

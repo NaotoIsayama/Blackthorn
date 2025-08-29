@@ -275,7 +275,7 @@ a {
     align-items: center;
     height: 100%;
     animation: slideUpAndFade 0.75s forwards;
-    gap: 6rem;
+    gap: 12rem;
 }
 
 .hero__main-content {

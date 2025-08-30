@@ -323,6 +323,7 @@ a {
 }
 
 .hero__image-container {
+    position: relative;
     display: flex;
     align-items: flex-end;
     width: 33.33%;
@@ -330,10 +331,19 @@ a {
 }
 
 #hero-image {
+    position: relative;
+    z-index: 999;
     margin-right: 5rem;
     height: 80%;
     width: 100%;
     object-fit: cover;
+}
+
+#hero-text-overlay {
+    position: absolute;
+    z-index: 0;
+    left: -50%;
+    top: 20%;
 }
 /*------END hero ------*/
 

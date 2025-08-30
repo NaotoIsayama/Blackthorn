@@ -259,12 +259,16 @@ a {
     position: absolute;
     z-index: 3;
     display: flex;
-    width: 45%;
+    width: max-content;
     justify-content: flex-start;
     align-items: center;
     height: max-content;
     animation: slideUpAndFade 0.75s forwards;
     gap: 6rem;
+}
+
+.desktop-nav a {
+    width: max-content;
 }
 
 .nav-container-form {

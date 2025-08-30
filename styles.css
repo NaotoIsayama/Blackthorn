@@ -351,8 +351,6 @@ a {
     position: relative;
     z-index: 999;
     margin-right: 5rem;
-    height: 80%;
-    width: 100%;
     object-fit: cover;
 }
 

@@ -249,6 +249,7 @@ a {
 
 /*------ hero section ------*/
 .hero {
+    background-color: var(--black);
     display: flex;
     height: 95%;
     box-sizing: border-box;
@@ -288,7 +289,6 @@ a {
     justify-content: center;
     align-items: flex-start;
     width: 66.66%;
-    background-color: var(--black);
     height: 100%;
 }
 
@@ -301,7 +301,7 @@ a {
 }
 
 #home-link-logo {
-    width: 75%;
+    width: 100%;
 }
 
 #hero-logo {
@@ -323,12 +323,15 @@ a {
 }
 
 .hero__image-container {
+    display: flex;
+    align-items: flex-end;
     width: 33.33%;
     height: 100%;
 }
 
 #hero-image {
-    height: 100%;
+    margin-right: 5rem;
+    height: 80%;
     width: 100%;
     object-fit: cover;
 }

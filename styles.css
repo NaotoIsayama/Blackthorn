@@ -251,13 +251,11 @@ a {
 .hero {
     background-color: var(--black);
     display: flex;
-    height: max-content;
+    height: 95%;
     box-sizing: border-box;
 }
 
 .desktop-nav {
-    position: absolute;
-    z-index: 3;
     display: flex;
     width: 45%;
     justify-content: flex-start;

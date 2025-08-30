@@ -310,6 +310,13 @@ a {
     max-width: none;
 }
 
+@media (min-width: 1200px) {
+    #home-link-logo {
+        width: 175%;
+        max-width: none;
+    }
+}
+
 #hero-logo {
     width: 75%;
     animation: slideUpAndFade 1.5s forwards;

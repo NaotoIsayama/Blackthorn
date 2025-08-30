@@ -355,6 +355,13 @@ a {
     object-fit: cover;
 }
 
+@media (min-width: 3000px) {
+    #hero-image {
+        width: 94%;
+    }
+    
+}
+
 #hero-text-overlay {
     position: absolute;
     z-index: 0;

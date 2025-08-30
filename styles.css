@@ -251,7 +251,7 @@ a {
 .hero {
     background-color: var(--black);
     display: flex;
-    height: 95%;
+    height: max-content;
     box-sizing: border-box;
 }
 

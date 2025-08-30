@@ -307,6 +307,7 @@ a {
 
 #home-link-logo {
     width: 110%;
+    max-width: none;
 }
 
 #hero-logo {

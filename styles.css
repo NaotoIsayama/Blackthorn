@@ -314,6 +314,10 @@ a {
         width: 130%;
         max-width: none;
     }
+
+    html {
+        font-size: 18px;
+    }
 }
 
 #hero-logo {

@@ -350,7 +350,8 @@ a {
 #hero-image {
     position: relative;
     z-index: 999;
-    margin-right: 5rem;
+    width: 98%;
+    margin-right: 2%;
     object-fit: cover;
 }
 

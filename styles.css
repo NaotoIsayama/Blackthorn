@@ -857,6 +857,8 @@ footer {
     }
 
     .hero__main-content {
+        position: relative;
+        z-index: 3;
         width: 100%;
         gap: 0rem;
         height: 50%;

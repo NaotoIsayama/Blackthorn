@@ -885,6 +885,8 @@ footer {
 
     .hero__paragraph {
         width: 100%;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
     }
 
     #hero-text-overlay {
@@ -896,7 +898,7 @@ footer {
     .hero__image-container {
         justify-content: center;
         height: 50vh;
-        padding: 1rem;
+        padding: 0 1rem 1rem 1rem;
         background-color: var(--black);
         width: 100%;
         align-items: flex-start;

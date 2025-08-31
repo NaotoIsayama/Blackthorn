@@ -895,10 +895,11 @@ footer {
 
     .hero__image-container {
         justify-content: center;
-        height: 65vh;
+        height: 50vh;
         padding: 1rem;
         background-color: var(--black);
         width: 100%;
+        align-items: flex-start;
     }
 
     #hero-image {

@@ -1088,6 +1088,7 @@ footer {
     }
 
     .hero__main-content {
+        box-sizing: border-box;
         position: relative;
         z-index: 3;
         width: 100%;
@@ -1129,6 +1130,7 @@ footer {
     }
 
     .hero__image-container {
+        box-sizing: border-box;
         justify-content: center;
         height: 50%;
         padding: 0 1rem 1rem 2rem;

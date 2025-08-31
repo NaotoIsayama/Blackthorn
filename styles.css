@@ -805,7 +805,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 900px){
+@media (max-width: 900px) and (orientation: portrait){
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
@@ -1145,4 +1145,12 @@ footer {
         width: 75%;
         height: auto;
     }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .hero {
+        height: 100dvh;
+    }
+
 }

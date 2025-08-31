@@ -850,6 +850,71 @@ footer {
         padding: 0rem 1rem;
     }
 
+    .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100dvh;
+    }
+
+    .hero__main-content {
+        box-sizing: border-box;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        gap: 0rem;
+        height: 50%;
+        padding: 0 1.5rem 3rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    picture {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero__main-content p {
+        text-align: center;
+    }
+
+    #hero-logo {
+        width: 100%;
+    }
+
+    #home-link-logo {
+        width: 85%;
+    }
+
+    .hero__paragraph {
+        width: 100%;
+        margin-top: 0.75rem;
+        margin-bottom: 1.0rem;
+    }
+
+    #hero-text-overlay {
+        width: 75%;
+        left: 5%;
+        top: 0%;
+    }
+
+    .hero__image-container {
+        box-sizing: border-box;
+        justify-content: center;
+        height: 50%;
+        padding: 0 1rem 1rem 2rem;
+        background-color: var(--black);
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    #hero-image {
+        z-index: 1;
+        height: 90%;
+        width: auto;
+        margin-right: -1rem;
+    }
+
     .marquee {
         height: max-content;
     }
@@ -1081,74 +1146,3 @@ footer {
         height: auto;
     }
 }
-
-
-/*Specific override for hero section portrait*/
-@media (max-width: 900px) and (orientation: portrait) {
-
-    .hero {
-        display: flex;
-        flex-direction: column-reverse;
-        height: 100dvh;
-    }
-
-    .hero__main-content {
-        box-sizing: border-box;
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        gap: 0rem;
-        height: 50%;
-        padding: 0 1.5rem 3rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    picture {
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero__main-content p {
-        text-align: center;
-    }
-
-    #hero-logo {
-        width: 100%;
-    }
-
-    #home-link-logo {
-        width: 85%;
-    }
-
-    .hero__paragraph {
-        width: 100%;
-        margin-top: 0.75rem;
-        margin-bottom: 1.0rem;
-    }
-
-    #hero-text-overlay {
-        width: 75%;
-        left: 5%;
-        top: 0%;
-    }
-
-    .hero__image-container {
-        box-sizing: border-box;
-        justify-content: center;
-        height: 50%;
-        padding: 0 1rem 1rem 2rem;
-        background-color: var(--black);
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    #hero-image {
-        z-index: 1;
-        height: 90%;
-        width: auto;
-        margin-right: -1rem;
-    }
-}
-    

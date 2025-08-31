@@ -805,7 +805,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 821px){
+@media (max-width: 900px){
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
@@ -853,7 +853,7 @@ footer {
     .marquee {
         height: max-content;
     }
-    
+
     .marquee__inner-el {
         display: flex;
         align-items: center;
@@ -1084,7 +1084,7 @@ footer {
 
 
 /*Specific override for hero section portrait*/
-@media (max-width: 821px) and (orientation: portrait) {
+@media (max-width: 900px) and (orientation: portrait) {
 
     .hero {
         display: flex;
@@ -1150,15 +1150,5 @@ footer {
         width: auto;
         margin-right: -1rem;
     }
-}
-
-/*Specific override for hero section landscape*/
-
-@media (max-width: 821px) and (orientation: landscape) {
-
-    #desktopNav {
-        display: none;
-    }
-
 }
     

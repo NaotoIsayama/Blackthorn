@@ -1148,6 +1148,13 @@ footer {
     }
 }
 
-/*Specific override for hero section landscape
-*/
+/*Specific override for hero section landscape*/
+
+@media (max-width: 821px) and (orientation: landscape) {
+
+    #desktopNav {
+        display: none;
+    }
+    
+}
     

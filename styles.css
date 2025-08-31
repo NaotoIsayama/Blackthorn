@@ -805,7 +805,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 821px){
+@media (max-width: 819px){
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
@@ -1079,7 +1079,8 @@ footer {
 }
 
 
-@media (max-width: 821px) and (orientation: portrait) {
+/*Specific override for hero section portrait*/
+@media (max-width: 819px) and (orientation: portrait) {
 
     .hero {
         display: flex;
@@ -1147,4 +1148,6 @@ footer {
     }
 }
 
+/*Specific override for hero section landscape
+*/
     

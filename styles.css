@@ -805,7 +805,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 821px) and (orientation: portrait){
+@media (max-width: 821px){
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);

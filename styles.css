@@ -898,7 +898,7 @@ footer {
     #hero-image {
         height: 100%;
         width: auto;
-        margin-left: -1rem;
+        margin-right: -1rem;
     }
 
     .marquee__inner-el {

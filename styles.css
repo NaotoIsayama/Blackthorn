@@ -290,10 +290,10 @@ a {
 .hero__main-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     width: 66.66%;
-    height: 100%;
+    height: 90%;
 }
 
 #navbar-logo {

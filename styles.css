@@ -1170,6 +1170,9 @@ footer {
         margin-bottom: 0.75rem;
     }
 
+    .testimonial__body {
+        margin-bottom: 0.75rem;
+    }
     #quotes {
         width: 25%;
     }

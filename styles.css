@@ -1147,10 +1147,24 @@ footer {
     }
 }
 
-@media (max-width: 900px) and (orientation: landscape) {
+@media (max-width: 900px) and (orientation: landscape){
 
+    .desktop-nav {
+        display: none;
+    }
+    
     .hero {
         height: 100dvh;
     }
 
+    .hero__main-content {
+        justify-content: flex-end;
+    }
+
+    #home-link-logo {
+        width: 75%;
+    }
 }
+
+
+    

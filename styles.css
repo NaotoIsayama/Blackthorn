@@ -850,6 +850,10 @@ footer {
         padding: 0rem 1rem;
     }
 
+    .marquee {
+        height: max-content;
+    }
+    
     .marquee__inner-el {
         display: flex;
         align-items: center;
@@ -1155,6 +1159,6 @@ footer {
     #desktopNav {
         display: none;
     }
-    
+
 }
     

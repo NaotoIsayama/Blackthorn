@@ -1138,6 +1138,7 @@ footer {
     }
 
     #hero-image {
+        z-index: 1;
         height: 90%;
         width: auto;
         margin-right: -1rem;

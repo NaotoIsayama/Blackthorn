@@ -888,6 +888,7 @@ footer {
     }
 
     .hero__image-container {
+        justify-content: center;
         height: 65vh;
         padding: 1rem;
         background-color: var(--black);

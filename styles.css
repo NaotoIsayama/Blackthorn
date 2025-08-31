@@ -883,16 +883,20 @@ footer {
         width: 75%;
     }
 
-    #form-logo
-
     .hero__paragraph {
         width: 100%;
     }
 
     .hero__image-container {
-        height: 60vh;
+        height: 65vh;
+        padding: 1rem;
         background-color: var(--black);
         width: 100%;
+    }
+
+    #hero-image {
+        height: 100%;
+        width: auto;
     }
 
     .marquee__inner-el {

@@ -859,7 +859,7 @@ footer {
     .hero__main-content {
         width: 100%;
         gap: 0rem;
-        height: 66.66%;
+        height: 50%;
         padding: 0 3rem 3rem 3rem;
         display: flex;
         align-items: center;
@@ -897,7 +897,7 @@ footer {
 
     .hero__image-container {
         justify-content: center;
-        height: 33.33%;
+        height: 50%;
         padding: 0 1rem 1rem 1rem;
         background-color: var(--black);
         width: 100%;

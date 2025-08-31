@@ -887,6 +887,12 @@ footer {
         width: 100%;
     }
 
+    #hero-text-overlay {
+        width: 75%;
+        left: 5%;
+        top: 0%;
+    }
+
     .hero__image-container {
         justify-content: center;
         height: 65vh;

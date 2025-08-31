@@ -1170,9 +1170,14 @@ footer {
         margin-bottom: 0.75rem;
     }
 
+    .about, .testimonials {
+        flex-direction: column;
+    }
+
     .testimonial__body {
         margin-bottom: 0.75rem;
     }
+
     #quotes {
         width: 25%;
     }

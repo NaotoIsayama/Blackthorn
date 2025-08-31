@@ -805,7 +805,7 @@ footer {
 
 
 /*---- mobile ----*/
-@media (max-width: 900px) and (orientation: portrait){
+@media (max-width: 933px) and (orientation: portrait){
 
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
@@ -1147,12 +1147,12 @@ footer {
     }
 }
 
-@media (max-width: 900px) and (orientation: landscape){
+@media (max-width: 933px) and (orientation: landscape){
 
     .section-padding {
         padding: 3rem 1rem;
     }
-    
+
     .desktop-nav {
         display: none;
     }

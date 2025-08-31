@@ -853,13 +853,13 @@ footer {
     .hero {
         display: flex;
         flex-direction: column-reverse;
-        height: max-content;
+        height: 100vh;
     }
 
     .hero__main-content {
         width: 100%;
         gap: 0rem;
-        height: max-content;
+        height: 45%;
         padding: 0 3rem 3rem 3rem;
         display: flex;
         align-items: center;
@@ -897,7 +897,7 @@ footer {
 
     .hero__image-container {
         justify-content: center;
-        height: 50vh;
+        height: 55%;
         padding: 0 1rem 1rem 1rem;
         background-color: var(--black);
         width: 100%;

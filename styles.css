@@ -1017,7 +1017,7 @@ footer {
 
     #portfolio__intro {
         text-align: center;
-        width: 75%;
+        width: 100%;
     }
 
     .portfolio__carousel-container {
@@ -1321,13 +1321,13 @@ footer {
 
 @media (max-width: 431px) and (orientation: portrait){
     .info-block__column-1 p, .info-block__column-2 p{
-        font-size: 0.75rem !important;
+        font-size: 1rem !important;
     }
 
     .portfolio__info-block {
         height: 32dvh;
     }
-    
+
     .paragraph-gap {
         margin-bottom: 1.5rem;
     }

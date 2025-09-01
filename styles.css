@@ -1323,4 +1323,12 @@ footer {
     .info-block__column-1 p, .info-block__column-2 p{
         font-size: 0.75rem !important;
     }
+
+    .portfolio__info-block {
+        height: 32dvh;
+    }
+    
+    .paragraph-gap {
+        margin-bottom: 1.5rem;
+    }
 }

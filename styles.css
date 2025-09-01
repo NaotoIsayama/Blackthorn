@@ -1291,6 +1291,10 @@ footer {
         margin-bottom: 0.75rem;
     }
 
+     #portfolio__intro {
+        text-align: left;
+    }
+
     .about, .testimonials {
         flex-direction: column;
     }

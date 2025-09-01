@@ -1251,6 +1251,10 @@ footer {
 
 @media (max-width: 1365px) and (orientation: landscape){
 
+    .side-padding {
+        padding: 0 1rem;
+    }
+
     .section-padding {
         padding: 3rem 1rem;
     }

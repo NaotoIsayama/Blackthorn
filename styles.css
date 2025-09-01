@@ -311,7 +311,6 @@ a {
 
 @media (min-width: 2000px) {
     #home-link-logo {
-        width: 130%;
         max-width: none;
     }
 

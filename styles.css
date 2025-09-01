@@ -1013,6 +1013,7 @@ footer {
 
     #portfolio__intro {
         text-align: center;
+        width: 75%;
     }
 
     .portfolio__carousel-container {
@@ -1023,8 +1024,6 @@ footer {
     .swiper-slide {
         text-align: center;
     }
-
-
 
     .about__flex-container {
         flex-direction: column;

@@ -1313,4 +1313,10 @@ footer {
 }
 
 
-    
+/* text size adjustments for phones on info block*/
+
+@media (max-width: 431px) and (orientation: portrait){
+    .info-block__column-1 p, .info-block__column-1 p{
+        font-size: 1rem;
+    }
+}

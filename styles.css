@@ -1249,7 +1249,7 @@ footer {
     }
 }
 
-@media (max-width: 933px) and (orientation: landscape){
+@media (max-width: 1365px) and (orientation: landscape){
 
     .section-padding {
         padding: 3rem 1rem;

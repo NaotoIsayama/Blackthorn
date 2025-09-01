@@ -427,13 +427,8 @@ a {
     gap: 1rem;
 }
 
-.swiper {
-    aspect-ratio: 4/3;
-    width: 95%;
-}
-
-.swiper-image {
-    height: 100%;
+#about__image {
+    aspect-ratio: 1/1;
     width: 100%;
     object-fit: cover;
 }

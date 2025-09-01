@@ -460,7 +460,9 @@ a {
 }
 
 .swiper-image {
+    aspect-ratio: 3/4;
     width: 100%;
+    object-fit: cover;
 }
 
 /*------END Portfolio section------*/

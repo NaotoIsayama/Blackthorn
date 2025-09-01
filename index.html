@@ -35,26 +35,23 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicons/Vector.png">
         <link rel="icon" type="image/png" sizes="48x48" href="favicons/Vector-2.png">
 
-        <!--Swiper CDN-->
+        <!--Swiper CSS-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
         
 </head>
 <body> 
 
-
+    <!-- add fades here, dont use classes, add them directly in css-->
     <section class="hero">
         <nav class="nav-padding desktop-nav" id="desktopNav">
-            <a class="sc-body light" href="#about">My Story</a>
-            <a class="sc-body light" href="#testimonial">Client Reviews</a>
-            <a class="sc-body light" href="#portfolio">Portfolio</a>
+            <a class="sc-body light" href="/portfolio.html">Portfolio</a>
+            <a class="sc-body light" href="/aftercare.html">Aftercare</a>
             <a class="sc-body light" href="/form.html">Book</a>
         </nav>
         <div class="hero__main-content side-padding">
-
-                <img src="images/logo4.png" id="home-link-logo"></img>
-
-            <p class="body light hero__paragraph">This is a demo website for a independent tattoo artist. Click the button below to see the intake form.</p>
+            <img src="images/logo4.png" id="home-link-logo"></img>
+            <p class="body light hero__paragraph"W>This is a demo website for a independent tattoo artist. Click the button below to see the intake form.</p>
             <a class="button sc-medium" href="form.html">BOOK NOW</a>
         </div>
         <div class="hero__image-container">
@@ -69,14 +66,49 @@
             <span class="marquee-font span2">BLACKTHORN • EDMONTON • TATTOO • BLACKTHORN • EDMONTON • TATTOO • BLACKTHORN • EDMONTON • TATTOO • BLACKTHORN • EDMONTON • TATTOO • BLACKTHORN • EDMONTON • TATTOO •</span>
         </div>
     </div>
-    <section class="profile section-padding fade-section" id="profile">
-        <h2 class="fade sc-title header-gap" data-speed="fast">To Be <span class="rose">Continued... </span></h2>
-        <p class="dev-message body fade" data-speed="slow">This site is just a short demo, just to illustrate my design style. Some other pages / sections that a solo tattoo artist might find useful include an aftercare information page, a gallery page that stores a large quantity of images in a grid, or a dedicated "About me" page. If you're interested in 
-            any of these, email me at naotojacob@gmail.com. <br><br> See the booking page for a demo of the intake form.<br><br></p>
 
-        <div class="profile__button-container">
-            <a id="devbutton" class="block button sc-medium" href="form.html">GO TO BOOKING FORM</a>
-            <a id="devbutton" class="block devbutton2 button sc-medium" href="#desktopNav">BACK TO TOP</a>
+    <section class="portfolio section-padding fade-section" id="portfolio">
+        <div class="portfolio__text-container">
+            <h2 class="sc-title rose fade block header-gap" data-speed="fast">Portfolio</h2>
+            <p class="body fade paragraph-gap" data-speed="medium">Here's some of my recent work. I specialize in black-and-grey, as well as realism. Follow my instagram at @blackthorn_tattoos to see more, and for my latest work.</p>
+            <div class="portfolio__info-block header-gap">
+                <div class="info-block__column-1">
+                    <div class="styles">
+                        <span class="marquee-font block fade paragraph-gap " data-speed="slow">STYLES</span>
+                        <p class="body fade" data-speed="medium">Realism</p>
+                        <p class="body fade" data-speed="medium">Black & Grey</p>
+                        <p class="body fade" data-speed="medium">Floral</p>
+                    </div>
+                    <div class="socials">
+                        <span class="marquee-font block fade paragraph-gap " data-speed="slow">CONTACT</span>
+                        <p class="body fade" data-speed="medium">@blackthorn_tattoos</p>
+                        <p class="body fade" data-speed="medium">blackthorn_tat@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-block__column-2">
+                    <div class="awards">
+                        <span class="marquee-font block fade-section paragraph-gap" data-speed="slow">AWARDS</span>
+                        <div class="awards__items">
+                            <p class="body fade" data-speed="medium">Artist of the Year -<br>Canadian Tattoo Arts Awards (2020)</p>
+                            <p class="body fade" data-speed="medium">Top Artist, Black & Grey Category -<br>Western Canada Tattoo Show (2023)</p>
+                            <p class="body fade" data-speed="medium">Best Floral Tattoo -<br>Alberta Ink Awards(2022)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `<a class="button sc-medium" href="portfolio.html">SEE MORE</a>
+        </div>
+
+        <div class="portfolio__carousel-container">
+            <div class="swiper swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="swiper-image" src="images/swiper-1.webp"></div>
+                    <div class="swiper-slide"><img class="swiper-image" src="images/swiper-2.webp"></div>
+                    <div class="swiper-slide"><img class="swiper-image" src="images/swiper-3.webp"></div>
+                    <div class="swiper-slide"><img class="swiper-image" src="images/swiper-4.webp"></div>
+                    <div class="swiper-slide"><img class="swiper-image" src="images/swiper-5.webp"></div>
+                </div>
+            </div>
         </div>
         
     </section>
@@ -143,13 +175,13 @@
     <!--swiper init-->
     <script>
         (function () {
-            const container = document.querySelector('#ref-photo-swiper');
+            const container = document.querySelector('.swiper-container');
             const slides = container.querySelectorAll('.swiper-slide');
             const hasMultiple = slides.length > 1;
 
-            new Swiper('#ref-photo-swiper', {
-                loop: true,                 // only loop if >1 slide
-                speed: 8000,
+            new Swiper('.swiper-container', {
+                loop: hasMultiple ? true : false,                 // only loop if >1 slide
+                speed: 1000,
                 allowTouchMove: hasMultiple,       // disable swipe when single image
                 spaceBetween: 0,
                 slidesPerView: 1,
@@ -157,7 +189,7 @@
                 pagination: hasMultiple ? { el: '.swiper-pagination', clickable: true } : {},
                 navigation: hasMultiple ? { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } : {},
                 autoplay: {
-                    delay: 1000,
+                    delay: 4000,
                     disableOnInteraction: false,
                 },
             });

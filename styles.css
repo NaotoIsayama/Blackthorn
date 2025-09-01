@@ -1001,6 +1001,7 @@ footer {
 
     .portfolio {
         flex-direction: column;
+        gap: 2rem;
     }
 
     .portfolio__text-container {
@@ -1014,8 +1015,15 @@ footer {
     }
 
     .portfolio__carousel-container {
+        height: 50vh;
         width: 100%;
     }
+
+    .swiper-slide {
+        text-align: center;
+    }
+
+
 
     .about__flex-container {
         flex-direction: column;

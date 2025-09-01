@@ -467,6 +467,7 @@ a {
 }
 
 .swiper-image {
+    object-fit: cover;
     aspect-ratio: 3/4;
     height: 100%;
 }

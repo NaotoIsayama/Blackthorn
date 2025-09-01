@@ -999,6 +999,24 @@ footer {
         align-items: center;
     }
 
+    .portfolio {
+        flex-direction: column;
+    }
+
+    .portfolio__text-container {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .portfolio__text-container p {
+        text-align: center;
+    }
+
+    .portfolio__carousel-container {
+        width: 100%;
+    }
+
     .about__flex-container {
         flex-direction: column;
         gap: 3rem;

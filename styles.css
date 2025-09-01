@@ -1269,12 +1269,12 @@ footer {
 
     .hero__main-content {
         justify-content: center;
-        width: 60%;
+        width: 55%;
         gap: 1rem;
     }
 
     .hero__image-container {
-        width: 40%;
+        width: 45%;
     }
 
     #home-link-logo {

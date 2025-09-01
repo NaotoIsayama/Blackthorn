@@ -1264,14 +1264,21 @@ footer {
     }
 
     .hero__main-content {
-        justify-content: flex-end;
+        justify-content: center;
+        width: 60%;
+        gap: 1rem;
+    }
+
+    .hero__image-container {
+        width: 40%;
     }
 
     #home-link-logo {
-        width: 75%;
+        width: 100%;
     }
 
     .hero__paragraph {
+        width: 100%;
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
     }

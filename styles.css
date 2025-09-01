@@ -1299,6 +1299,10 @@ footer {
         flex-direction: column;
     }
 
+    #about__image {
+        width: 100%;
+    }
+
     .testimonial__body {
         margin-bottom: 0.75rem;
     }

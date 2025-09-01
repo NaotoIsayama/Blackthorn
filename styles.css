@@ -448,7 +448,7 @@ a {
 
 .portfolio__carousel-container {
     height: 100vh;
-    width: 40%;
+    width: 48%;
 }
 
 .swiper-container {
@@ -1015,7 +1015,7 @@ footer {
     }
 
     .portfolio__carousel-container {
-        height: 50vh;
+        height: 65vh;
         width: 100%;
     }
 

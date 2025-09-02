@@ -471,6 +471,7 @@ a {
 }
 
 .swiper-image {
+    margin-right: 1px; /*line fix*/
     object-fit: cover;
     aspect-ratio: 3/4;
     height: 100%;

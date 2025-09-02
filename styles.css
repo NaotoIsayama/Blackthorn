@@ -1575,3 +1575,14 @@ footer {
     }
 }
 
+/* super small phone screen mobile menu fix*/
+
+@media (max-width: 390) {
+    :root {
+        --side-padding: 3rem;
+    }
+    .side-menu__nav-links {
+        gap:3rem
+    }
+}
+

@@ -485,7 +485,7 @@ body:has(#hamburger-checkbox:checked) {
 
 #hero-image {
     position: relative;
-    z-index: 999;
+    z-index: 2;
     width: 100%;
     object-fit: cover;
     animation: slideUpAndFade 0.75s forwards;

@@ -29,6 +29,14 @@ html {
     --marquee: clamp(1rem, 2vw, 1.618rem);
     --medium: clamp(1rem, 2vw, 1.618rem);
     --body: clamp(0.875rem, 1.5vw, 1.2rem);
+
+    --animation-speed: 0.2s;
+
+    --bar-width: 32px;
+    --bar-height: 4px;
+    --hamburger-gap: 6px;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --side-padding: 5rem;
 }
 
 body {
@@ -39,6 +47,7 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--white);
 }
 
 .CTA-button {
@@ -166,6 +175,121 @@ a {
 
 /*------ Components ------*/
 
+/*--- My Hamburger Menu ---*/
+
+/*--- Hamburger Component ---*/
+#mobileNav {display:none};
+
+body:has(#hamburger-checkbox:checked) {
+    overflow-y: hidden;
+}
+
+.hamburger-menu { 
+    padding-right: var(--side-padding);
+    box-sizing: border-box;
+    pointer-events: all;
+
+    /*display and flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--hamburger-gap);
+
+    /*padding and margin
+    padding-right: var(--side-padding-mobile);*/
+
+    /*position and sizing*/
+    position: relative;
+    width: 50%;
+    z-index: 1;
+
+    --hypotenuse: calc(var(--hamburger-height) * 1.41421356); /*used to calculate how long each bar should be*/
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-checkbox {
+    /*position and sizing*/
+    width: var(--bar-width);
+    height: var(--bar-height);
+
+    content: "";
+    background-color: var(--tan);
+    border-radius: 100px;
+    transition: opacity var(--animation-speed), width var(--animation-speed),
+    rotate var(--animation-speed), translate var(--animation-speed);
+    transform-origin: left center;
+}
+
+.hamburger-checkbox {
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-checkbox:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--hypotenuse);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--hypotenuse);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu:has(input:checked) + .side-menu {
+    transform: translate(0, -15%);
+}
+
+.hamburger-menu:has(input:checked) + .sidemenu .navLinksMobile {
+    opacity: 1;
+}
+
+/*---Off canvas menu---*/
+.side-menu {
+    box-sizing: border-box;
+
+    /*display and flex*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /*position and sizing*/
+    position: relative;
+    width: 100vw;
+    height: 110vh;
+    z-index: 0;
+
+    padding: 30vh var(--side-padding) 5vh var(--side-padding);
+    background-color: var(--black);
+    transform: translate(0, -100%); 
+    transition: transform var(--animation-speed);
+
+    pointer-events: auto;
+}
+
+.side-menu__nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+/*--- END Hamburger Component ---*/
+
+/*------ My Hamburger Menu---*/
+
 .button {
     width: max-content;
     padding: 0.5rem 5rem;
@@ -247,7 +371,7 @@ a {
 }
 
 .undo-absolute {
-    position: static !important;
+    position: relative !important;
 }
 
 .page-nav {
@@ -951,6 +1075,36 @@ footer {
 /*---- mobile ----*/
 @media (max-width: 1025px) and (orientation: portrait){
 
+    #mobileNav {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 999;
+        pointer-events: none;
+    }
+
+    .mobileNav__options {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+    }
+
+    #mobileNav__logo-link {
+        padding-left: var(--side-padding);
+        padding-top: 0.5rem;
+        width: 50%;
+        position: relative;
+        z-index: 999;
+        pointer-events: auto;
+    }
+
+    #mobileNav__logo-image {
+        width: 75%;
+    }
+
     :root {
         --title: clamp(3.24rem, 7vw, 6.0rem);
         --subtitle: clamp(3.24rem, 6vw, 4.85rem);
@@ -998,6 +1152,7 @@ footer {
         display: flex;
         flex-direction: column-reverse;
         height: 100dvh;
+        padding-top:5rem; /*offset mobile nav*/
     }
 
     .hero__main-content {

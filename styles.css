@@ -1596,6 +1596,13 @@ footer {
 }
 
 @media (min-width: 425px) {
+
+    :root {
+        --bar-width: 48px;
+        --bar-height: 6px;
+        --hamburger-gap: 10px;
+    }
+
     .hero {
         padding-top:10rem;
     }

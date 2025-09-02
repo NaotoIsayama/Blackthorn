@@ -1442,6 +1442,13 @@ footer {
         object-fit: fill;
     }
 
+    #form__flowers-overlay {
+        top: 50%;
+        left:50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+
     .form__flex-container {
         flex-direction: column;
     }

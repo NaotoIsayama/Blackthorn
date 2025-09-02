@@ -409,7 +409,6 @@ a {
     display: flex;
     justify-content: space-between;
     height: max-content;
-
 }   
 
 .portfolio__text-container {
@@ -901,7 +900,7 @@ footer {
 }
 
 #portfolio__flowers-overlay {
-    top: 70%;
+    top: 75%;
     transform: translateY(-50%);
     z-index: 0;
     position: absolute;

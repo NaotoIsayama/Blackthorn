@@ -1401,6 +1401,7 @@ footer {
     }
 }
 
+/* super wide screen adjustments */
 @media (min-width: 3000px) {
     #hero-image {
         width: 94%;
@@ -1408,6 +1409,14 @@ footer {
 
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    }
+}
+
+/*gallery adjustments */
+
+@media (min-width: 1700px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     }
 }
 

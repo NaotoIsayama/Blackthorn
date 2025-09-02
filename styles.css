@@ -578,6 +578,14 @@ a {
     transform: translate(-50%, -50%);
 }
 
+/*overflow fix*/
+@media (min-width: 2700px) {
+    #quotes {
+        right: 5%;
+    }
+   
+}
+
 .testimonial__flex-container {
     width: 100%;
     display: flex;

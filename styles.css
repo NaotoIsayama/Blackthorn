@@ -408,6 +408,7 @@ a {
     background-color: var(--tan);
     display: flex;
     justify-content: space-between;
+    height: max-content;
 
 }   
 

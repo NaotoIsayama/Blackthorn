@@ -1595,7 +1595,7 @@ footer {
     }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 425px) and (orientation: portrait) {
 
     :root {
         --bar-width: 48px;
@@ -1604,7 +1604,7 @@ footer {
     }
 
     .hero {
-        padding-top:10rem;
+        padding-top: 10rem;
     }
 
     #mobileNav__logo-image {

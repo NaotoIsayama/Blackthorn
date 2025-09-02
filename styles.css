@@ -1385,7 +1385,7 @@ footer {
     }
 
     .portfolio__info-block {
-        height: 32dvh;
+        height: max-content;
     }
 
     .paragraph-gap {

@@ -245,6 +245,17 @@ a {
 .line-height-1 {
     line-height: 1;
 }
+
+.undo-absolute {
+    position: static !important;
+}
+
+.page-nav {
+    width: 100% !important;
+    background-color: var(--black);
+}
+
+.bg-dark {background-color: var(--black);}
 /*------ end Utility ------*/
 
 /*------ hero section ------*/
@@ -263,7 +274,6 @@ a {
     justify-content: flex-start;
     align-items: center;
     height: max-content;
-    animation: slideUpAndFade 0.75s forwards;
     gap: 6rem;
 }
 
@@ -307,6 +317,7 @@ a {
 #home-link-logo {
     width: 80%;
     max-width: none;
+    animation: slideUpAndFade 0.75s forwards;
 }
 
 @media (min-width: 2000px) {
@@ -351,7 +362,10 @@ a {
     z-index: 999;
     width: 100%;
     object-fit: cover;
+    animation: slideUpAndFade 0.75s forwards;
 }
+
+
 
 @media (min-width: 3000px) {
     #hero-image {
@@ -1333,3 +1347,51 @@ footer {
         margin-bottom: 1.5rem;
     }
 }
+
+
+/*--- PORTFOLIO STLYES (VIBE CODED) ---*/
+
+.portfolio-gallery {
+    background-color: var(--tan);
+}
+
+#portfolio__flowers-overlay {
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 0;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+}
+
+.portfolio-gallery h1 {
+    animation: slideUpAndFade 1.25s forwards;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    animation: slideUpAndFade 0.75s forwards;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 9 / 16; /* same ratio for all items */
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+    object-fit: cover;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/*--- END PORTFOLIO STLYES (VIBE CODED) ---*/

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Coded by Naoto Isayama -->
+
+        <!--metadata-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Blackthorn Tattoo Ink is a fictional tattoo company based in Edmonton, Alberta, founded by award winning artist, Emily Blackthorn">
+        <meta name="format-detection" content="telephone=no"> <!--Prevents Safari Default Styling-->
+    
+        <!-- Social Media Tags -->
+        <meta property="og:title" content="BlackThorn Tattoo">
+        <meta property="og:description" content="Fictional Tattoo company in Edmonton Alberta">
+        <meta property="og:image" content="[]"><!--ADD THIS WHEN HOSTING-->
+        <meta property="og:url" content="[Your Website URL]"> <!--ADD THIS WHEN HOSTING-->
+        
+        <title>Blackthorn Tattoo Ink | Portfolio</title>
+
+        <!--css-->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <!-- LightGallery CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+
+        <!--Baskerville SC-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC:wght@400..700&display=swap" rel="stylesheet">
+
+        <!--Young Serif-->
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+
+        <!--Fav Icon-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images/Vector-1.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/Vector.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/Vector-2.png">
+</head>
+<body>
+
+    <nav class="nav-padding desktop-nav undo-absolute page-nav">
+        <a href="/index.html"><img id="footer-logo" src="images/logo4.png"></a>
+        <a class="sc-body light" href="/portfolio.html">Portfolio</a>
+        <a class="sc-body light" href="/aftercare.html">Aftercare</a>
+        <a class="sc-body light" href="/form.html">Book</a>
+    </nav>
+
+    <section class="portfolio-gallery section-padding" >
+        <img id="portfolio__flowers-overlay" src="images/flowers-overlay-1.png" alt="an overlay image of flowers">
+        <h1 class="sc-title rose block header-gap">Portfolio</h1>
+
+        <div id="gallery" class="gallery">
+
+            <a href="images/swiper-1.webp">
+            <img src="images/swiper-1.webp" alt="Tattoo 1">
+            </a>
+
+            <a href="images/swiper-2.webp">
+            <img src="images/swiper-2.webp" alt="Tattoo 2">
+            </a>
+
+            <a href="images/swiper-3.webp">
+            <img src="images/swiper-3.webp" alt="Tattoo 3">
+            </a>
+
+            <a href="images/swiper-4.webp">
+            <img src="images/swiper-4.webp" alt="Tattoo 4">
+            </a>
+
+            <a href="images/swiper-5.webp">
+            <img src="images/swiper-5.webp" alt="Tattoo 5">
+            </a>
+
+            <a href="images/portfolio1.webp">
+            <img src="images/portfolio1.webp" alt="Tattoo 6">
+            </a>
+
+            <a href="images/portfolio2.webp">
+            <img src="images/portfolio2.webp" alt="Tattoo 7">
+            </a>
+
+            <a href="images/portfolio3.webp">
+            <img src="images/portfolio3.webp" alt="Tattoo 8">
+            </a>
+
+            <a href="images/portfolio4.webp">
+            <img src="images/portfolio4.webp" alt="Tattoo 9">
+            </a>
+
+            <a href="images/portfolio5.webp">
+            <img src="images/portfolio5.webp" alt="Tattoo 10">
+            </a>
+
+            <a href="images/portfolio6.webp">
+            <img src="images/portfolio6.webp" alt="Tattoo 11">
+            </a>
+            
+            <a href="images/portfolio7.webp">
+            <img src="images/portfolio7.webp" alt="Tattoo 12">
+            </a>
+            
+            <a href="images/portfolio8.webp">
+            <img src="images/portfolio8.webp" alt="Tattoo 13">
+            </a>
+
+            <a href="images/portfolio9.webp">
+            <img src="images/portfolio9.webp" alt="Tattoo 14">
+            </a>
+            
+            <a href="images/portfolio10.webp">
+            <img src="images/portfolio10.webp" alt="Tattoo 15">
+            </a>
+        </div>
+    </section>
+
+    <footer class="side-padding">
+        <div class="footer-top">
+            <img id="footer-logo" src="images/logo4_black.png">
+            <span><a id="personal-link" href="https://www.naotoisayama.com">Designed By Naoto Isayama</a></span>
+        </div>
+        <div class="divider"></div>
+        <div>
+            <span class="copyright">© 2025 Blackthorn Tattoo. All rights reserved</span>
+        </div>
+    </footer>
+    
+
+  <!-- LightGallery JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+  <script>
+    lightGallery(document.getElementById('gallery'), {
+      selector: 'a',
+      plugins: [lgZoom, lgThumbnail],
+      speed: 400,
+      download: false
+    });
+  </script>
+
+</body>
+</html>

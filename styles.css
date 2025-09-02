@@ -392,10 +392,11 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 .desktop-nav {
+    background-color: var(--black);
     position: absolute;
     z-index: 3;
     display: flex;
-    width: max-content;
+    width: 100%;
     justify-content: flex-start;
     align-items: center;
     height: max-content;

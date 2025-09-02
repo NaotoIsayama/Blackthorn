@@ -492,9 +492,6 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 
-
-
-
 #hero-text-overlay {
     position: absolute;
     z-index: 0;
@@ -1429,6 +1426,10 @@ footer {
 
     .contact {
         height: max-content;
+    }
+
+    .form-hide-marquee {
+        display: none;
     }
 
     .form__image-container {

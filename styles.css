@@ -1441,6 +1441,10 @@ footer {
         object-fit: fill;
     }
 
+    .form__form-container h2 {
+        z-index: 2;
+    }
+
     #form__flowers-overlay {
         top: 50%;
         left:50%;

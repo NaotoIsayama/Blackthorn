@@ -1484,6 +1484,7 @@ footer {
     }
 }
 
+/*mobile landscapes*/
 @media (max-width: 1365px) and (orientation: landscape){
 
     .side-padding {
@@ -1550,7 +1551,6 @@ footer {
 
 
 /* text size adjustments for phones on info block*/
-
 @media (max-width: 431px) and (orientation: portrait){
     .info-block__column-1 p, .info-block__column-2 p{
         font-size: 1rem !important;
@@ -1586,12 +1586,22 @@ footer {
 
 /* super small phone screen mobile menu fix*/
 
-@media (max-width: 390) {
+@media (max-width: 390px) {
     :root {
         --side-padding: 1rem;
     }
     .side-menu__nav-links {
         gap:3rem
+    }
+}
+
+@media (min-width: 425px) {
+    .hero {
+        padding-top:10rem;
+    }
+
+    #mobileNav__logo-image {
+        width: 60%;
     }
 }
 

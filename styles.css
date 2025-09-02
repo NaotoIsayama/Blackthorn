@@ -1446,10 +1446,7 @@ footer {
     }
 
     #form__flowers-overlay {
-        top: 50%;
-        left:50%;
-        width: 100%;
-        transform: translate(-50%, -50%);
+        display: none;
     }
 
     .form__flex-container {

@@ -367,12 +367,7 @@ a {
 
 
 
-@media (min-width: 3000px) {
-    #hero-image {
-        width: 94%;
-    }
-    
-}
+
 
 #hero-text-overlay {
     position: absolute;
@@ -1348,6 +1343,15 @@ footer {
     }
 }
 
+@media (min-width: 3000px) {
+    #hero-image {
+        width: 94%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    }
+}
 
 /*--- PORTFOLIO STLYES (VIBE CODED) ---*/
 
@@ -1374,6 +1378,7 @@ footer {
     gap: 10px;
     animation: slideUpAndFade 0.75s forwards;
 }
+
 
 .gallery a {
     display: block;

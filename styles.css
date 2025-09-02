@@ -1075,6 +1075,10 @@ footer {
 /*---- mobile ----*/
 @media (max-width: 1025px) and (orientation: portrait){
 
+    :root {
+        --side-padding: 1rem;
+    }
+
     #mobileNav {
         position: absolute;
         display: flex;
@@ -1579,7 +1583,7 @@ footer {
 
 @media (max-width: 390) {
     :root {
-        --side-padding: 3rem;
+        --side-padding: 1rem;
     }
     .side-menu__nav-links {
         gap:3rem

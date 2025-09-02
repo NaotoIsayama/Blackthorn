@@ -1156,7 +1156,7 @@ footer {
         display: flex;
         flex-direction: column-reverse;
         height: 100dvh;
-        padding-top:5rem; /*offset mobile nav*/
+        padding-top: 6rem; /*offset mobile nav*/
     }
 
     .hero__main-content {

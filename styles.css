@@ -1510,10 +1510,15 @@ footer {
 
     .hero__image-container {
         width: 45%;
+        justify-content: flex-end;
+    }
+
+    #hero-image {
+        width:75%;
     }
 
     #home-link-logo {
-        width: 100%;
+        width: 75%;
     }
 
     .hero__paragraph {

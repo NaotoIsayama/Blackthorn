@@ -1311,6 +1311,10 @@ footer {
         width: 50%;
         height: auto;
     }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 @media (max-width: 1365px) and (orientation: landscape){

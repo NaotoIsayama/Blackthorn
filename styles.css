@@ -1709,6 +1709,15 @@ footer {
 }
 
 @media (max-width: 916px) and (orientation: landscape) {
+
+    .hero {
+        padding-top: 10rem;
+    }
+
+    #hero-image {
+        width: 65%;
+    }
+    
     .side-menu__nav-links li a {
         color: var(--true-transparent);
     }

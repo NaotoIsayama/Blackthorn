@@ -1549,6 +1549,10 @@ footer {
 /*mobile landscapes*/
 @media (max-width: 1365px) and (orientation: landscape){
 
+    :root {
+        --side-padding: 1rem;
+    }
+
     .side-padding {
         padding: 0 1rem;
     }
@@ -1588,7 +1592,7 @@ footer {
     }
 
     #mobileNav__logo-image {
-        width: 75%;
+        width: 25%;
     }
     
     .hero {

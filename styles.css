@@ -1482,7 +1482,7 @@ footer {
     }
 
     .form__flex-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .form__form-container {

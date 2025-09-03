@@ -27,7 +27,7 @@ const observer2 = new IntersectionObserver((entries) => {
     })
 }, { 
     root: null,
-    threshold: 0.1
+    threshold: 0.2
 });
 
 window.addEventListener('resize', () => {

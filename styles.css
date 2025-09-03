@@ -885,7 +885,7 @@ body:has(#hamburger-checkbox:checked) {
 
 .form__form-container h2 {
     position: relative;
-    z-index: 999;
+    z-index: 3;
     margin-left: -0.5rem;
     animation: slideUpAndFade 0.5s forwards;
     margin-bottom: 2rem;

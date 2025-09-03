@@ -1532,6 +1532,10 @@ footer {
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+
+    .aftercare-paragraph {
+        width: 100%;
+    }
 }
 
 /*mobile landscapes*/

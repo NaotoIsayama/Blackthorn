@@ -1717,13 +1717,17 @@ footer {
     #hero-image {
         width: 65%;
     }
-    
+
     .side-menu__nav-links li a {
         color: var(--true-transparent);
     }
 
     .hamburger-menu:has(input:checked) + nav ul li a {
         color: var(--white);
+    }
+
+    .side-menu {
+        height: 120vh;
     }
 }
 

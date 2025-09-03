@@ -1075,6 +1075,21 @@ footer {
 
 .aftercare {
     background-color: var(--tan);
+    height: 100vh;
+}
+
+#aftercare__flowers-overlay {
+    top: 75%;
+    transform: translateY(-50%);
+    z-index: 0;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    opacity: 0.25;
+}
+
+.aftercare-paragraph {
+    width: 75%;
 }
 /*--- END Aftercare---*/
 

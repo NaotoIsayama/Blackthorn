@@ -1288,10 +1288,7 @@ footer {
     }
 
     #about__flowers-overlay {
-        width: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0.8;
+        display: none;
     }
     
     .about__image-container {
@@ -1540,6 +1537,8 @@ footer {
     #aftercare__flowers-overlay {
         display: none;
     }
+
+
 }
 
 /*mobile landscapes*/

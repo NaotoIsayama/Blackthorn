@@ -1070,6 +1070,16 @@ footer {
 
 /*--- END PORTFOLIO STLYES (VIBE CODED) ---*/
 
+
+/*--- Aftercare---*/
+
+.aftercare {
+    background-color: var(--tan);
+}
+/*--- END Aftercare---*/
+
+
+
 /*---- mobile ----*/
 @media (max-width: 1025px) and (orientation: portrait){
 

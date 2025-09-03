@@ -1086,7 +1086,7 @@ footer {
 }
 
 #aftercare__flowers-overlay {
-    top: 75%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 0;
     position: absolute;

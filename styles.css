@@ -1082,7 +1082,7 @@ footer {
 
 .aftercare {
     background-color: var(--tan);
-    height: 100vh;
+    height: max-content;
 }
 
 #aftercare__flowers-overlay {

@@ -386,7 +386,7 @@ body:has(#hamburger-checkbox:checked) {
 .hero {
     background-color: var(--black);
     display: flex;
-    height: 95%;
+    height: 95vh;
     box-sizing: border-box;
 }
 
@@ -503,7 +503,7 @@ body:has(#hamburger-checkbox:checked) {
 /*------Marquee------*/
 
 .marquee {
-    height: 5%;
+    height: 5vh;
     margin: auto;
     overflow: hidden;
 }

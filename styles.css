@@ -391,7 +391,7 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 .desktop-nav {
-    background-color: var(--black);
+    background-color: var(--transparent);
     position: absolute;
     z-index: 3;
     display: flex;

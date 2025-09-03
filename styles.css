@@ -1729,5 +1729,9 @@ footer {
     .side-menu {
         height: 120vh;
     }
+
+    .side-menu__nav-links {
+        gap: 2rem;
+    }
 }
 

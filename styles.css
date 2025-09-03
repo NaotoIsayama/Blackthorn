@@ -359,6 +359,10 @@ body:has(#hamburger-checkbox:checked) {
     margin-bottom:  4rem;
 }
 
+.header-top-gap {
+    margin-top:  4rem;
+}
+
 .block {
     display: block;
 }
@@ -1517,6 +1521,7 @@ footer {
         width: 50%;
         height: auto;
     }
+
 
     .portfolio-gallery {
         overflow-x: hidden;

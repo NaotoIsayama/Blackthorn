@@ -1560,6 +1560,36 @@ footer {
     .desktop-nav {
         display: none;
     }
+
+    #mobileNav {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 999;
+        pointer-events: none;
+    }
+
+    .mobileNav__options {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+    }
+
+    #mobileNav__logo-link {
+        padding-left: var(--side-padding);
+        padding-top: 0.5rem;
+        width: 50%;
+        position: relative;
+        z-index: 999;
+        pointer-events: auto;
+    }
+
+    #mobileNav__logo-image {
+        width: 75%;
+    }
     
     .hero {
         height: 100dvh;

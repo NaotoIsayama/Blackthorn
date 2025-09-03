@@ -1536,6 +1536,10 @@ footer {
     .aftercare-paragraph {
         width: 100%;
     }
+
+    #aftercare__flowers-overlay {
+        display: none;
+    }
 }
 
 /*mobile landscapes*/

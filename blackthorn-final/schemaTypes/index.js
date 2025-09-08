@@ -1,5 +1,11 @@
+import roadTripDoc from "./roadTripDoc"
 import roadTrip from "./roadTrip"
+import weeklyAvailability from "./weeklyAvailability"
+import dayBooking from "./dayBooking"
 
 export const schemaTypes = [
-    roadTrip
+    roadTripDoc,
+    roadTrip,
+    weeklyAvailability,
+    dayBooking
 ]

@@ -9,7 +9,7 @@ export default {
     fields: [
         { name: 'scheduleTitle', title: 'Schedule Title', type: 'string'},
         {
-            name: 'Weekdays',
+            name: 'weekdays',
             title: 'Workdays',
             type: 'array',
             of: [

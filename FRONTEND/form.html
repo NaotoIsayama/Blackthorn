@@ -195,13 +195,11 @@
             console.log(window.availabilityData);
         })   
 
-        const weeklyScheduleDays = []; // array to store weekly schedule data
+        let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 
-        for (let i = 0; i < window.availabilityData.weeklySchedule.length; i++) {
-            weeklyScheduleDays.push(window.availabilityData.weeklydays);
-        }
+        const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
 
-        console.log(`Weekly Schedule is : ${weeklyScheduleDays}`);
+        console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
 
         flatpickr("#appointment-date", {
             dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS

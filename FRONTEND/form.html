@@ -192,7 +192,7 @@
             })
             const data = await response.json();
             window.availabilityData = data;
-            console.log(window.availabilityData);
+            console.log(`window.avalabilityData is ${window.availabilityData}`);
         })   
 
         let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability

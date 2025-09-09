@@ -16,14 +16,14 @@ export default {
                 {
                     type: 'string',
                     options: {
-                        list: [
-                            { title: 'Monday', value: 'Monday' },
-                            { title: 'Tuesday', value: 'Tuesday' },
-                            { title: 'Wednesday', value: 'Wednesday' },
-                            { title: 'Thursday', value: 'Thursday' },
-                            { title: 'Friday', value: 'Friday' },
-                            { title: 'Saturday', value: 'Saturday' },
-                            { title: 'Sunday', value: 'Sunday' },
+                        list: [ //Values here correspond to flatpickers weekdays
+                            { title: 'Monday', value: '1' },
+                            { title: 'Tuesday', value: '2' },
+                            { title: 'Wednesday', value: '3' },
+                            { title: 'Thursday', value: '4' },
+                            { title: 'Friday', value: '5' },
+                            { title: 'Saturday', value: '6' },
+                            { title: 'Sunday', value: '0' },
                         ]
                     }
                 }

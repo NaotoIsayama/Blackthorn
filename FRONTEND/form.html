@@ -186,15 +186,21 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- Flatpickr JS -->
 
     <script>
-
         window.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch('https://blackthorntattoo.naotoisayama.com/.netlify/functions/getAvailability', {
                 method: 'POST',
             })
             const data = await response.json();
             window.availabilityData = data;
-            console.log(window.availabilityData);
         })   
+
+        const weeklyScheduleDays = []; // array to store weekly schedule data
+
+        for (let i = 0; i < window.availabilityData.weeklySchedule.length; i++) {
+            weeklyScheduleDays.push(window.availabilityData.weeklySchedule.weekdays);
+        }
+
+        console.log(weeklyScheduleDays);
 
         flatpickr("#appointment-date", {
             dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS

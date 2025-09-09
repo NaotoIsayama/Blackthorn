@@ -1,5 +1,5 @@
 //Lucide
-import { Calendar, CalendarCheck } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 
 export default {
   name: 'dayBooking',

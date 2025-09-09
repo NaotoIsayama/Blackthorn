@@ -188,13 +188,13 @@
     <script>
 
         window.addEventListener('DOMContentLoaded', async () => {
-            const response = await fetch('./netlify/functions/getAvailability', {
+            const response = await fetch('/.netlify/functions/getAvailability', {
                 method: 'POST',
             })
             const data = await response.json();
             window.availabilityData = data;
             console.log(window.availabilityData);
-        })
+        })   
 
         flatpickr("#appointment-date", {
             dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS

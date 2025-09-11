@@ -193,24 +193,27 @@
             const data = await response.json();
             window.availabilityData = data;
             console.log('window.availabilityData is', window.availabilityData);
+
+            console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weekLySchedule);
+
+            //let weeklyScheduleArray = window.availabilityData.weeklySchedule; Extract out the 'weeklySchedule' array for better readability
+
+            const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
+
+            console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
+
+            flatpickr("#appointment-date", {
+                dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS
+                minDate: "2025-10-25",     // prevent past dates
+                disable: [{
+                    from: "2020-08-27",
+                    to: "2025-10-25"
+                }]           // you can populate blocked dates later
+            });
+
         })   
 
-        console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weekLySchedule);
-
-        //let weeklyScheduleArray = window.availabilityData.weeklySchedule; Extract out the 'weeklySchedule' array for better readability
-
-        const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
-
-        console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
-
-        flatpickr("#appointment-date", {
-            dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS
-            minDate: "2025-10-25",     // prevent past dates
-            disable: [{
-                from: "2020-08-27",
-                to: "2025-10-25"
-            }]           // you can populate blocked dates later
-        });
+        
     </script>
 
     </body>

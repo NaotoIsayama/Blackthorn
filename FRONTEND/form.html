@@ -194,9 +194,9 @@
             window.availabilityData = data;
             console.log('window.availabilityData is', window.availabilityData);
 
-            console.log('window.availabilityData.weekLySchedule is', window.availabilityData.weeklySchedule);
+            console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weeklySchedule);
 
-            //let weeklyScheduleArray = window.availabilityData.weeklySchedule; Extract out the 'weeklySchedule' array for better readability
+            let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 
             const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
 

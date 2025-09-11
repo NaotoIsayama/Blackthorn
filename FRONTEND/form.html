@@ -215,9 +215,9 @@
             // Console log extracted
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
 
-            let roadTripObjectArray = window.availabilityData.roadTrips.map( trip => ({
-                from: trip.startDate,
-                to: trip.endDate
+            let roadTripObjectArray = window.availabilityData.roadTrips.map( t => ({
+                from: t.trip.startDate,
+                to: t.trip.endDate
             }));
 
             console.log('The roadTripObjectArray is ', roadTripObjectArray);

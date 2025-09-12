@@ -235,14 +235,39 @@
 
             console.log('The bookedDatesArray is ', bookedDatesArray);
 
+            // 4.. MAP WEEKDAY NAMES TO NUMERICAL REPRESENTATION
+            // Map the weekly schedule to numerical representations
+              const weekdayMap = {
+                Sunday: 0,
+                Monday: 1,
+                Tuesday: 2,
+                Wednesday: 3,
+                Thursday: 4,
+                Friday: 5,
+                Saturday: 6,
+            };
+            
+                //This should give me numerical representation of the days that are blocked off in the schedule
+            const disabledWeekdays = scheduledDaysArray.map(d => weekdayMap[d]);
+                
+                //Function to recurringly disable the scheduled days for flatpcikr
+            const recurringDisabledWeekdays = (date) => {
+                return disabledWeekdays.includes(date.getDay());
+            }
+            
+            // 5.. Condense all blocked dates data into a single array for the 'disable' option in flatpickr
+            const flatpickrDisabled = [
+                ...roadTripRanges,   // ranges
+                ...bookedSingles,    // single days
+                recurringDisableFn   // recurring weekdays
+            ];
+            
+
 
             flatpickr("#appointment-date", {
-                dateFormat: "Y-m-d", // ISO format, good for saving to backend/CMS
-                minDate: "2025-10-25",     // prevent past dates
-                disable: [{
-                    from: "2020-08-27",
-                    to: "2025-10-25"
-                }]           // you can populate blocked dates later
+                dateFormat: "Y-m-d",
+                minDate: "today", 
+                disable: flatpickrDisabled  
             });
         })           
     </script>

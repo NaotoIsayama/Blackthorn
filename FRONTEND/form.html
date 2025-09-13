@@ -224,6 +224,13 @@
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
 
             const dropdown = document.getElementById("tattoo-location");
+
+            if (dropdown) {
+                console.log('dropdown is found'); //existence check
+            } else {
+                console.log('dropdown DNE')
+            }
+
             let selectedValue;
             let selectedTrip;
 

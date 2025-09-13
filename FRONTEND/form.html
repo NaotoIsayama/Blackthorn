@@ -236,6 +236,7 @@
 
             dropdown.addEventListener("change", () => {
 
+                
                 alert("change event fired");
                 /*selectedValue = dropdown.value;
                 
@@ -249,6 +250,8 @@
                     console.warn('No trip found for:', selectedValue);
                 }*/
             });
+            
+            console.log("event listener is attached");
 
             console.log(selectedTrip); // Should just be an object
 

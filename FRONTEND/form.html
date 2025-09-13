@@ -119,16 +119,16 @@
                         <input class="sc-body" placeholder="Your Email">
                     </div>
 
-                    <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
-                    <div class="form-line fade">
-                        <label class="sc-medium block" for="tattoo-location">Tattoo Placement</label>
-                        <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
-                            <option class="sc-body" value="" disabled selected>Select placement</option>
-                            <option class="sc-body" value="shoulder">Shoulder/Upper Arm</option>
-                            <option class="sc-body" value="other">Forearm</option>
-                            <option class="sc-body" value="other">Upper Back</option>
-                        </select>
-                    </div>
+                        <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
+                        <div class="form-line fade">
+                            <label class="sc-medium block" for="tattoo-location">Tattoo Placement</label>
+                            <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
+                                <option class="sc-body" value="" disabled selected>Select placement</option>
+                                <option class="sc-body" value="shoulder">Shoulder/Upper Arm</option>
+                                <option class="sc-body" value="other">Forearm</option>
+                                <option class="sc-body" value="other">Upper Back</option>
+                            </select>
+                        </div>
 
                     <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <div class="form-line fade">
@@ -223,20 +223,25 @@
 
             const dropdown = document.getElementById("tattoo-select");
             let selectedValue;
+            let selectedTrip;
 
             dropdown.addEventListener("change", () => {
+
                 selectedValue = dropdown.value;
                 console.log("Selected:", selectedValue); // optional debug
+                
+                selectedTrip = window.availabilityData.roadTrips.find(
+                    (item) => item.trip.city === selectedValue
+                );
+
+                if (selectedTrip) {
+                    console.log('Matched Trip:', selectedTrip);
+                } else {
+                    console.warn('No trip found for:', selectedValue);
+                }
             });
 
-            let selectedTrip = window.availabilityData.roadTrips.find((item) => {
-                item.trip.city === selectedValue;
-            });
-
-            let dateRange = [selectedTrip.trip.startDate, selectedTrip.trip.endDate] ;
-
-
-
+            console.log(selectedTrip); // Should just be an object
 
             // 3.. EXTRACT BLOCKED DATES INTO ARRAY
             // Console log extracted
@@ -265,6 +270,7 @@
             const recurringDisabledWeekdays = (date) => {
                 return disabledWeekdays.includes(date.getDay());
             }
+
             
             // 5.. Condense all blocked dates data into a single array for the 'disable' option in flatpickr
             const flatpickrDisabled = [

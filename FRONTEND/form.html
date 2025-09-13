@@ -228,7 +228,6 @@
             dropdown.addEventListener("change", () => {
 
                 selectedValue = dropdown.value;
-                console.log("Selected:", selectedValue); // optional debug
                 
                 selectedTrip = window.availabilityData.roadTrips.find(
                     (item) => item.trip.city === selectedValue

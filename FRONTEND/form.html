@@ -215,7 +215,7 @@
 
             // Console.log of weeklySchedule *check
             console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
-            
+
 
             // 2.. EXTRACT ROAD TRIP DATA INTO ARRAY
             // Currently working on implementing conditional calendar view based on user selection of
@@ -230,7 +230,7 @@
             dropdown.addEventListener("change", () => {
 
                 alert("change event fired");
-                selectedValue = dropdown.value;
+                /*selectedValue = dropdown.value;
                 
                 selectedTrip = window.availabilityData.roadTrips.find(
                     (item) => item.trip.city === selectedValue
@@ -240,7 +240,7 @@
                     console.log('Matched Trip:', selectedTrip);
                 } else {
                     console.warn('No trip found for:', selectedValue);
-                }
+                }*/
             });
 
             console.log(selectedTrip); // Should just be an object

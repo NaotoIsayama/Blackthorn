@@ -189,6 +189,9 @@
 
         window.addEventListener('DOMContentLoaded', async () => {
 
+            /* 2025-09-12: So the current issue im having is that 'selectedTrip' will only exist if there
+            is a change on the dropdown.*/
+
             // Send POST request on page load
             const response = await fetch('https://blackthorntattoo.naotoisayama.com/.netlify/functions/getAvailability', {
                 method: 'POST',
@@ -221,7 +224,7 @@
             // Console log extracted
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
 
-            const dropdown = document.getElementById("tattoo-select");
+            const dropdown = document.getElementById("tattoo-location");
             let selectedValue;
             let selectedTrip;
 

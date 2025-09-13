@@ -133,7 +133,7 @@
                     <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <div class="form-line fade">
                         <label class="sc-medium block" for="tattoo-location">Your Location</label>
-                        <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
+                        <select class="sc-body" id="tattoo-city" name="tattoo-location" required>
                             <option class="sc-body" value="" disabled selected>Select City</option>
                             <option class="sc-body" value="arm">Calgary</option>
                             <option class="sc-body" value="leg">Edmonton</option>
@@ -223,7 +223,7 @@
             // Console log extracted
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
 
-            const dropdown = document.getElementById("tattoo-location");
+            const dropdown = document.getElementById("tattoo-city");
 
             if (dropdown) {
                 console.log('dropdown is found'); //existence check

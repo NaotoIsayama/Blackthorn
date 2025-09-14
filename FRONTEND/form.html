@@ -131,6 +131,8 @@
                         </div>
 
                     <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
+                    <!--Currently have hardcoded values but I will need to eventually implement a dynamic way to 
+                    get values  -->
                     <div class="form-line fade">
                         <label class="sc-medium block" for="tattoo-location">Your Location</label>
                         <select class="sc-body" id="tattoo-city" name="tattoo-location" required>
@@ -186,7 +188,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- Flatpickr JS -->
 
     <script>
-
         window.addEventListener('DOMContentLoaded', async () => {
 
             /* 2025-09-12: So the current issue im having is that 'selectedTrip' will only exist if there
@@ -201,19 +202,18 @@
             window.availabilityData = data;
 
 
-
             // 1. EXTRACT WEEKLY SCHEDULE INTO ARRAY
-            // Console logs
+                // Console logs
             console.log('window.availabilityData is', window.availabilityData);
 
-            // Console.log of weeklySchedule
+                // Console.log of weeklySchedule
             console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weeklySchedule);
 
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 
             const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
 
-            // Console.log of weeklySchedule *check
+                // Console.log of weeklySchedule *check
             console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
 
 
@@ -223,27 +223,6 @@
             // Console log extracted
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
 
-            const dropdown = document.getElementById("tattoo-city");
-
-            let selectedValue;
-            let selectedTrip;
-
-            dropdown.addEventListener("change", () => {
-                selectedValue = dropdown.value;
-                
-                selectedTrip = window.availabilityData.roadTrips.find(
-                    (item) => item.trip.city === selectedValue
-                );
-
-                if (selectedTrip) {
-                    console.log('Matched Trip:', selectedTrip);
-                } else {
-                    console.warn('No trip found for:', selectedValue);
-                }
-            });
-
-            console.log(selectedTrip); // Should just be an object
-
 
             // 3.. EXTRACT BLOCKED DATES INTO ARRAY
             // Console log extracted
@@ -252,6 +231,8 @@
             const bookedDatesArray = window.availabilityData.bookedDays.map(b => b.date);
 
             console.log('The bookedDatesArray is ', bookedDatesArray);
+
+
 
 
             // 4.. MAP WEEKDAY NAMES TO NUMERICAL REPRESENTATION
@@ -273,19 +254,53 @@
             const recurringDisabledWeekdays = (date) => {
                 return disabledWeekdays.includes(date.getDay());
             }
-            
-            // 5.. Condense all blocked dates data into a single array for the 'disable' option in flatpickr
-            const flatpickrDisabled = [
-                selectedTrip,   // ranges
-                ...bookedDatesArray,    // single days
-                recurringDisabledWeekdays   // recurring weekdays
-            ];
 
-            flatpickr("#appointment-date", {
-                dateFormat: "Y-m-d",
-                minDate: "today", 
-                disable: flatpickrDisabled  
+
+
+
+
+            // 5.. IMPLEMENT LOGIC FOR LOCATION-BASED FILTERING
+            const dropdown = document.getElementById("tattoo-city");
+
+            let selectedValue;
+            let selectedTrip;
+
+            // Dropdown menu event listener, The initialization for flatpickr is inside here
+            dropdown.addEventListener("change", () => {
+                selectedValue = dropdown.value;
+                
+                selectedTrip = window.availabilityData.roadTrips.find(
+                    (item) => item.trip.city === selectedValue
+                );
+                
+                // Condense all blocked dates data into a single array for the 'disable' option in flatpickr
+                const flatpickrDisabled = [
+                    [selectedTrip.trip.startDate, selectedTrip.trip.endDate],   // ranges
+                    ...bookedDatesArray,    // single days
+                    recurringDisabledWeekdays   // recurring weekdays
+                ];
+
+                flatpickr("#appointment-date", {
+                    dateFormat: "Y-m-d",
+                    minDate: "today", 
+                    disable: flatpickrDisabled  
+                });
+
+                if (selectedTrip) {
+                    console.log('Matched Trip:', selectedTrip);
+                } else {
+                    console.warn('No trip found for:', selectedValue);
+                }
             });
+
+            console.log(selectedTrip); // Should just be an object
+
+
+            
+
+
+            
+
         })           
     </script>
 

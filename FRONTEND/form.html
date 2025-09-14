@@ -276,7 +276,7 @@
                 
                 // Condense all blocked dates data into a single array for the 'disable' option in flatpickr
                 const flatpickrDisabled = [
-                    [selectedTrip.trip.startDate, selectedTrip.trip.endDate],   // ranges
+                    {from: 'selectedTrip.trip.startDate', to: 'selectedTrip.trip.endDate'},   // ranges
                     ...bookedDatesArray,    // single days
                     recurringDisabledWeekdays   // recurring weekdays
                 ];

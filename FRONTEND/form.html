@@ -216,6 +216,8 @@
                 // Console.log of weeklySchedule *check
             console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
 
+
+               
             // 2.. MAP WEEKDAY NAMES TO NUMERICAL REPRESENTATION
             // Map the weekly schedule to numerical representations
             const weekdayMap = {
@@ -256,12 +258,6 @@
 
 
 
-            
-
-
-
-
-
             // 5.. IMPLEMENT LOGIC FOR LOCATION-BASED FILTERING
             const dropdown = document.getElementById("tattoo-city");
 
@@ -279,7 +275,7 @@
                 // Condense trip date range data and scheduled days into a single 'Enable ' array
                 const flatpickrEnabled = [
                     {from: selectedTrip.trip.startDate, to: selectedTrip.trip.endDate},   // ranges
-                    recurringEnableddWeekdays   // recurring weekdays
+                    recurringEnabledWeekdays   // recurring weekdays
                 ];
 
                 //Console log flatpickr enabled

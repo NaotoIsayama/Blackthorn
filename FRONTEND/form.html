@@ -217,11 +217,13 @@
             console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);
 
 
+
             // 2.. EXTRACT ROAD TRIP DATA INTO ARRAY
             // Currently working on implementing conditional calendar view based on user selection of
             // 'location' option
             // Console log extracted
             console.log('window.availabilityData is', window.availabilityData.roadTrips);
+
 
 
             // 3.. EXTRACT BLOCKED DATES INTO ARRAY
@@ -231,7 +233,6 @@
             const bookedDatesArray = window.availabilityData.bookedDays.map(b => b.date);
 
             console.log('The bookedDatesArray is ', bookedDatesArray);
-
 
 
 
@@ -279,6 +280,9 @@
                     ...bookedDatesArray,    // single days
                     recurringDisabledWeekdays   // recurring weekdays
                 ];
+
+                //Console log flatpickr disabled
+                console.log('The flatpickrDisabled array is: ', flatpickrDisabled);
 
                 flatpickr("#appointment-date", {
                     dateFormat: "Y-m-d",

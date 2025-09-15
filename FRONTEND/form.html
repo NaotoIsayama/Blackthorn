@@ -265,7 +265,7 @@
             /*--------------TESTING GROUNDS------------------------------*/
 
             dates = [
-            new Date(2025, 9, 15), // September 15, 2025
+            new Date(2025, 9, 15), // October 15, 2025
             new Date(2025, 9, 16),
             new Date(2025, 9, 17),
             new Date(2025, 9, 18),
@@ -278,6 +278,8 @@
             new Date(2025, 9, 25)
             ]
 
+            console.log('Allowed dates should be: Mondays, Tuesdays, Wednesdays,Thurdays');
+            console.log('ScheduledDaysArray is: ', scheduledDaysArray);
             dates.forEach(d => {
                 console.log(d.toDateString(), recurringDisabledWeekdays(d));
             });

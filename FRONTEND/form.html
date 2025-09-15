@@ -219,24 +219,6 @@
 
                 // Console.log HOMECITY
             console.log('Home City is: ', homeCity);
-
-
-               
-            // 2.. MAP WEEKDAY NAMES TO NUMERICAL REPRESENTATION
-            // Map the weekly schedule to numerical representations
-            const weekdayMap = {
-                Sunday: 0,
-                Monday: 1,
-                Tuesday: 2,
-                Wednesday: 3,
-                Thursday: 4,
-                Friday: 5,
-                Saturday: 6,
-            };
-            
-                //This should give me numerical representation of the days that are allowed in the schedule
-            const enabledWeekdays = scheduledDaysArray.map(d => weekdayMap[d]);
-            console.log('enabled Weekdays is: ', enabledWeekdays);
                 
                 /*Function to recurringly enable the scheduled days for flatpcikr
             const recurringEnabledWeekdays = (date) => {
@@ -299,14 +281,18 @@
                         flatpickrDisabled.push(bookedDatesArray[i]);
                     }
 
-                    // Consolelog Flatpickr Disabled
+                    // Write function that returns 'false' if date is not in scheduledDaysArray
+                    const recurringDisabledWeekdays = (date) => {
+                        return !scheduledDaysArray.includes(date.getDay());
+                    }
 
-                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrDisabled);
+                    flatpickrDisabled.push(recurringDisabledWeekdays);
+
+                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrDisabled); 
 
                     flatpickr("#appointment-date", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
-                        /*enable: [recurringEnabledWeekdays],*/
                         disable: flatpickrDisabled
                     });
                 }

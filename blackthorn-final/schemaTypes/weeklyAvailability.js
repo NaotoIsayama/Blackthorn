@@ -8,6 +8,7 @@ export default {
     icon: CalendarCheck,
     fields: [
         { name: 'scheduleTitle', title: 'Schedule Title', type: 'string'},
+        { name: 'homeCity', title: 'Set your Home City', type: 'string'},
         {
             name: 'weekdays',
             title: 'Workdays',

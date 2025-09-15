@@ -211,7 +211,7 @@
 
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 
-            const homeCity = weeklyScheduleArray.map(s => s.homeCity);
+            const homeCity = weeklyScheduleArray[0].homeCity; // weeklySchedule Array should just be size 1, look into adding restrictions in sanity studio
             const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
 
                 // Console.log of weeklySchedule *check
@@ -282,7 +282,7 @@
                 console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
                 console.log('The data type of selectedValue is: ', typeof selectedValue);
                 console.log('The data type of homeCity is: ', typeof homeCity);
-                if (selectedValue === homeCity) {
+                if (selectedValue === homeCity[0]) {
 
                     const flatpickrDisabled = [];
 

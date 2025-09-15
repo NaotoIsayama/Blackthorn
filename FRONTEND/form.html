@@ -264,7 +264,8 @@
 
 
             /*--------------TESTING GROUNDS------------------------------*/
-
+            
+            /*
             dates = [
             new Date(2025, 9, 15), // October 15, 2025
             new Date(2025, 9, 16),
@@ -285,7 +286,7 @@
                 console.log(d.toDateString(), ' is transformed to ', d.getDay(), ' after applying .getDay()');
                 console.log(d.toDateString(), ' returns ', scheduledDaysArray.includes(d.getDay().toString()), ' when checking if its included in scheduledDaysArray, and is converted to a string');
                 console.log(d.toDateString(), recurringDisabledWeekdays(d));
-            });
+            });*/
 
             /*--------------TESTING GROUNDS------------------------------*/
 
@@ -328,7 +329,10 @@
                     flatpickr("#appointment-date", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
-                        disable: [recurringDisabledWeekdays]
+                        disable: [
+                            flatpickrDisabled,
+                            recurringDisabledWeekdays
+                        ]
                         /*
                         disable: [
                             flatpickrDisabled,

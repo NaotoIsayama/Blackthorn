@@ -248,7 +248,7 @@
             // Currently working on implementing conditional calendar view based on user selection of
             // 'location' option
             // Console log extracted
-            console.log('window.availabilityData is', window.availabilityData.roadTrips);
+            console.log('window.availabilityData.roadTrips is', window.availabilityData.roadTrips);
 
 
 
@@ -271,8 +271,32 @@
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
                 selectedValue = dropdown.value;
+
+                //console log
                 alert('selectedValue is: ', selectedValue);
                 console.log('selectedValue is: ', selectedValue);
+
+                // If selected Value is home city, display schedule - (trip dates + bookedDays)
+
+                if (selectedValue === homeCity) {
+
+                    flatpickrDisabled = [
+
+                    ]
+
+                    flatpickr("#appointment-date", {
+                        dateFormat: "Y-m-d",
+                        minDate: "today", 
+                        enable: recurringEnabledWeekdays,
+                        disable: bookedDatesArray  
+                    });
+                }
+
+
+
+
+
+
                 
                 selectedTrip = window.availabilityData.roadTrips.find(
                     (item) => item.trip.city === selectedValue

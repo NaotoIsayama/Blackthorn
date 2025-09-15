@@ -271,6 +271,7 @@
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
                 selectedValue = dropdown.value;
+                alert('selectedValue is: ', selectedValue);
                 
                 selectedTrip = window.availabilityData.roadTrips.find(
                     (item) => item.trip.city === selectedValue

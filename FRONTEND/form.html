@@ -253,9 +253,10 @@
             let selectedTrip;
 
             // Write function that returns 'false' if date is not in scheduledDaysArray
-            // getDay() return the numerical representation of the day of the week
+            // getDay() return the numerical representation of the day of the week, convert it
+            // to string since 'scheduledDaysArray' consists of strings
             const recurringDisabledWeekdays = (date) => {
-                return !(scheduledDaysArray.includes(date.getDay()));
+                return !(scheduledDaysArray.includes(date.getDay().toString()));
             }
 
 

@@ -283,7 +283,7 @@
             console.log('ScheduledDaysArray is: ', scheduledDaysArray);
             dates.forEach(d => {
                 console.log(d.toDateString(), ' is transformed to ', d.getDay(), ' after applying .getDay()');
-                console.log(d.toDateString(), ' returns ', scheduledDaysArray.includes(d.getDay()), ' when checking if its included in scheduledDaysArray');
+                console.log(d.toDateString(), ' returns ', scheduledDaysArray.includes(d.getDay().toString()), ' when checking if its included in scheduledDaysArray, and is converted to a string');
                 console.log(d.toDateString(), recurringDisabledWeekdays(d));
             });
 

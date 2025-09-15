@@ -281,6 +281,8 @@
             console.log('Allowed dates should be: Mondays, Tuesdays, Wednesdays,Thurdays');
             console.log('ScheduledDaysArray is: ', scheduledDaysArray);
             dates.forEach(d => {
+                console.log(d.toDateString(), ' is transformed to ', d.getDay(), ' after applying .getDay()');
+                console.log(d.toDateString(), ' returns ', scheduledDaysArray.includes(d.getDay()), ' when checking if its included in scheduledDaysArray');
                 console.log(d.toDateString(), recurringDisabledWeekdays(d));
             });
 

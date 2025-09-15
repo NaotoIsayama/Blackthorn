@@ -248,7 +248,8 @@
             // Currently working on implementing conditional calendar view based on user selection of
             // 'location' option
             // Console log extracted
-            console.log('window.availabilityData.roadTrips is', window.availabilityData.roadTrips);
+            const roadTrips = window.availabilityData.roadTrips
+            console.log('window.availabilityData.roadTrips is', roadTrips);
 
 
 
@@ -280,9 +281,24 @@
 
                 if (selectedValue === homeCity) {
 
-                    flatpickrDisabled = [
+                    const flatpickrDisabled = [];
 
-                    ]
+                    // Loop through road trips, and push a range object to disable array
+                    for (let i =  0; i < roadTrips.length; i++) {
+                        flatpickrDisabled.push({
+                            from: roadTrips[i].trip.startDate,
+                            to: roadTrips[i].trip.endDate
+                        })
+                    }
+                    
+                    // Add booked dates array to disabled
+                    for (let i = 0; i < bookedDatesArray.length; i++) {
+                        flatpickrDisabled.push(bookedDatesArray[i]);
+                    }
+
+                    // Consolelog Flatpickr Disabled
+
+                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrDisabled);
 
                     flatpickr("#appointment-date", {
                         dateFormat: "Y-m-d",

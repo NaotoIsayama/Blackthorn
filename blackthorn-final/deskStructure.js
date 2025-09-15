@@ -16,7 +16,7 @@ export const myDeskStructure = (S) =>
                                 .title('Plan A Trip')
                                 .icon(Plane),
                             S.documentTypeListItem('weeklyAvailability')
-                                .title('Your Weekly Schedule')
+                                .title('Set your Home Schedule')
                                 .icon(CalendarDays),
                             S.documentTypeListItem('dayBooking')
                                 .title('Block Off an Appointment Day')

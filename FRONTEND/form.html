@@ -257,6 +257,35 @@
                 return !scheduledDaysArray.includes(date.getDay());
             }
 
+
+
+
+
+            /*--------------TESTING GROUNDS------------------------------*/
+
+            dates = [
+            new Date(2025, 8, 15), // September 15, 2025
+            new Date(2025, 8, 16),
+            new Date(2025, 8, 17),
+            new Date(2025, 8, 18),
+            new Date(2025, 8, 19),
+            new Date(2025, 8, 20),
+            new Date(2025, 8, 21),
+            new Date(2025, 8, 22),
+            new Date(2025, 8, 23),
+            new Date(2025, 8, 24),
+            new Date(2025, 8, 25)
+            ]
+
+            dates.forEach(d => {
+                console.log(d.toDateString(), recurringDisabledWeekdays(d));
+            });
+
+            /*--------------TESTING GROUNDS------------------------------*/
+
+
+
+
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
                 selectedValue = dropdown.value;

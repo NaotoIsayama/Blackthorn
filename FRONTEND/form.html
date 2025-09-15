@@ -274,7 +274,6 @@
                 selectedValue = dropdown.value;
 
                 //console log
-                alert('selectedValue is: ', selectedValue);
                 console.log('selectedValue is: ', selectedValue);
 
                 // If selected Value is home city, display schedule - (trip dates + bookedDays)
@@ -307,7 +306,7 @@
                         dateFormat: "Y-m-d",
                         minDate: "today", 
                         enable: recurringEnabledWeekdays,
-                        disable: bookedDatesArray  
+                        disable: flatpickrDisabled  
                     });
                 }
 

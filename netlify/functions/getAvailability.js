@@ -35,6 +35,7 @@ exports.handler = async function(event) {
         const weeklyScheduleQuery = `*[_type == "weeklyAvailability"]{
         _id,
         scheduleTitle,
+        homeCity,
         weekdays
         }`;
 

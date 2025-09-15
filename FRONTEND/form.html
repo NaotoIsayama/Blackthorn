@@ -236,6 +236,7 @@
             
                 //This should give me numerical representation of the days that are allowed in the schedule
             const enabledWeekdays = scheduledDaysArray.map(d => weekdayMap[d]);
+            console.log('enabled Weekdays is: ', enabledWeekdays);
                 
                 //Function to recurringly enable the scheduled days for flatpcikr
             const recurringEnabledWeekdays = (date) => {

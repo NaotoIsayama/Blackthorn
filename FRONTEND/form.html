@@ -252,6 +252,11 @@
             let selectedValue;
             let selectedTrip;
 
+            // Write function that returns 'false' if date is not in scheduledDaysArray
+            const recurringDisabledWeekdays = (date) => {
+                return !scheduledDaysArray.includes(date.getDay());
+            }
+
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
                 selectedValue = dropdown.value;
@@ -281,55 +286,19 @@
                         flatpickrDisabled.push(bookedDatesArray[i]);
                     }
 
-                    // Write function that returns 'false' if date is not in scheduledDaysArray
-                    const recurringDisabledWeekdays = (date) => {
-                        return !scheduledDaysArray.includes(date.getDay());
-                    }
-
-                    flatpickrDisabled.push(recurringDisabledWeekdays);
+                    
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrDisabled); 
 
                     flatpickr("#appointment-date", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
-                        disable: flatpickrDisabled
+                        disable: [
+                            flatpickrDisabled,
+                            recurringDisabledWeekdays
+                        ]
                     });
                 }
-
-
-
-
-
-
-                /*
-                selectedTrip = window.availabilityData.roadTrips.find(
-                    (item) => item.trip.city === selectedValue
-                );
-                
-                // Condense trip date range data and scheduled days into a single 'Enable ' array
-                const flatpickrEnabled = [
-                    {from: selectedTrip.trip.startDate, to: selectedTrip.trip.endDate},   // ranges
-                    recurringEnabledWeekdays   // recurring weekdays
-                ];
-
-                //Console log flatpickr enabled
-                console.log('The flatpickrEnabled array is: ', flatpickrEnabled);
-
-                // Init flatpickr with trips and schedule dates as 'enabled', while entering in 'bookedDatesArray' 
-                // in disable.
-                flatpickr("#appointment-date", {
-                    dateFormat: "Y-m-d",
-                    minDate: "today", 
-                    enable: flatpickrEnabled,
-                    disable: bookedDatesArray  
-                });
-
-                if (selectedTrip) {
-                    console.log('Matched Trip:', selectedTrip);
-                } else {
-                    console.warn('No trip found for:', selectedValue);
-                }*/
             });
         })           
     </script>

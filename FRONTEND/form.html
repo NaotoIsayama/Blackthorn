@@ -210,8 +210,8 @@
             console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weeklySchedule);
 
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
-            let homeCity = window.availabilityData.weeklySchedule.homeCity;
 
+            const homeCity = weeklyScheduleArray.map(s => s.homeCity);
             const scheduledDaysArray = weeklyScheduleArray.flatMap(s => s.weekdays); //Get scheduled days into a flattened 1-D array
 
                 // Console.log of weeklySchedule *check
@@ -219,7 +219,6 @@
 
                 // Console.log HOMECITY
             console.log('Home City is: ', homeCity);
-            console.log('Home City, directly from window.availabilityData is; ', window.availabilityData.weeklySchedule.homeCity);
 
 
                

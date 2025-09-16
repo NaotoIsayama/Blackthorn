@@ -3,7 +3,7 @@ filename of the uploaded file*/
 
 const button = document.querySelector('.custom-file-upload');
 const buttonText = document.querySelector('.custom-file-upload__btn-text');
-const hiddenFileInput = document.getElementById('reference-photos');
+const hiddenFileInput = document.getElementById('reference-photos1');
 
 hiddenFileInput.addEventListener("change", () => {
     if (hiddenFileInput.files.length > 0) {

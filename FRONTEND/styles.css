@@ -133,8 +133,8 @@ a {
 .flatpickr-calendar {
     font-family: 'Baskervville SC', serif;
     font-size: var(--medium);
-    background-color: var(--black) !important;
     color: var(--white) !important;
+    background-color: var(--black) !important;
 }
 
 

@@ -136,13 +136,16 @@ a {
     background-color: var(--black) !important;
 }
 
+.flatpickr-day {
+    color: var(--white);
+}
 .flatpickr-day:hover {
     background-color: var(--rose) !important;
 }
 
 .flatpickr-prev-month svg,
 .flatpickr-nexy-month svg {
-    fill: var(--white);
+    fill: var(--white) !important;
 }
 
 

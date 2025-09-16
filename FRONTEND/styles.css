@@ -142,7 +142,7 @@ a {
 }
 
 .flatpickr-day {
-    color: var(--white);
+    color: var(--white)!important;
 }
 
 .flatpickr-day:hover {

@@ -1018,6 +1018,7 @@ input[type="file"] {
 
 .ref-photos {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 

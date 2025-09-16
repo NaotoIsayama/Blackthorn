@@ -137,6 +137,10 @@ a {
     background-color: var(--black) !important;
 }
 
+.flatpickr-months {
+    padding: 0.5rem; /*Fix mobile visibility*/
+}
+
 .flatpickr-day {
     color: var(--tan) !important;
 }

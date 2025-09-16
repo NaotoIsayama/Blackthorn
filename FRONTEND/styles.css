@@ -137,6 +137,11 @@ a {
     background-color: var(--black) !important;
 }
 
+.flatpickr-day.disabled {
+    color: grey !important;
+    background-color: grey;
+}
+
 .flatpickr-day {
     color: var(--white) !important;
 }
@@ -149,10 +154,7 @@ a {
     color: var(--white) !important;
 }
 
-.flatpickr-day.disabled {
-    color: grey !important;
-    background-color: grey;
-}
+
 
 
 /*------ END FlatPickr CSS ------ */

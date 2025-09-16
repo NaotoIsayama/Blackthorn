@@ -137,6 +137,18 @@ a {
     background-color: var(--black) !important;
 }
 
+.flatpickr-day {
+    color: var(--white) !important;
+}
+
+.flatpickr-current-month {
+    color: var(--white) !important;
+}
+
+.flatpickr-weekday {
+    color: var(--white) !important;
+}
+
 
 /*------ END FlatPickr CSS ------ */
 

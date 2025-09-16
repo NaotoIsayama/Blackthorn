@@ -136,14 +136,6 @@ a {
     background-color: var(--black) !important;
 }
 
-.flatpickr-day.disabled {
-    color: var(--white) ;
-}
-
-.flatpickr-day {
-    color: var(--white);
-}
-
 .flatpickr-day:hover {
     background-color: var(--rose) !important;
 }

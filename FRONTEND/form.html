@@ -295,6 +295,8 @@
 
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
+
+                // Dropdown option selected
                 selectedValue = dropdown.value;
 
                 //console log
@@ -305,13 +307,14 @@
                 console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
                 console.log('The data type of selectedValue is: ', typeof selectedValue);
                 console.log('The data type of homeCity is: ', typeof homeCity);
-                if (selectedValue === homeCity) {
+                
+                const flatpickrArray = [];
 
-                    const flatpickrDisabled = [];
+                if (selectedValue === homeCity) {
 
                     // Loop through road trips, and push a range object to disable array
                     for (let i =  0; i < roadTrips.length; i++) {
-                        flatpickrDisabled.push({
+                        flatpickrArray.push({
                             from: roadTrips[i].trip.startDate,
                             to: roadTrips[i].trip.endDate
                         })
@@ -319,26 +322,45 @@
                     
                     // Add booked dates array to disabled
                     for (let i = 0; i < bookedDatesArray.length; i++) {
-                        flatpickrDisabled.push(bookedDatesArray[i]);
+                        flatpickrArray.push(bookedDatesArray[i]);
                     }
 
-                    
-
-                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrDisabled); 
+                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
                     flatpickr("#appointment-date", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
                         disable: [
-                            ...flatpickrDisabled,
+                            ...flatpickrArray,
                             recurringDisabledWeekdays
                         ]
-                        /*
-                        disable: [
-                            flatpickrDisabled,
-                            recurringDisabledWeekdays
-                        ]*/
                     });
+
+                } else {
+                    
+                    // Find which trip is selected
+                    for (let i = 0; i < roadTrips.length; i++) {
+                        if (roadTrips[i].trip.city === selectedValue) {
+                            flatpickrArray.push({
+                                from: roadTrips[i].trip.startDate,
+                                to: roadTrips[i].trip.endDate
+                            })
+                        }
+                    }
+
+                    // Add booked dates array to disabled
+                    for (let i = 0; i < bookedDatesArray.length; i++) {
+                        flatpickrArray.push(bookedDatesArray[i]);
+                    }
+
+                    flatpickr("#appointment-date", {
+                        dateFormat: "Y-m-d",
+                        minDate: "today", 
+                        enable: flatpickrArray,
+                        disable: bookedDatesArray
+                    });
+
+
                 }
             });
         })           

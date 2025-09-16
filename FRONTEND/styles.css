@@ -167,7 +167,7 @@ a {
     color: var(--tan) !important;
 }
 
-.flatpickr {
+.date-picker {
     display: flex;
 }
 

@@ -145,6 +145,10 @@ a {
     color: var(--white);
 }
 
+.flatpickr-day:hover {
+    background-color: var(--rose);
+}
+
 .flatpickr-current-month {
     color: var(--white) !important;
 }

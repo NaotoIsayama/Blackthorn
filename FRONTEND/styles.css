@@ -1040,7 +1040,7 @@ input[type="file"] {
 }
 
 .dev-note {
-    color: var(--transparent);
+    color: #6c757d;
 }
 
 #submit-button {

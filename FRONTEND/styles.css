@@ -137,8 +137,7 @@ a {
 }
 
 .flatpickr-day.disabled {
-    color: grey ;
-    background-color: grey;
+    color: var(--white) ;
 }
 
 .flatpickr-day {

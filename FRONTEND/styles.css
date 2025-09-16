@@ -145,7 +145,7 @@ a {
     color: rgb(54, 54, 54) !important;
 }
 
-.flatpickr-day.nextMonthDay {
+.flatpickr-day.nextMonthDay, .flatpickr-day.prevMonthDay {
     color: rgb(54, 54, 54) !important;
 }
 

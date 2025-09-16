@@ -1039,6 +1039,10 @@ input[type="file"] {
     transition: opacity 1.5s ease;
 }
 
+.dev-note {
+    color: var(--transparent);
+}
+
 #submit-button {
     margin-top: 2rem;
     cursor: pointer;

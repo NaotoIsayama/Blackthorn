@@ -1040,6 +1040,9 @@ input[type="file"] {
 }
 
 .dev-note {
+    font-family: 'arial';
+    font-weight: light;
+    font-size: 0.75rem;
     color: #6c757d;
 }
 

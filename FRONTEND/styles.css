@@ -142,7 +142,7 @@ a {
 }
 
 .flatpickr-day.flatpickr-disabled {
-    color: grey !important;
+    color: rgb(87, 87, 87) !important;
 }
 
 .flatpickr-day:hover {

@@ -155,16 +155,16 @@ a {
 
 .flatpickr-prev-month,
 .flatpickr-next-month {
-    fill: var(--white) !important;
+    color: var(--tan) !important;
 }
 
 
 .flatpickr-current-month {
-    color: var(--white) !important;
+    color: var(--tan) !important;
 }
 
 .flatpickr-weekday {
-    color: var(--white) !important;
+    color: var(--tan) !important;
 }
 
 

@@ -172,6 +172,7 @@ a {
 }
 
 .calendar-button {
+    color: #8c8c8c;
     border: none;
     background-color: var(--true-transparent);
 }

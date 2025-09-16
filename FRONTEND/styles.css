@@ -1005,7 +1005,7 @@ select {
                 background-color 0.2s ease-in-out;
 }
 
-.custom-file-upload:hover {
+.custom-file-upload-1:hover, .custom-file-upload-2:hover, .custom-file-upload-3:hover{
     cursor: pointer;
     color: var(--white);
     background-color: var(--rose);

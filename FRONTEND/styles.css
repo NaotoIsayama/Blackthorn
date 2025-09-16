@@ -1016,6 +1016,15 @@ input[type="file"] {
     display: none;
 }
 
+.ref-photos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reference-photos-title {
+    width: 100%;
+}
+
 .submit-message {
     margin-left: 0.6rem;
     opacity: 0;

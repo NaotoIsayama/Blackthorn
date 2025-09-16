@@ -2,7 +2,7 @@
 filename of the uploaded file*/
 
 const button = document.querySelectorAll('.custom-file-upload-1, .custom-file-upload-2, .custom-file-upload-3');
-const buttonText = document.querySelectorAll('.custom-file-upload__btn-text-1, .custom-file-upload__btn-text-1, .custom-file-upload__btn-text-1');
+const buttonText = document.querySelectorAll('.custom-file-upload__btn-text-1, .custom-file-upload__btn-text-2, .custom-file-upload__btn-text-3');
 const hiddenFileInputs = document.querySelectorAll('#reference-photos1, #reference-photos2, #reference-photos3');
 
 // note that all are the same size, so use i to find corresponding elements

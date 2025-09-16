@@ -140,6 +140,12 @@ a {
     background-color: var(--rose) !important;
 }
 
+.flatpickr-prev-month svg,
+.flatpickr-nexy-month svg {
+    fill: var(--white);
+}
+
+
 .flatpickr-current-month {
     color: var(--white) !important;
 }

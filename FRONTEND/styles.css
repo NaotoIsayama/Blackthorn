@@ -991,7 +991,7 @@ select {
     color: #6c757d; /*same as placeholder*/
 }
 
-.custom-file-upload {
+.custom-file-upload-1, .custom-file-upload-2, .custom-file-upload-3 {
     box-sizing: border-box;
     width: max-content;
     height: max-content;

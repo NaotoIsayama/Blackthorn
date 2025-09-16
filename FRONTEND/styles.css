@@ -137,12 +137,12 @@ a {
 }
 
 .flatpickr-day.disabled {
-    color: grey !important;
+    color: grey ;
     background-color: grey;
 }
 
 .flatpickr-day {
-    color: var(--white)!important;
+    color: var(--white);
 }
 
 .flatpickr-day:hover {

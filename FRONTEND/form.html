@@ -338,7 +338,7 @@
 
                 } else {
                     
-                    // Find which trip is selected
+                    // Find which trip is selected and add those dates to enable
                     for (let i = 0; i < roadTrips.length; i++) {
                         if (roadTrips[i].trip.city === selectedValue) {
                             flatpickrArray.push({
@@ -346,11 +346,6 @@
                                 to: roadTrips[i].trip.endDate
                             })
                         }
-                    }
-
-                    // Add booked dates array to disabled
-                    for (let i = 0; i < bookedDatesArray.length; i++) {
-                        flatpickrArray.push(bookedDatesArray[i]);
                     }
 
                     flatpickr("#appointment-date", {

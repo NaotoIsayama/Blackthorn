@@ -166,7 +166,7 @@
                     <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block" for="appointment-date">Appointment Date</label>
                         <span class="line-height-1 body dark">Here you can select a range of dates to block out for this calender. For example, this artist is booked until October 26th.</span>
-                        <div class="date-picker" data-id="datetime">
+                        <div class="date-picker" id="date-picker-el"data-id="datetime">
                             <input class="sc-body" type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
                             <button type="button" class="calendar-button" title="toggle" data-toggle>
                                 <i data-lucide="calendar"></i>
@@ -339,7 +339,7 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    flatpickr("#appointment-date", {
+                    flatpickr("#date-picker-el", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
                         disable: [
@@ -361,7 +361,7 @@
                         }
                     }
 
-                    flatpickr("#appointment-date", {
+                    flatpickr("#date-picker-el", {
                         dateFormat: "Y-m-d",
                         minDate: "today", 
                         enable: flatpickrArray,

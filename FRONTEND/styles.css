@@ -172,6 +172,8 @@ a {
 }
 
 .calendar-button {
+    position: relative;
+    transform: translateX(-100%);
     color: #8c8c8c;
     border: none;
     background-color: var(--true-transparent);

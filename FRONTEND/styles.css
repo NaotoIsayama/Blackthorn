@@ -131,7 +131,8 @@ a {
 /*------ FlatPickr CSS ------ */
 
 .flatpickr-calendar {
-    font-family: 'Young Serif', serif;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: lighter;
     font-size: var(--marquee);
     background-color: var(--black) !important;
 }

@@ -47,7 +47,8 @@
         <!-- Flatpickr CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-        
+        <!--Lucide CDN import-->
+        <script src="https://unpkg.com/lucide@latest"></script>
 </head>
     <body>
 
@@ -161,7 +162,13 @@
                     <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block" for="appointment-date">Appointment Date</label>
                         <span class="line-height-1 body dark">Here you can select a range of dates to block out for this calender. For example, this artist is booked until October 26th.</span>
-                        <input class="sc-body" type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
+                        <div class="flatpickr" data-id="datetime">
+                            <input class="sc-body" type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
+                            <button type="button" class="calendar-button" title="toggle" data-toggle>
+                                <i data-lucide="calendar"></i>
+                            </button>
+                        </div>
+                       
                     </div>
 
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
@@ -193,6 +200,8 @@
             /* 2025-09-12: So the current issue im having is that 'selectedTrip' will only exist if there
             is a change on the dropdown. Also, the availability logic is flawed, this program currently excludes the 
             days of the week that the artist is scheduled.*/
+
+            lucide.createIcons(); // replaces all data-lucide icons with SVGs
 
             // Send POST request on page load
             const response = await fetch('https://blackthorntattoo.naotoisayama.com/.netlify/functions/getAvailability', {
@@ -333,7 +342,8 @@
                         disable: [
                             ...flatpickrArray,
                             recurringDisabledWeekdays
-                        ]
+                        ],
+                        wrap: true
                     });
 
                 } else {
@@ -352,7 +362,8 @@
                         dateFormat: "Y-m-d",
                         minDate: "today", 
                         enable: flatpickrArray,
-                        disable: bookedDatesArray
+                        disable: bookedDatesArray,
+                        wrap: true
                     });
 
 

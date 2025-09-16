@@ -138,7 +138,7 @@ a {
 }
 
 .flatpickr-day {
-    color: var(--white);
+    color: var(--white) !important;
 }
 .flatpickr-day:hover {
     background-color: var(--rose) !important;

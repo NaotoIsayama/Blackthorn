@@ -145,6 +145,10 @@ a {
     color: rgb(54, 54, 54) !important;
 }
 
+.flatpickr-day.nextMonthDay {
+    color: rgb(54, 54, 54) !important;
+}
+
 .flatpickr-day:hover {
     background-color: var(--rose) !important;
 }

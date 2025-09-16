@@ -1044,13 +1044,14 @@ input[type="file"] {
     cursor: pointer;
     color: var(--white);
     animation: slideUpAndFade 0.65s forwards;
+    border: solid var(--true-transparent) 2px;
     transition: color 0.2s ease-in-out,
                 background-color 0.2s ease-in-out,
                 border 0.2s ease-in-out;
 }
 
 #submit-button:hover {
-    border: solid var(--rose);
+    border: solid var(--rose) 2px;
     color: var(--rose);
 }
 

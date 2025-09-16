@@ -155,7 +155,7 @@ a {
 
 .flatpickr-prev-month,
 .flatpickr-next-month {
-    color: var(--tan) !important;
+    fill: var(--tan) !important;
 }
 
 

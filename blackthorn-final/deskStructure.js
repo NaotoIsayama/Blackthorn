@@ -1,5 +1,5 @@
 // Lucide Icons
-import { Plane, CalendarDays, CalendarCog, CalendarCheck2 } from 'lucide-react' 
+import { Plane, CalendarDays, CalendarCog, CalendarCheck2, Store, Zap } from 'lucide-react' 
 
 export const myDeskStructure = (S) => 
     S.list()
@@ -23,5 +23,16 @@ export const myDeskStructure = (S) =>
                                 .icon(CalendarCheck2),
                         ])
                 ),
-            //Other top level item go here
-        ])
+            S.listItem()
+                .title('Flash Store Catalogue')
+                .icon(Store)
+                .child(
+                    S.list()
+                        .title('Add a Flash Design')
+                        .items([
+                            S.documentTypeListItem('repeatFlash')
+                                .title('Add a Repeat Flash')
+                                .icon(Zap)
+                        ])
+                )
+            ])

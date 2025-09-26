@@ -1186,6 +1186,45 @@ footer {
 
 
 
+/*--- STORE styles ---*/
+.store-section {
+    background-color: var(--tan);
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: max-content;
+    border: solid 6px var(--black);
+    transition: border var(--animation-speed) ease-in-out;
+}
+
+.product-card:hover {
+    border: solid 6px var(--rose);
+}
+
+.product-card img {
+    aspect-ratio: 3/4;
+    width: 100%;
+}
+
+.product-card h3 {
+    font-weight: 400;
+    line-height: 2;
+}
+
+.product-card p {
+    color: #6c757d;
+}
+
+/*--- END STORE styles ---*/
+
+
+
 /*---- mobile ----*/
 @media (max-width: 1025px) and (orientation: portrait){
 

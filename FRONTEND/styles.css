@@ -1264,12 +1264,16 @@ footer {
   bottom: -2px; /* adjust so it sits just below text */
   width: 0;
   height: 2px;
-  background: var(--black);
+  background: var(--rose);
   transition: width 0.3s ease;
 }
 
 .categories-menu__li button:hover::after {
   width: 100%;
+}
+
+.categories-menu__li button.category-active::after {
+    width: 100%;
 }
 
 .categories-menu__btn {

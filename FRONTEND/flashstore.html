@@ -86,23 +86,33 @@
         <section class="store-section section-padding fade-section">
 
             <div class="store__description-container">
-                <h1 class="sc-title dark block header-gap fade" data-speed="medium">Flash Store</h1>
+                <h1 class="sc-title dark block header-gap fade" data-speed="medium">Flash <span class="rose">Store</span></h1>
                 <p class="body fade paragraph-gap" id="portfolio__intro" data-speed="medium">Explore my Flash Collection and find a design that speaks to you! Every piece you see here is repeatable.  Click on the design you like, place a deposit, and you’ll secure your appointment. It’s the easiest way to lock in the tattoo you’ll love!
                 </p>
             </div>
 
             <nav class="store__categories-menu header-gap">
                 <ul class="categories-menu__ul">
-                    <li class="categories-menu__li sc-body fade" data-speed="fast"><button class="categories-menu__btn" data-btn-category="store__category-1">Category 1</button></li>
+                    <li class="categories-menu__li sc-body fade " data-speed="fast"><button class="categories-menu__btn category-active" data-btn-category="store__category-1">Category 1</button></li>
                     <li class="categories-menu__li sc-body fade" data-speed="fast"><button class="categories-menu__btn" data-btn-category="store__category-2">Category 2</button></li>
                     <li class="categories-menu__li sc-body fade" data-speed="fast"><button class="categories-menu__btn" data-btn-category="store__category-3">Category 3</button></li>
                 </ul>
             </nav>  
             
             <div class="store__category-container">
+
                 <!--skull flash-->
+                <!--Hardcoding metadata in for now, but each of these wil-->
                 <div class="store__category-1 active fade" data-speed="fast">
-                    <a class="product-card" href="flashstore.html">
+                    <a class="product-card" href="flashstore.html"
+
+                        data-name="Skelly Boi"
+                        data-description="A lil Skeleton Traditional Flash tattoo, part of my traditional flash collection. This design is repeatable"
+                        data-min-size="3"
+                        data-price="100"
+                        data-placement="Arm, Leg, Shoulder"
+
+                       >
                         <img src="images/skellyFlash.png">
                         <h3 class="product-card__title sc-medium dark">Example Flash 1</h3>
                         <p class="product-price sc-body dark">$100</p>
@@ -111,7 +121,15 @@
 
                 <!--anchor flash-->
                 <div class="store__category-2 fade" data-speed="fast">
-                    <a class="product-card" href="flashstore.html">
+                    <a class="product-card" href="flashstore.html"
+                    
+                        data-name="Anchor"
+                        data-description="A good old Anchor Traditional Flash tattoo, part of my traditional flash collection. This design is repeatable"
+                        data-min-size="5"
+                        data-price="100"
+                        data-placement="Arm"
+
+                    >
                         <img src="images/anchor-1.png">
                         <h3 class="product-card__title sc-medium dark">Example Flash 1</h3>
                         <p class="product-price sc-body dark">$100</p>
@@ -120,7 +138,15 @@
 
                 <!--dagger flash-->
                 <div class="store__category-3 fade" data-speed="fast">
-                    <a class="product-card" href="flashstore.html">
+                    <a class="product-card" href="flashstore.html"
+                    
+                        data-name="Dagger"
+                        data-description="A simple dagger Traditional Flash tattoo, part of my traditional flash collection. This design is repeatable"
+                        data-min-size="4"
+                        data-price="100"
+                        data-placement="Anywhere"
+
+                    >
                         <img src="images/dagger-1.png">
                         <h3 class="product-card__title sc-medium dark">Example Flash 1</h3>
                         <p class="product-price sc-body dark">$100</p>

@@ -20,10 +20,12 @@ categoryBtns.forEach(btn => {
         
         console.log('Selected Category is: ', selectedCategory);
 
-        selectedCategory.classList.add('active') //Add the '.active' css class to selected category
+        selectedCategory.classList.add('active'); //Add the '.active' css class to selected category
+        btn.classList.add('category-active'); //Add underline to selected category
     })
 })
 
 function clearActive() {
     categoriesArray.forEach(cat => cat.classList.remove('active')); // Set all categories to display none
+    categoryBtns.forEach(btn => btn.classList.remove('category-active')); // Remove underline from each
 }

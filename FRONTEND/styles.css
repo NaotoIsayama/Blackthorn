@@ -1277,6 +1277,16 @@ footer {
     cursor: pointer;
 }
 
+.store__category-1, .store__category-2, .store__category-3 {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+/*.store__category-1.active, .store__category-2.active, .store__category-3.active {
+    display: block;
+}*/
 
 /*--- END STORE styles ---*/
 

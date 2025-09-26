@@ -21,6 +21,7 @@ html {
 :root {
     --white: #FFFFFF;
     --rose: #631e08;
+    --brighter-rose : #943312;
     --black: #191717;
     --tan: #FBEED6;
     --transparent: #e2d6d60e;
@@ -1200,21 +1201,32 @@ footer {
     width: 25%;
     height: max-content;
     border: solid 6px var(--black);
-    transition: border var(--animation-speed) ease-in-out;
+    transition: border 0.2s ease-in-out;
 }
 
 .product-card:hover {
-    border: solid 6px var(--rose);
+    border: solid 6px var(--brighter-rose);
+}
+
+.product-card:hover h3 {
+    color: var(--brighter-rose);
+}
+
+.product-card:hover img {
+    filter: brightness(1.0);
 }
 
 .product-card img {
     aspect-ratio: 3/4;
     width: 100%;
+    filter: brightness(0.8);
+    transition: filter 0.2s ease-in-out
 }
 
 .product-card h3 {
     font-weight: 400;
     line-height: 2;
+    transition: color 0.2s ease-in-out;
 }
 
 .product-card p {

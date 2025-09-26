@@ -1190,8 +1190,7 @@ footer {
 /*--- STORE styles ---*/
 .store-section {
     background-color: var(--tan);
-    height: 100vh;
-    overflow-y: scroll;
+    height: max-content;
 }
 
 .product-card {
@@ -1232,6 +1231,52 @@ footer {
 .product-card p {
     color: #6c757d;
 }
+
+.store__description-container {
+    width: 50%;
+}
+
+.store__categories {
+    width: 50%;
+}
+
+.categories__ul {
+    display: flex;
+    gap: 6rem;
+}
+
+.categories__li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.categories__li button {
+  text-decoration: none; /* remove default underline */
+  color: black;
+  position: relative;
+}
+
+.categories__li button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust so it sits just below text */
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
+}
+
+.categories__li button:hover::after {
+  width: 100%;
+}
+
+.categories__btn {
+    all: unset;
+    cursor: pointer;
+}
+
 
 /*--- END STORE styles ---*/
 

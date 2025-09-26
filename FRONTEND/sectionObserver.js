@@ -4,7 +4,7 @@
 const sections = document.querySelectorAll('.fade-section');
 const lightsections = document.querySelectorAll('.light-section');
 const nav = document.querySelector('#desktopNav');
-const navHeight = nav.offsetHeight;
+//const navHeight = nav.offsetHeight;
 
 const observer1 = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {

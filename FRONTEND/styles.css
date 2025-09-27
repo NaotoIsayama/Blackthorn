@@ -1319,6 +1319,12 @@ footer {
     aspect-ratio: 3/4;
 }
 
+.product__details-container {
+    width: 50%;
+    display: flex;
+    
+}
+
 
 /*--- END Product page ---*/
 

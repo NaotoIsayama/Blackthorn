@@ -28,8 +28,12 @@ exports.handler = async function(event) {
         trip{
             city,
             startDate,
-            endDate
+            endDate,
+            timeSlot{
+                startTime,
+                endTime
             }
+        }
         }`;
 
         const weeklyScheduleQuery = `*[_type == "weeklyAvailability"]{

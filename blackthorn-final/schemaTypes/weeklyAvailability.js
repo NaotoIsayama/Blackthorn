@@ -15,10 +15,10 @@ export default {
       of: [
         {
           type: 'object',
+          name: 'weekdayAvailability', // added name for the object type
           fields: [
-            // Day of the week
             {
-              name: 'day', // MUST have a name
+              name: 'day',
               title: 'Day of the Week',
               type: 'string',
               options: {
@@ -33,16 +33,12 @@ export default {
                 ],
               },
             },
-
-            // Start time
             {
               name: 'startTime',
               title: 'Start Time',
-              type: 'string', // could use custom time type
+              type: 'string',
               description: 'Start time for this day (e.g., "09:00")',
             },
-
-            // End time
             {
               name: 'endTime',
               title: 'End Time',
@@ -50,6 +46,28 @@ export default {
               description: 'End time for this day (e.g., "17:00")',
             },
           ],
+          preview: {
+            select: {
+              day: 'day',
+              start: 'startTime',
+              end: 'endTime',
+            },
+            prepare(selection) {
+              const { day, start, end } = selection;
+              const dayMap = {
+                '0': 'Sunday',
+                '1': 'Monday',
+                '2': 'Tuesday',
+                '3': 'Wednesday',
+                '4': 'Thursday',
+                '5': 'Friday',
+                '6': 'Saturday',
+              };
+              return {
+                title: `${dayMap[day] || day} (${start || '—'} - ${end || '—'})`,
+              };
+            },
+          },
         },
       ],
     },

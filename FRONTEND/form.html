@@ -229,7 +229,7 @@
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 
             const homeCity = weeklyScheduleArray[0].homeCity; // weeklySchedule Array should just be size 1, look into adding restrictions in sanity studio
-            const scheduledDaysArray = weeklyScheduleArray.weekdays.flatMap(s => s.day); //Get scheduled days into a flattened 1-D array
+            const scheduledDaysArray = weeklyScheduleArray[0].weekdays.flatMap(s => s.day); //Get scheduled days into a flattened 1-D array
 
                 // Console.log of weeklySchedule *check
             console.log(`Weekly Schedule Array Data is : ${scheduledDaysArray} after processing`);

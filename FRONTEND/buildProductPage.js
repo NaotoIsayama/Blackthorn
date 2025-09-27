@@ -6,14 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholdersList = document.querySelectorAll(".placeholder");
 
     // console.log sessionStorage contents
-    console.log("Name in session storage is", sessionStorage.getItem("name"));
+    console.log("Image in session storage is", sessionStorage.getItem("image"));
 
     // console.log contents of placeholdersList
     console.log("placeholdersList is: ", placeholdersList);
 
     placeholdersList.forEach(item => {
         key = item.dataset.label; // extract data-label value for lookup in sessionStorage
-
         // Check if item is a img tag first
         if (item.tagName === 'IMG') {
             item.src = sessionStorage.getItem("key");

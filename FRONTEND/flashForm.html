@@ -170,6 +170,8 @@
                     </div>
 
                     <!--Hour Picker-->
+                    <!--
+                    -->
 
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
                 </form>
@@ -197,9 +199,8 @@
     <script>
         window.addEventListener('DOMContentLoaded', async () => {
 
-            /* 2025-09-12: So the current issue im having is that 'selectedTrip' will only exist if there
-            is a change on the dropdown. Also, the availability logic is flawed, this program currently excludes the 
-            days of the week that the artist is scheduled.*/
+            /* 2025-09-27: The schema for the schedule is now an array of objects, where each object has a
+            day of the week, and a time range in the 24hr format. Pretty sure this breaks my current setup*/
 
             lucide.createIcons(); // replaces all data-lucide icons with SVGs
 
@@ -216,7 +217,7 @@
             console.log('window.availabilityData is', window.availabilityData);
 
                 // Console.log of weeklySchedule
-            console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weeklySchedule);
+            console.log('window.availabilityData.weeklySchedule is (UPDATE)', window.availabilityData.weeklySchedule);
 
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
 

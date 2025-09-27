@@ -31,7 +31,7 @@ export default {
         },
         {
           name: 'timeSlot',
-          title: 'Time Slot',
+          title: 'Trip Working Hours',
           type: 'object',
           fields: [
             {

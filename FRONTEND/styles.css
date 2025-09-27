@@ -396,6 +396,21 @@ body:has(#hamburger-checkbox:checked) {
 .devbutton2 {
     margin-left: 2rem;
 }
+
+.flashButton {
+    width: max-content;
+    padding: 0.5rem 5rem;
+    background-color: var(--rose);
+    color: var(--white);
+    border: 2px solid var(--rose);
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+}
+
+.flashButton:hover {
+    background-color: var(--transparent);
+    color: var(--rose);
+}
 /*------ END components ------*/
 
 

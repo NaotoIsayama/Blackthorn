@@ -169,6 +169,8 @@
                         </div>
                     </div>
 
+                    <!--Hour Picker-->
+
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
                 </form>
             </div>
@@ -336,12 +338,7 @@
 
                     //EXPERIMENTING WITH enableTime
                     flatpickr("#date-picker-el", {
-                        /* START EXPERIMENTAL FEATURES delete this chunk if something breaks*/
-                        enableTime: true,
-                        noCalendar:false,
-                        minuteIncrement: 60,
-
-                        dateFormat: "Y-m-d H:i", // Original dateFormat: "Y-m-d"
+                        dateFormat: "Y-m-d",
                         minDate: "today", 
                         disable: [
                             ...flatpickrArray,
@@ -364,12 +361,7 @@
 
                     //EXPERIMENTING WITH enableTime
                     flatpickr("#date-picker-el", {
-                        /* START EXPERIMENTAL FEATURES delete this chunk if something breaks*/
-                        enableTime: true,
-                        noCalendar: false,
-                        minuteIncrement: 60,
-
-                        dateFormat: "Y-m-d H:i", // Original dateFormat: "Y-m-d"
+                        dateFormat: "Y-m-d", 
                         minDate: "today", 
                         enable: flatpickrArray,
                         disable: bookedDatesArray,

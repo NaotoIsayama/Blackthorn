@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     // each and create a option method
 
     const placementArray = sessionStorage.getItem("placement").split(",");
-    console.log("placementArray");
+    console.log(placementArray);
 
 });

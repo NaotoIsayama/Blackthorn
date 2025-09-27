@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () =>{
     // Set min size on size input, dont forget to convert to int
     minSize.min = sessionStorage.getItem("min-size");
     minSize.placeholder = sessionStorage.getItem("min-size");
-    
-    // Create
+
+    // Create an array from "placement" in sessionStorage, then loop through
+    // each and create a option method
+
+    const placementArray = sessionStorage.getItem("placement").split(",");
+    console.log("placementArray");
+
 });

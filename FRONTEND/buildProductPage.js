@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Key is currently: ", key);
         // Check if item is a img tag first
         if (item.tagName === 'IMG') {
-            item.src = sessionStorage.getItem("key");
+            item.src = sessionStorage.getItem(key);
         } else {
-            item.textContent = sessionStorage.getItem("key");
+            item.textContent = sessionStorage.getItem(key);
         }
     }); 
 });

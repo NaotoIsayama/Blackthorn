@@ -7,5 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // console.log sessionStorage contents
     console.log("Name in session storage is", sessionStorage.getItem("name"));
+
+    // console.log contents of placeholdersList
+    console.log("placeholdersList is: ", placeholdersList);
     
 })

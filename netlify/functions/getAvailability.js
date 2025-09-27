@@ -46,7 +46,7 @@ exports.handler = async function(event) {
         const bookedDaysQuery = `*[_type == "dayBooking"]{
         _id,
         bookingTitle,
-        date
+        date,
         timeSlot{
             startTime,
             endTime

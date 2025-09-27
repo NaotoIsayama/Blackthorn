@@ -47,6 +47,10 @@ exports.handler = async function(event) {
         _id,
         bookingTitle,
         date
+        timeSlot{
+            startTime,
+            endTime
+        }
         }`;
 
         // Query for road trip data

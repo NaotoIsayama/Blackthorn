@@ -36,7 +36,11 @@ exports.handler = async function(event) {
         _id,
         scheduleTitle,
         homeCity,
-        weekdays
+        weekdays[]{
+            day,
+            startTime,
+            endTime
+        }
         }`;
 
         const bookedDaysQuery = `*[_type == "dayBooking"]{

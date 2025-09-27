@@ -104,6 +104,7 @@
                 </p>
                 <p id="submit-message" class="submit-message sc-medium">Thanks for Reaching out! <br>(In a full version, the client will get a email confirmation, and you get a email with all the relevant info)</p>
                 <form method="post">
+                    
                     <!--Name Input-->
                     <div class="form-line fade" data-speed="medium">
                         <label class="sc-medium block">Name</label>
@@ -122,16 +123,23 @@
                         <input class="sc-body" placeholder="Your Email">
                     </div>
 
-                        <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
-                        <div class="form-line fade">
-                            <label class="sc-medium block" for="tattoo-location">Tattoo Placement</label>
-                            <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
-                                <option class="sc-body" value="" disabled selected>Select placement</option>
-                                <option class="sc-body" value="shoulder">Shoulder/Upper Arm</option>
-                                <option class="sc-body" value="other">Forearm</option>
-                                <option class="sc-body" value="other">Upper Back</option>
-                            </select>
-                        </div>
+                    <!--Size Input-->
+                    <div class="form-line fade" data-speed="medium">
+                        <label class="sc-medium block">Flash Size</label>
+                        <input class="sc-body" placeholder="Size (height x width)">
+                    </div>
+
+                    <!--Tattoo Placement Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
+                    <div class="form-line fade">
+                        <label class="sc-medium block" for="tattoo-location">Flash Tattoo Placement</label>
+                        <select class="sc-body" id="tattoo-location" name="tattoo-location" required>
+                            <option class="sc-body" value="" disabled selected>Select placement</option>
+
+                            <!--fill in dynamically-->
+                            <option class="sc-body" value=""></option>
+
+                        </select>
+                    </div>
 
                     <!--Tattoo location Dropdown Menu !!! CONSIDER REPLACEING W/ CHECKBOX-->
                     <!--Currently have hardcoded values but I will need to eventually implement a dynamic way to 

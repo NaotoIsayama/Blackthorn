@@ -86,6 +86,11 @@ a {
     line-height: 0.75;
 }
 
+.sc-price {
+    font-size: var(--marquee);
+    font-family: 'Baskervville SC', serif;
+}
+
 .marquee-font {
     font-size: var(--marquee);
     font-family: 'Young Serif', serif;

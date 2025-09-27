@@ -10,5 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // console.log contents of placeholdersList
     console.log("placeholdersList is: ", placeholdersList);
+
+    placeholdersList.forEach(item => {
+        key = item.dataset.label;
+        if (sessionStorage[key]) {
+            item.textContent = products[key];
+        }
+    })
     
 })

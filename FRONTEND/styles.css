@@ -126,6 +126,10 @@ a {
     color: var(--rose);
 }
 
+.grey {
+    color: #6c757d;
+}
+
 /*------ END Typography Classes ------*/
 
 
@@ -1322,7 +1326,7 @@ footer {
 .product__details-container {
     width: 50%;
     display: flex;
-    
+    flex-direction: column;
 }
 
 

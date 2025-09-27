@@ -17,4 +17,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     // Set name of flash tattoo in input
     flashName.placeholder = sessionStorage.getItem("name");
 
+    // Set min size on size input, dont forget to convert to int
+    minSize.min = sessionStorage.getItem("min-size");
 });

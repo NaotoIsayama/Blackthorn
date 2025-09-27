@@ -1302,6 +1302,23 @@ footer {
     height: max-content;
 }
 
+.product__flex-container {
+    display: flex;
+    width: 100%;
+}
+
+.product__image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__image-container img {
+    width: 75%;
+    aspect-ratio: 3/4;
+}
+
 
 /*--- END Product page ---*/
 

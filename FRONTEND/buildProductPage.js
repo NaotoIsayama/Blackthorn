@@ -12,10 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("placeholdersList is: ", placeholdersList);
 
     placeholdersList.forEach(item => {
-        key = item.dataset.label;
-        if (sessionStorage[key]) {
-            item.textContent = products[key];
+        key = item.dataset.label; // extract data-label value for lookup in sessionStorage
+
+        // Check if item is a img tag first
+        if (item.tagName === 'IMG') {
+            item.src = sessionStorage.getItem("key");
+        } else {
+            item.textContent = sessionStorage.getItem("key");
         }
-    })
-    
-})
+    }); 
+});

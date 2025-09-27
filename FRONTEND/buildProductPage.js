@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item.tagName === 'IMG') {
             item.src = sessionStorage.getItem(key);
         } else {
-            item.textContent = sessionStorage.getItem(key);
+            item.textContent += sessionStorage.getItem(key);
         }
     }); 
 });

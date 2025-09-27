@@ -1295,6 +1295,16 @@ footer {
 /*--- END STORE styles ---*/
 
 
+/*--- Product page ---*/
+
+.product-page {
+    background-color: var(--tan);
+    height: max-content;
+}
+
+
+/*--- END Product page ---*/
+
 
 /*---- mobile ----*/
 @media (max-width: 1025px) and (orientation: portrait){

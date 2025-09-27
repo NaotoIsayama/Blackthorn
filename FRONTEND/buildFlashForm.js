@@ -22,9 +22,16 @@ document.addEventListener('DOMContentLoaded', () =>{
     minSize.placeholder = sessionStorage.getItem("min-size");
 
     // Create an array from "placement" in sessionStorage, then loop through
-    // each and create a option method
+    // each and create a option tag. Append to placementDropdown
 
     const placementArray = sessionStorage.getItem("placement").split(",");
     console.log(placementArray);
+
+    placementArray.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item;
+        option.textContent = item;
+        placementDropdown.appendChild(option);
+    })
 
 });

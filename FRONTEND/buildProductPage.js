@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholdersList.forEach(item => {
         key = item.dataset.label; // extract data-label value for lookup in sessionStorage
         console.log("Key is currently: ", key);
+        
         // Check if item is a img tag first
         if (item.tagName === 'IMG') {
             item.src = sessionStorage.getItem(key);

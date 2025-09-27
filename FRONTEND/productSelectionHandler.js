@@ -1,3 +1,4 @@
+
 const products = document.querySelectorAll(".product-card"); // These are anchor tags <a>
 
 products.forEach(p => {

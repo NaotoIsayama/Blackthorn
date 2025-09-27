@@ -24,6 +24,7 @@ html {
     --brighter-rose : #943312;
     --black: #191717;
     --tan: #FBEED6;
+    --gray: #cdd0d4;
     --transparent: #e2d6d60e;
     --true-transparent: #00000000;
 
@@ -996,6 +997,10 @@ form input, form textarea {
     width: 100%;
     resize: vertical;
     color: var(--black);
+}
+
+.input-disabled {
+    background-color: var(--gray);
 }
 
 .form-line {

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // console.log sessionStorage contents
     console.log("Image in session storage is", sessionStorage.getItem("image"));
+    console.log("Manually")
 
     // console.log contents of placeholdersList
     console.log("placeholdersList is: ", placeholdersList);

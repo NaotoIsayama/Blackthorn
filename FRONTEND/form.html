@@ -344,10 +344,10 @@
 
             /* 6. Add event listener on the flatpickr calendar, use date to find available hours for that day, given the availabilityData */
 
-            const calendarElement = document.getElementById("date-picker-el"); 
-
+            const calendarInstance = flatpickr("#date-picker-el");
+            
             calendarElement.addEventListener("change", () => {
-                console.log("The selected date is: ", calendarElement.selectedDates[0]);
+                console.log("The selected date is: ", calendarInstance.selectedDates[0]);
             })
         })           
     </script>

@@ -350,7 +350,7 @@
             const calendarElement = document.getElementById("date-picker-el"); // Needed for event listener
 
             calendarElement.addEventListener("change", () => {
-                console.log("The selected date is: ", calendarInstance.selectedDates[0]);
+                console.log("The selected date is: ", calendarElement.value);
             });
         })           
     </script>

@@ -276,40 +276,6 @@
                 return !(scheduledDaysArray.includes(date.getDay().toString()));
             }
 
-
-
-
-
-            /*--------------TESTING GROUNDS------------------------------*/
-            
-            /*
-            dates = [
-            new Date(2025, 9, 15), // October 15, 2025
-            new Date(2025, 9, 16),
-            new Date(2025, 9, 17),
-            new Date(2025, 9, 18),
-            new Date(2025, 9, 19),
-            new Date(2025, 9, 20),
-            new Date(2025, 9, 21),
-            new Date(2025, 9, 22),
-            new Date(2025, 9, 23),
-            new Date(2025, 9, 24),
-            new Date(2025, 9, 25)
-            ]
-
-            console.log('Allowed dates should be: Mondays, Tuesdays, Wednesdays,Thurdays');
-            console.log('ScheduledDaysArray is: ', scheduledDaysArray);
-            dates.forEach(d => {
-                console.log(d.toDateString(), ' is transformed to ', d.getDay(), ' after applying .getDay()');
-                console.log(d.toDateString(), ' returns ', scheduledDaysArray.includes(d.getDay().toString()), ' when checking if its included in scheduledDaysArray, and is converted to a string');
-                console.log(d.toDateString(), recurringDisabledWeekdays(d));
-            });*/
-
-            /*--------------TESTING GROUNDS------------------------------*/
-
-
-
-
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
 
@@ -373,10 +339,16 @@
                         disable: bookedDatesArray,
                         wrap: true
                     });
-
-
                 }
             });
+
+            /* 6. Add event listener on the flatpickr calendar, use date to find available hours for that day, given the availabilityData */
+
+            const calendarElement = document.getElementById("date-picker-el"); 
+
+            calendarElement.addEventListener("change", () => {
+                console.log("The selected date is: ", calendar.selectedDates[0]);
+            })
         })           
     </script>
 

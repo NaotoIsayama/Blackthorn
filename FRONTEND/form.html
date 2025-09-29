@@ -288,6 +288,13 @@
                 return !(scheduledDaysArray.includes(date.getDay().toString()));
             }
 
+            function clearCalendar(cal) {
+                cal.clear();
+                cal.set("enable", []);
+                cal.set("disable", []);
+                cal.redraw();
+            }
+
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
 
@@ -308,8 +315,7 @@
                 if (selectedValue === homeCity) {
 
                     // Clear calendar
-                    calendarInstance.set("enable", []);
-                    calendarInstance.set("disable", []);
+                    clearCalendar(calendarInstance);
 
                     // Loop through road trips, and push a range object to disable array
                     for (let i =  0; i < roadTrips.length; i++) {
@@ -330,8 +336,7 @@
 
                 } else {
                     // Clear calendar
-                    calendarInstance.set("enable", []);
-                    calendarInstance.set("disable", []);
+                    clearCalendar(calendarInstance);
                     
                     // Find which trip is selected and add those dates to enable
                     for (let i = 0; i < roadTrips.length; i++) {

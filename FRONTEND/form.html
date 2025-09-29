@@ -295,10 +295,6 @@
 
             function clearCalendar(cal) {
                 cal.clear();
-                cal.set("enable", [{
-                    from: fromDate,
-                    to: toDate
-                }]);
                 cal.set("disable", []);
                 cal.redraw();
             }
@@ -340,6 +336,10 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
+                    calendarInstance.set("enable", [{
+                        from: fromDate,
+                        to: toDate
+                    }]);
                     calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
 
                 } else {

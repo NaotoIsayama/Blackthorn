@@ -367,7 +367,7 @@
                         }
                     }
 
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
+                    calendarInstance.set("disable", [...flatpickrArray, ...bookedDatesArray]);
                 }
             });
 

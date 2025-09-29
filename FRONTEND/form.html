@@ -285,14 +285,11 @@
             // getDay() return the numerical representation of the day of the week, convert it
             // to string since 'scheduledDaysArray' consists of strings
 
-            /* OLD CODE
+            // OLD CODE
             const recurringDisabledWeekdays = (date) => {
                 return !(scheduledDaysArray.includes(date.getDay().toString()));
-            }*/
-
-            const recurringEnabledWeekdays = (date) => {
-                return (scheduledDaysArray.includes(date.getDay().toString()));
             }
+
 
             function clearCalendar(cal) {
                 cal.clear();
@@ -337,12 +334,8 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    calendarInstance.set("enable", [recurringEnabledWeekdays]);
-                    calendarInstance.set("disable", [flatpickrArray]);
-
-                    /* OLD CODE
                     calendarInstance.set("enable", []);
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);*/
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
 
                 } else {
                     // Clear calendar

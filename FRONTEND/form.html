@@ -335,6 +335,8 @@
 
                 } else {
                     
+                    let startDateObj;
+
                     // Find which trip is selected and disable today -> startOfTrip && endOfTrip -> 3 months
                     for (let i = 0; i < roadTrips.length; i++) {
                         if (roadTrips[i].trip.city === selectedValue) {
@@ -346,7 +348,7 @@
                             // today -> startOfTrip
 
                             // randomly convert to dat obj
-                            const startDateObj = new Date(roadTrips[i].trip.startDate);
+                            startDateObj = new Date(roadTrips[i].trip.startDate);
 
                             // from is inclusive, so go today -1
                             today.setDate(today.getDate()-1);

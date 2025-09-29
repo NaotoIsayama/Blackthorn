@@ -293,17 +293,11 @@
             let toDate = new Date();
             toDate.setMonth(fromDate.getMonth() + 3);
 
-            function clearCalendar(cal) {
-                cal.clear();
-                cal.set("disable", []);
-                cal.redraw();
-            }
-
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
 
                 // Clear calendar
-                clearCalendar(calendarInstance);
+                calendarInstance.clear()
 
                 // Dropdown option selected
                 selectedValue = dropdown.value;
@@ -336,11 +330,21 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
+                    calendarInstance.set({
+                        enable: [{
+                            from: fromDate,
+                            to: toDate
+                        }],
+                        disable: [...flatpickrArray, recurringDisabledWeekdays]
+                    });
+
+                    /*
                     calendarInstance.set("enable", [{
                         from: fromDate,
                         to: toDate
                     }]);
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
+
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);*/
 
                 } else {
                     
@@ -354,8 +358,10 @@
                         }
                     }
 
-                    calendarInstance.set("enable", flatpickrArray);
-                    calendarInstance.set("disable", bookedDatesArray);
+                    calendarInstance.set({
+                        enable: flatpickrArray,
+                        disable: bookedDatesArray
+                    });
                 }
             });
 

@@ -345,9 +345,8 @@
 
                             // today -> startOfTrip
 
-                            // the 'To' in ranges is exclusive, so go date - 1
+                            // randomly convert to dat obj
                             const startDateObj = new Date(roadTrips[i].trip.startDate);
-                            //startDateObj.setDate(startDateObj.getDate() - 1);
 
                             // from is inclusive, so go today -1
                             today.setDate(today.getDate()-1);
@@ -369,6 +368,7 @@
                     }
 
                     calendarInstance.set("disable", [...flatpickrArray, ...bookedDatesArray]);
+                    calendarInstance.set("minDate", startDateObj);
                 }
             });
 

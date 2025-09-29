@@ -300,6 +300,9 @@
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
 
+                // Clear calendar
+                clearCalendar(calendarInstance);
+
                 // Dropdown option selected
                 selectedValue = dropdown.value;
 
@@ -316,9 +319,6 @@
 
                 if (selectedValue === homeCity) {
 
-                    // Clear calendar
-                    clearCalendar(calendarInstance);
-
                     // Loop through road trips, and push a range object to disable array
                     for (let i =  0; i < roadTrips.length; i++) {
                         flatpickrArray.push({
@@ -334,12 +334,9 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    calendarInstance.set("enable", []);
                     calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
 
                 } else {
-                    // Clear calendar
-                    clearCalendar(calendarInstance);
                     
                     // Find which trip is selected and add those dates to enable
                     for (let i = 0; i < roadTrips.length; i++) {

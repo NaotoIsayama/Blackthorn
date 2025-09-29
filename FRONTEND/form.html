@@ -289,8 +289,8 @@
                 return !(scheduledDaysArray.includes(date.getDay().toString()));
             }
 
-            let fromDate = new Date();
-            let toDate = new Date();
+            let today = new Date();
+            let threeMonths = new Date();
             toDate.setMonth(fromDate.getMonth() + 3);
 
             // Dropdown menu event listener, The initialization for flatpickr is inside here
@@ -330,38 +330,29 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    calendarInstance.set({
-                        enable: [{
-                            from: fromDate,
-                            to: toDate
-                        }],
-                        disable: [...flatpickrArray, recurringDisabledWeekdays]
-                    });
-
-                    /*
-                    calendarInstance.set("enable", [{
-                        from: fromDate,
-                        to: toDate
-                    }]);
-
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);*/
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
 
                 } else {
                     
-                    // Find which trip is selected and add those dates to enable
+                    // Find which trip is selected and disable today -> startOfTrip && endOfTrip -> 3 months
                     for (let i = 0; i < roadTrips.length; i++) {
                         if (roadTrips[i].trip.city === selectedValue) {
+
+                            // today -> startOfTrip
                             flatpickrArray.push({
-                                from: roadTrips[i].trip.startDate,
-                                to: roadTrips[i].trip.endDate
-                            })
+                                from: today,
+                                to: roadTrips[i].trip.startDate
+                            });
+
+                            // endOfTrip -> 3 months
+                            flatpickrArray.push({
+                                from: roadTrips[i].trip.endDate,
+                                to: threeMonths
+                            });
                         }
                     }
 
-                    calendarInstance.set({
-                        enable: flatpickrArray,
-                        disable: bookedDatesArray
-                    });
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
                 }
             });
 

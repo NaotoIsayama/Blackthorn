@@ -290,8 +290,8 @@
             }
 
             let today = new Date();
-            let threeMonths = new Date();
-            threeMonths.setMonth(today.getMonth() + 3);
+            let sixMonths = new Date();
+            sixMonths.setMonth(today.getMonth() + 6);
 
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
@@ -338,6 +338,8 @@
                     for (let i = 0; i < roadTrips.length; i++) {
                         if (roadTrips[i].trip.city === selectedValue) {
 
+                            console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
+                            console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
                             // today -> startOfTrip
                             flatpickrArray.push({
                                 from: today,
@@ -347,7 +349,7 @@
                             // endOfTrip -> 3 months
                             flatpickrArray.push({
                                 from: roadTrips[i].trip.endDate,
-                                to: threeMonths
+                                to: sixMonths
                             });
                         }
                     }

@@ -264,6 +264,18 @@
 
 
             // 5.. IMPLEMENT LOGIC FOR LOCATION-BASED FILTERING
+
+            //init flatpickr first
+            const calendarInstance = flatpickr("#date-picker-el", {
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                wrap: true,
+                onChange: (selectedDates, dateStr, instance) => {
+                    console.log('Date object: ', selectedDates[0]);
+                    console.log('Date string: ', dateStr);
+                }
+            });
+
             const dropdown = document.getElementById("tattoo-city");
 
             let selectedValue;
@@ -310,15 +322,9 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    flatpickr("#date-picker-el", {
-                        dateFormat: "Y-m-d",
-                        minDate: "today", 
-                        disable: [
-                            ...flatpickrArray,
-                            recurringDisabledWeekdays
-                        ],
-                        wrap: true
-                    });
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
+                    calendarInstance.set("enable", []);
+
 
                 } else {
                     
@@ -332,26 +338,10 @@
                         }
                     }
 
-                    flatpickr("#date-picker-el", {
-                        dateFormat: "Y-m-d",
-                        minDate: "today", 
-                        enable: flatpickrArray,
-                        disable: bookedDatesArray,
-                        wrap: true
-                    });
+                    calendarInstance.set("enable", flatpickrArray);
+                    calendarInstance.set("disable", bookedDatesArray);
                 }
             });
-
-
-
-            /* 6. Add event listener on the flatpickr calendar, use date to find available hours for that day, given the availabilityData */
-
-            const calendarInstance = flatpickr("#date-picker-el", {
-                onChange: (selectedDates, dateStr, instance) => {
-                    console.log('Date object: ', selectedDates[0]);
-                    console.log('Date string: ', dateStr);
-                }
-            }); // Needed to get selected Value
 
         })           
     </script>

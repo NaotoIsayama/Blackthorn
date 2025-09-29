@@ -308,8 +308,8 @@
                 if (selectedValue === homeCity) {
 
                     // Clear calendar
-                    calendarInstance.set("enable", null);
-                    calendarInstance.set("disable", null);
+                    calendarInstance.set("enable", []);
+                    calendarInstance.set("disable", []);
 
                     // Loop through road trips, and push a range object to disable array
                     for (let i =  0; i < roadTrips.length; i++) {
@@ -330,8 +330,8 @@
 
                 } else {
                     // Clear calendar
-                    calendarInstance.set("enable", null);
-                    calendarInstance.set("disable", null);
+                    calendarInstance.set("enable", []);
+                    calendarInstance.set("disable", []);
                     
                     // Find which trip is selected and add those dates to enable
                     for (let i = 0; i < roadTrips.length; i++) {
@@ -345,7 +345,6 @@
 
                     calendarInstance.set("enable", flatpickrArray);
                     calendarInstance.set("disable", bookedDatesArray);
-
                 }
             });
 

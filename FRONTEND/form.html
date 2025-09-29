@@ -264,6 +264,8 @@
 
 
             // 5.. IMPLEMENT LOGIC FOR LOCATION-BASED FILTERING
+            let selectedValue;
+            let selectedTrip;
 
             //init flatpickr first
             const calendarInstance = flatpickr("#date-picker-el", {
@@ -278,21 +280,25 @@
 
             const dropdown = document.getElementById("tattoo-city");
 
-            let selectedValue;
-            let selectedTrip;
-
+            
             // Write function that returns 'false' if date is not in scheduledDaysArray
             // getDay() return the numerical representation of the day of the week, convert it
             // to string since 'scheduledDaysArray' consists of strings
 
-            // OLD CODE
             const recurringDisabledWeekdays = (date) => {
                 return !(scheduledDaysArray.includes(date.getDay().toString()));
             }
 
+            let fromDate = new Date();
+            let toDate = new Date();
+            toDate.setMonth(fromDate.getMonth() + 3);
 
             function clearCalendar(cal) {
                 cal.clear();
+                cal.set("enable", [{
+                    from: fromDate,
+                    to: toDate
+                }])
                 cal.set("disable", []);
                 cal.redraw();
             }

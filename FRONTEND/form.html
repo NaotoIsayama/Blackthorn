@@ -340,15 +340,28 @@
 
                             console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
                             console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
+
+
                             // today -> startOfTrip
+
+                            // the 'To' in ranges is exclusive, so go date - 1
+                            const startDateObj = new Date(roadTrips[i].trip.startDate);
+                            startDateObj.setDate(startDateObj.getDate() - 1);
+
+                            // from is inclusive, so go today -1
+                            today.setDate(today.getDate()-1);
+
                             flatpickrArray.push({
                                 from: today,
-                                to: roadTrips[i].trip.startDate
+                                to: startDateObj
                             });
 
                             // endOfTrip -> 3 months
+                            const endDateObj = new Date(roadTrips[i].trip.endDate);
+                            endDateObj.setDate(endDateObj.getDate() + 1);
+
                             flatpickrArray.push({
-                                from: roadTrips[i].trip.endDate,
+                                from: endDateObj,
                                 to: sixMonths
                             });
                         }

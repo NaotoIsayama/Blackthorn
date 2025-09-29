@@ -322,10 +322,9 @@
 
                     console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
                     calendarInstance.set("enable",[{}]);
-
-
+                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
+                
                 } else {
                     
                     // Find which trip is selected and add those dates to enable

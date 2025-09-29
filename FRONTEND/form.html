@@ -181,6 +181,12 @@
                         </div>
                     </div>
 
+                    <!--Reference Photos-->
+                    <div class="form-line time-blocks fade" data-speed="medium">
+                        <label class="sc-medium block reference-photos-title">Select a time</label>
+
+                    </div>
+
                     <button id="submit-button" type="submit" class="button sc-medium fade" data-speed="slow">SUBMIT</button>
                 </form>
             </div>
@@ -225,9 +231,10 @@
             console.log('window.availabilityData is', window.availabilityData);
 
                 // Console.log of weeklySchedule
-            console.log('window.availabilityData.weeklySchedule is', window.availabilityData.weeklySchedule);
+            console.log('weeklyScheduleArray is', window.availabilityData.weeklySchedule);
 
             let weeklyScheduleArray = window.availabilityData.weeklySchedule; //Extract out the 'weeklySchedule' array for better readability
+            let weeklyScheduleObject = weeklyScheduleArray[0];
 
             const homeCity = weeklyScheduleArray[0].homeCity; // weeklySchedule Array should just be size 1, look into adding restrictions in sanity studio
             const scheduledDaysArray = weeklyScheduleArray[0].weekdays.flatMap(s => s.day); // Get scheduled days into a flattened 1-D array
@@ -238,10 +245,6 @@
                 // Console.log HOMECITY
             console.log('Home City is: ', homeCity);
                 
-                /*Function to recurringly enable the scheduled days for flatpcikr
-            const recurringEnabledWeekdays = (date) => {
-                return enabledWeekdays.includes(date.getDay());
-            }*/
 
 
 
@@ -276,11 +279,12 @@
                 onChange: (selectedDates, dateStr, instance) => {
                     console.log('Date object: ', selectedDates[0]);
                     console.log('Date string: ', dateStr);
+                    console.log("Selected Day is: ", dateStr);
+                    getHours(dateStr, dropdown.value);
                 }
             });
 
             const dropdown = document.getElementById("tattoo-city");
-
             
             // Write function that returns 'false' if date is not in scheduledDaysArray
             // getDay() return the numerical representation of the day of the week, convert it
@@ -374,6 +378,35 @@
                     calendarInstance.set("minDate", startDateObj);
                 }
             });
+
+
+
+            // 6.. FROM SELECTED DATE, GET HOUR RANGE
+
+            // Console log date range for selected day
+            let city = dropdown.value;
+
+            // Get hours is a function that takes a date string (chosen by the user via flatpickr)
+            // and a city (chosen by the user in the dropdown) and creates a grid of buttons, corresponding to
+            // available time blocks of size n (n being the time needed to do the flash tattoo)
+            function getHours(dateString, city) {
+
+                // Start with finding the date range given these inputs
+
+                // Since the city is already selected, we can grab the schedule based on that choice
+                if (city === homeCity) {
+                    alert("getHours() fired, main branch");
+                    const dateObject = new Date(dateString);
+                    const dateWeekday = dateObject.getDay();
+
+                    console.log("dateWeekday is: ", dateWeekday);
+
+                    let weekday = weeklyScheduleObject[dateWeekday];
+
+                    console.log("the selected Weekday is: ", weekday);
+
+                }
+            }
 
         })           
     </script>

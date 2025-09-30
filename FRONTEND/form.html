@@ -181,9 +181,15 @@
                         </div>
                     </div>
 
-                    <!--Reference Photos-->
-                    <div class="form-line time-blocks fade" data-speed="medium">
+                    <!--time blocks-->
+                    <div class="form-line time-blocks-grid fade" data-speed="medium">
                         <label class="sc-medium block reference-photos-title">Select a time</label>
+                        
+                        <!--Example Time Slot Button, delete later
+                        <label class="time-block borderred">
+                            <input type = "radio" name="timeBlock" value="9:00-10:30">
+                            9:00-10:30
+                        </label>-->
 
                     </div>
 
@@ -253,7 +259,7 @@
             // 'location' option
             // Console log extracted
             const roadTrips = window.availabilityData.roadTrips
-            console.log('window.availabilityData.roadTrips is', roadTrips);
+            console.log('roadTrips is', roadTrips);
 
 
 
@@ -277,10 +283,10 @@
                 minDate: "today",
                 wrap: true,
                 onChange: (selectedDates, dateStr, instance) => {
-                    console.log('Date object: ', selectedDates[0]);
-                    console.log('Date string: ', dateStr);
-                    console.log("Selected Day is: ", dateStr);
-                    getHours(dateStr, dropdown.value);
+                    console.log('selectedDates[0] is: ', selectedDates[0]);
+                    if (selectedDates[0]) {
+                        getHours(selectedDates[0], dropdown.value);
+                    }
                 }
             });
 
@@ -297,12 +303,17 @@
             let today = new Date();
             let twelveMonths = new Date();
             twelveMonths.setMonth(today.getMonth() + 6);
+            const grid = document.querySelector(".time-blocks-grid");
 
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {
 
                 // Clear calendar
                 calendarInstance.clear()
+
+                // Clear grid
+                const oldBlocks = grid.querySelectorAll(".time-block");
+                oldBlocks.forEach(block => block.remove());
 
                 // Dropdown option selected
                 selectedValue = dropdown.value;
@@ -312,9 +323,10 @@
 
                 // If selected Value is home city, display schedule - (trip dates + bookedDays)
                 // console log comparison
+                /*
                 console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
                 console.log('The data type of selectedValue is: ', typeof selectedValue);
-                console.log('The data type of homeCity is: ', typeof homeCity);
+                console.log('The data type of homeCity is: ', typeof homeCity);*/
                 
                 const flatpickrArray = [];
 
@@ -333,7 +345,7 @@
                         flatpickrArray.push(bookedDatesArray[i]);
                     }
 
-                    console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
+                    //console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
                     calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
                     calendarInstance.set("minDate", today);
@@ -346,9 +358,8 @@
                     for (let i = 0; i < roadTrips.length; i++) {
                         if (roadTrips[i].trip.city === selectedValue) {
 
-                            console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
-                            console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
-
+                            //console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
+                            //console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
 
                             // today -> startOfTrip
 
@@ -380,31 +391,157 @@
             });
 
 
-
             // 6.. FROM SELECTED DATE, GET HOUR RANGE
 
             // Console log date range for selected day
             let city = dropdown.value;
 
+            // timeDiff calculates the time difference between 2 24-hr strings and returns the
+            // start and end times, expressed as minutes since midnight
+            function timeDiff(start, end) {
+                const [startHours, startMins] = start.split(":").map(Number);
+                const [endHours, endMinutes] = end.split(":").map(Number);
+
+                // Convert both to minutes since midnight
+                const startDelta = startHours * 60 + startMins;
+                const endDelta = endHours * 60 + endMinutes;
+
+                // return diff, startDelta and endDelta
+                return {
+                    delta: endDelta - startDelta,
+                    start: startDelta,
+                    end: endDelta
+                }
+            }  
+            
+            // VIBE CODED. Translates minutes from midnight to 24hr xx:xx format
+            function formatTimeRange(time1, time2) {
+                function minutesTo24Hour(minutes) {
+                    const hours = Math.floor(minutes / 60);
+                    const mins = minutes % 60;
+                    // pad with leading 0
+                    const hh = hours.toString().padStart(2, "0");
+                    const mm = mins.toString().padStart(2, "0");
+                    return `${hh}:${mm}`;
+                }
+                return `${minutesTo24Hour(time1)}-${minutesTo24Hour(time2)}`;
+            }
+
+            // minutesToStandardTime converts 
+            function minutesToStandardTime() {};
+
             // Get hours is a function that takes a date string (chosen by the user via flatpickr)
             // and a city (chosen by the user in the dropdown) and creates a grid of buttons, corresponding to
             // available time blocks of size n (n being the time needed to do the flash tattoo)
-            function getHours(dateString, city) {
 
-                // Start with finding the date range given these inputs
+            function getHours(dateObj, city) {
+
+                //clear all old blocks
+                const oldBlocks = grid.querySelectorAll(".time-block");
+                oldBlocks.forEach(block => block.remove());
+
+                const dateWeekday = dateObj.getDay();
+                let timeChunks = [];
+                let n = 90;
 
                 // Since the city is already selected, we can grab the schedule based on that choice
                 if (city === homeCity) {
                     alert("getHours() fired, main branch");
-                    const dateObject = new Date(dateString);
-                    const dateWeekday = dateObject.getDay();
 
-                    console.log("dateWeekday is: ", dateWeekday);
+                    // console.log("dateWeekday is: ", dateWeekday);
+                    // console.log("weeklyScheduleObject is: ", weeklyScheduleObject);
+                    let weekday = weeklyScheduleObject.weekdays[dateWeekday];
 
-                    let weekday = weeklyScheduleObject[dateWeekday];
+                    // in minutes
+                    let timeDiffObj = timeDiff(weekday.startTime, weekday.endTime)
 
-                    console.log("the selected Weekday is: ", weekday);
+                    console.log("The time range is: ", timeDiffObj.delta, " minutes.");
+                    // Here, set n to be the size (in minutes) you want the time chunks to be
+                    
 
+                    // This loop calculates how many N sized chunks fit in the available time
+                    // Each object in timeChunks represents the time blocks (minutes since Midnight)
+                    // that are available
+                    for (let i = 0; i < (timeDiffObj.delta/n); i++) {
+                        if ((n + (n * i)) <= timeDiffObj.delta) { // This conditional checks if the 'end' of the next iteration exceeds the end of the artists working hours
+                            timeChunks.push({
+                                start: timeDiffObj.start + (n * i),
+                                end: (timeDiffObj.start + n) + (n * i)
+                            })
+                        }
+                    }
+
+                    // 4:46: Next step, generate a button / check box for each object in time chunk. For now, lets just insert 
+                    // the minutes since midnight format.
+                    timeChunks.forEach(block => {
+                        //Create label
+                        const label = document.createElement("label");
+                        label.className = "time-block";
+
+                        //Create radio input
+                        const radioInput = document.createElement("input");
+                        radioInput.type = "radio";
+                        radioInput.name = "timeBlock";
+                        radioInput.value = `${formatTimeRange(block.start, block.end)}`;
+                        
+                        //Create text span
+                        const text = document.createElement("span");
+                        text.textContent = `${formatTimeRange(block.start, block.end)}`;
+                        
+                        label.appendChild(radioInput);
+                        label.appendChild(text);
+
+                        grid.appendChild(label);
+                    })
+                } else {
+                    // Write code for road trip city
+
+                    // Find city name in roadTrips
+                    let timeDiffObj; 
+
+                    roadTrips.forEach(item => {
+                        if (item.trip.city === city) {
+                            timeDiffObj = timeDiff(item.trip.timeSlot.startTime, item.trip.timeSlot.endTime)
+                            alert("City Found");
+                        }
+                    });
+
+                    console.log("timeDiffObj for the road trip is: ", timeDiffObj);
+
+                    // MAKE A HELPER FUNCTION !!!
+
+                    // This loop calculates how many N sized chunks fit in the available time
+                    // Each object in timeChunks represents the time blocks (minutes since Midnight)
+                    // that are available
+                    for (let i = 0; i < (timeDiffObj.delta/n); i++) {
+                        if ((n + (n * i)) <= timeDiffObj.delta) { // This conditional checks if the 'end' of the next iteration exceeds the end of the artists working hours
+                            timeChunks.push({
+                                start: timeDiffObj.start + (n * i),
+                                end: (timeDiffObj.start + n) + (n * i)
+                            })
+                        }
+                    }
+
+                    timeChunks.forEach(block => {
+                        //Create label
+                        const label = document.createElement("label");
+                        label.className = "time-block";
+
+                        //Create radio input
+                        const radioInput = document.createElement("input");
+                        radioInput.type = "radio";
+                        radioInput.name = "timeBlock";
+                        radioInput.value = `${formatTimeRange(block.start, block.end)}`;
+                        
+                        //Create text span
+                        const text = document.createElement("span");
+                        text.textContent = `${formatTimeRange(block.start, block.end)}`;
+                        
+                        label.appendChild(radioInput);
+                        label.appendChild(text);
+
+                        grid.appendChild(label);
+                    })
                 }
             }
 

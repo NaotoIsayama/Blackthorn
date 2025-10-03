@@ -47,11 +47,22 @@ export default {
       end: 'timeSlot.endTime',
     },
     prepare(selection) {
+
+    const [year, month, day] = selection.date.split('-').map(Number);
+
+    const formattedDate = new Date(Date.UTC(year, month - 1, day))
+      .toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC' // prevents conversion to local TZ
+      });
+      /*
       const formattedDate = new Date(selection.date).toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric'
-      });
+      });*/
       const timeString = selection.start && selection.end ? ` (${selection.start} - ${selection.end})` : '';
       return {
         title: `${formattedDate}${timeString}`,

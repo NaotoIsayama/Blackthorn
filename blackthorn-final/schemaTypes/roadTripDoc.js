@@ -70,12 +70,6 @@ export default {
           timeZone: 'UTC' // prevents conversion to local TZ
       });
 
-      const formattedEnd = new Date(selection.end).toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      });
-
       return {
         title: `${selection.title} Trip`,
         subtitle: `From ${formattedStart} (${selection.startTime || 'N/A'}) to ${formattedEnd} (${selection.endTime || 'N/A'})`,

@@ -939,6 +939,8 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 .form__flex-container {
+    background-image: url(images/form-img.webp);
+    background-size: contain;
     display: flex;
     height: 100%;
     width: 100%; 

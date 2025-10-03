@@ -204,12 +204,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 return `${minutesTo24Hour(time1)}-${minutesTo24Hour(time2)}`;
             }
 
-            // Takes a 24 hour string, converts it into minutes since midnight
-            function minutesFrom24Hour(time) {
-                const [hours, mins] = time.split(":").map(Number);
-                return hours * 60 + mins;
-            }
-
             // Get hours is a function that takes a date string (chosen by the user via flatpickr)
             // and a city (chosen by the user in the dropdown) and creates a grid of buttons, corresponding to
             // available time blocks of size n (n being the time needed to do the flash tattoo)
@@ -368,6 +362,19 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // ------------ BEGIN PROGRAM ------------ //
 
+            //init flatpickr first
+            const calendarInstance = flatpickr("#date-picker-el", {
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                wrap: true,
+                onChange: (selectedDates, dateStr, instance) => {
+                    console.log('selectedDates[0] is: ', selectedDates[0]);
+                    if (selectedDates[0]) {
+                        getHours(selectedDates[0], dropdown.value);
+                    }
+                }
+            });
+
             // Loop through all roadtrips and extract out date ranges as Date() objects
             roadTrips.forEach(t => {
                 roadTripRangesArr.push({
@@ -463,27 +470,10 @@ window.addEventListener('DOMContentLoaded', async () => {
             // remove duplicates from partiallyBooked by converting to a map, then convert it back
             const tempMap = new Map();
             partiallyBooked.forEach(obj => tempMap.set(obj.date, obj));
-            //console.log("tempMap is: ", tempMap);
             partiallyBooked = Array.from(tempMap.values());
-
 
             //console.log("The array of fully booked dates is: ", fullyBooked);
             console.log("The array of partially booked dates is: ", partiallyBooked);
-
-            // 4... IMPLEMENT LOGIC FOR LOCATION-BASED FILTERING
-
-            //init flatpickr first
-            const calendarInstance = flatpickr("#date-picker-el", {
-                dateFormat: "Y-m-d",
-                minDate: "today",
-                wrap: true,
-                onChange: (selectedDates, dateStr, instance) => {
-                    console.log('selectedDates[0] is: ', selectedDates[0]);
-                    if (selectedDates[0]) {
-                        getHours(selectedDates[0], dropdown.value);
-                    }
-                }
-            });
 
             // Dropdown menu event listener, The initialization for flatpickr is inside here
             dropdown.addEventListener("change", () => {

@@ -939,21 +939,20 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 .form__flex-container {
-    background-image: url(images/form-img.webp);
-    background-size: contain;
+    /*background-image: url(images/form-img.webp);
+    background-size: contain;*/
     display: flex;
     height: 100%;
     width: 100%; 
 }
 
 .form__image-container {
+    background-color: var(--tan);
     width: 50%;
 }
 
 #form-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 150%;
 }
 
 .form__form-container {
@@ -1065,6 +1064,48 @@ input[type="file"] {
 .reference-photos-title {
     width: 100%;
 }
+
+.time-blocks-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Similar styles to file upload buttons */
+.time-block {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+    color: #6c757d; /*same as placeholder*/ 
+    border: 3px solid var(--rose);
+    border-radius: 2px;
+    display: inline-block; /*regular inline elements dont obey top/bottom margin*/
+    background-color:  var(--transparent);
+    transition: color 0.2s ease-in-out,
+                background-color 0.2s ease-in-out;
+}
+
+.time-block:hover {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--rose);
+}
+
+.time-block input:checked + span {
+    color: var(--white);
+    background-color: var(--rose);
+}
+
+.time-block span {
+    padding: 0.20rem;
+    width: max-content;
+}
+
+.time-block__input {
+    display: none;
+}
+
+
 
 #warning-bubble { margin-top: -2rem;}
 

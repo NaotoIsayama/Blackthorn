@@ -258,6 +258,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         // console.log("weeklyScheduleObject is: ", weeklyScheduleObject);
                         let weekday = weeklyScheduleObject.weekdays[dateWeekday];
 
+                        console.log("weeklyDay is: ", weekday);
                         // in minutes
                         let timeDiffObj = timeDiff(weekday.startTime, weekday.endTime)
 
@@ -342,12 +343,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     //Create radio input
                     const radioInput = document.createElement("input");
+                    radioInput.className = "time-block__input";
                     radioInput.type = "radio";
                     radioInput.name = "timeBlock";
                     radioInput.value = `${formatTimeRange(block.start, block.end)}`;
                     
                     //Create text span
                     const text = document.createElement("span");
+                    text.classList.add("sc-medium");
                     text.textContent = `${formatTimeRange(block.start, block.end)}`;
                     
                     label.appendChild(radioInput);

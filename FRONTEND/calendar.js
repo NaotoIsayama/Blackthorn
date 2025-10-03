@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             lucide.createIcons(); // replaces all data-lucide icons with SVGs
 
-
             // ------------ GLOBALS ------------//
 
             // More convienient shortcuts for sanity data
@@ -77,7 +76,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // ------------ HELPER FUNCTIONS ------------ //
             //Date Parser is a function that splits up the date string so that date() objects created with it 
-            //dont apply the stupid fucking timezone shift
+            //dont apply the timezone shift
             function dateParser(dateStr) {
                 // Expecting format YYYY-MM-DD
                 const [year, month, day] = dateStr.split("-").map(Number);
@@ -94,9 +93,12 @@ window.addEventListener('DOMContentLoaded', async () => {
             // time blocks for easier calculations
             function mergeIntervals(bookedSlots) {
 
+                if (bookedSlots.length == 0) {
+                    return [];
+                }
+
                 if (bookedSlots.length == 1) {
-                    const merged = [bookedSlots[0]];
-                    return merged;
+                    return [bookedSlots[0]];
                 }
 
                 // first, sort array by start time
@@ -118,10 +120,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                         lastMerged[1] = Math.max(lastMerged[1], bookedSlots[i][1]); // Set endpoint to whichever endpoint is later
                     } else {
                         merged.push(bookedSlots[i]);
-                    }
-
-                    return merged;
+                    }  
                 }
+                return merged;
             }
 
             // getFreeSlots takes a schedule {startTime, endTime} and a mergedIntervals [[start, end], ...] and returns
@@ -362,198 +363,226 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // ------------ BEGIN PROGRAM ------------ //
 
-            //init flatpickr first
-            const calendarInstance = flatpickr("#date-picker-el", {
-                dateFormat: "Y-m-d",
-                minDate: "today",
-                wrap: true,
-                onChange: (selectedDates, dateStr, instance) => {
-                    console.log('selectedDates[0] is: ', selectedDates[0]);
-                    if (selectedDates[0]) {
-                        getHours(selectedDates[0], dropdown.value);
-                    }
-                }
-            });
-
-            // Loop through all roadtrips and extract out date ranges as Date() objects
-            roadTrips.forEach(t => {
-                roadTripRangesArr.push({
-                    city: t.trip.city,
-                    start: new Date(dateParser(t.trip.startDate)), 
-                    end: new Date(dateParser(t.trip.endDate)),
-                    timeSlot: t.trip.timeSlot
-                })
-            });
-
-            // console.log("roadTripRangesArr is: ", roadTripRangesArr);
-            bookedDateObjArr.forEach(obj => {
-                // Convert Time slots to minutes
-                obj.timeSlot = {
-                    startTime: timeToMinutes(obj.timeSlot.startTime),
-                    endTime: timeToMinutes(obj.timeSlot.endTime)
-                };
-            })
-
-            // Loop through all booked Dates and check each one for which range they fit into
-            bookedDateObjArr.forEach(obj => {
-                bookedDateObj = new Date(dateParser(obj.date));
-
-                // console.log("bookedDateObj is: ", bookedDateObj);
-                
-                let bookedDateRoadTrip = roadTripRangesArr.find(t => {
-                    return bookedDateObj >= t.start && bookedDateObj <= t.end
-                });
-
-                // find all bookings on that day 
-                // bookingsOnDate is currently a array of objects
-                let bookingsOnDate = bookedDateObjArr.filter(b => b.date === obj.date);
-                //console.log("bookingsOnDate is: ", bookingsOnDate);
-
-
-                // create array of 2d arrays, each of which is [startTime, endTime]
-                let intervals = [];
-
-                for (let obj of bookingsOnDate) {
-                    let item = [];
-                    item.push(obj.timeSlot.startTime, obj.timeSlot.endTime);
-                    intervals.push(item);
-                }
-
-                //console.log("Intervals is: ", intervals);
-
-                // Merge all bookings on the same day into min amount of blocks
-
-                const mergedIntervals = mergeIntervals(intervals);
-
-                //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
-
-                let scheduleForDay;
-
-                // You can move out the shared code outside this if-else block
-                if (bookedDateRoadTrip) {
-
-                    // Pulling Schedule from road trip, translate time slots data into minutes
-                    scheduleForDay = {
-                        startTime: timeToMinutes(bookedDateRoadTrip.timeSlot.startTime),
-                        endTime: timeToMinutes(bookedDateRoadTrip.timeSlot.endTime)
-                    };
-
-                    //console.log("City Schedule for day is: ", scheduleForDay);
-
-                    let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
-
-                    // If the date is fully booked, then push only the date to fullyBooked, if not push the array of free slots to partially booked
-                    isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
-
-                    //console.log(`bookedDateFreeSlots for ${bookedDateObj} in ${bookedDateRoadTrip.city} is: `, bookedDateFreeSlots);
-
-                } else {
-                    //console.log("weeklySchedule object is: ", weeklyScheduleObject);
-                    
-                    // Find the correct weekday {day, endTime, startTime}
-                    weekdaysObject = weeklyScheduleObject.weekdays.find(s => s.day == bookedDateObj.getDay());
-
-                    scheduleForDay = {
-                        startTime: timeToMinutes(weekdaysObject.startTime),
-                        endTime: timeToMinutes(weekdaysObject.endTime)
-                    }
-
-                    let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
-
-                    isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
-
-                    //console.log("Home Schedule for day is: ", scheduleForDay);
-                    //console.log(`bookedDateFreeSlots for ${bookedDateObj} in Edmonton is: `, bookedDateFreeSlots);
-                }
-            });
-
-            // remove duplicates from partiallyBooked by converting to a map, then convert it back
-            const tempMap = new Map();
-            partiallyBooked.forEach(obj => tempMap.set(obj.date, obj));
-            partiallyBooked = Array.from(tempMap.values());
-
-            //console.log("The array of fully booked dates is: ", fullyBooked);
-            console.log("The array of partially booked dates is: ", partiallyBooked);
-
-            // Dropdown menu event listener, The initialization for flatpickr is inside here
-            dropdown.addEventListener("change", () => {
-
-                // Clear calendar
-                calendarInstance.clear()
-
-                // Clear grid
-                const oldBlocks = grid.querySelectorAll(".time-block");
-                oldBlocks.forEach(block => block.remove());
-
-                // Dropdown option selected
-                selectedValue = dropdown.value;
-
-                //console log
-                //console.log('selectedValue is: ', selectedValue);
-
-                // If selected Value is home city, display schedule - (trip dates + bookedDays)
-                // console log comparison
-                /*
-                console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
-                console.log('The data type of selectedValue is: ', typeof selectedValue);
-                console.log('The data type of homeCity is: ', typeof homeCity);*/
-                
-                const flatpickrArray = [];
-                flatpickrArray.push(...fullyBooked);
-
-                if (selectedValue === homeCity) {
-
-                    // Loop through road trips, and push a range object to disable array
-                    for (let i =  0; i < roadTrips.length; i++) {
-                        flatpickrArray.push({
-                            from: roadTrips[i].trip.startDate,
-                            to: roadTrips[i].trip.endDate
-                        })
-                    }
-
-                    //console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
-
-                    calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
-                    calendarInstance.set("minDate", today);
-
-                } else {
-                    
-                    let startDateObj;
-
-                    // Find which trip is selected and disable today -> startOfTrip && endOfTrip -> 3 months
-                    for (let i = 0; i < roadTrips.length; i++) {
-                        if (roadTrips[i].trip.city === selectedValue) {
-
-                            //console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
-                            //console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
-
-                            // today -> startOfTrip
-
-                            // randomly convert to dat obj
-                            startDateObj = new Date(roadTrips[i].trip.startDate);
-
-                            // from is inclusive, so go today -1
-                            today.setDate(today.getDate()-1);
-
-                            flatpickrArray.push({
-                                from: today,
-                                to: startDateObj
-                            });
-
-                            // endOfTrip -> 3 months
-                            const endDateObj = new Date(roadTrips[i].trip.endDate);
-                            endDateObj.setDate(endDateObj.getDate() + 1);
-
-                            flatpickrArray.push({
-                                from: endDateObj,
-                                to: twelveMonths
-                            });
+            function main() {
+                //init flatpickr first
+                const calendarInstance = flatpickr("#date-picker-el", {
+                    dateFormat: "Y-m-d",
+                    minDate: "today",
+                    wrap: true,
+                    onChange: (selectedDates, dateStr, instance) => {
+                        console.log('selectedDates[0] is: ', selectedDates[0]);
+                        if (selectedDates[0]) {
+                            getHours(selectedDates[0], dropdown.value);
                         }
                     }
+                });
 
-                    calendarInstance.set("disable", [...flatpickrArray]);
-                    calendarInstance.set("minDate", startDateObj);
+                // Loop through all roadtrips and extract out date ranges as Date() objects
+                roadTrips.forEach(t => {
+                    roadTripRangesArr.push({
+                        city: t.trip.city,
+                        start: new Date(dateParser(t.trip.startDate)), 
+                        end: new Date(dateParser(t.trip.endDate)),
+                        timeSlot: t.trip.timeSlot
+                    })
+                });
+
+                // console.log("roadTripRangesArr is: ", roadTripRangesArr);
+                bookedDateObjArr.forEach(obj => {
+                    // Convert Time slots to minutes
+                    obj.timeSlot = {
+                        startTime: timeToMinutes(obj.timeSlot.startTime),
+                        endTime: timeToMinutes(obj.timeSlot.endTime)
+                    };
+                })
+
+                // Loop through all booked Dates and check each one for which range they fit into
+                bookedDateObjArr.forEach(obj => {
+                    bookedDateObj = new Date(dateParser(obj.date));
+
+                    // console.log("bookedDateObj is: ", bookedDateObj);
+                    
+                    let bookedDateRoadTrip = roadTripRangesArr.find(t => {
+                        return bookedDateObj >= t.start && bookedDateObj <= t.end
+                    });
+
+                    // find all bookings on that day 
+                    // bookingsOnDate is currently a array of objects
+                    let bookingsOnDate = bookedDateObjArr.filter(b => b.date === obj.date);
+                    //console.log("bookingsOnDate is: ", bookingsOnDate);
+
+
+                    // create array of 2d arrays, each of which is [startTime, endTime]
+                    let intervals = [];
+
+                    for (let obj of bookingsOnDate) {
+                        let item = [];
+                        item.push(obj.timeSlot.startTime, obj.timeSlot.endTime);
+                        intervals.push(item);
+                    }
+
+                    //console.log("Intervals is: ", intervals);
+
+                    // Merge all bookings on the same day into min amount of blocks
+
+                    const mergedIntervals = mergeIntervals(intervals);
+
+                    //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
+
+                    let scheduleForDay;
+
+                    // You can move out the shared code outside this if-else block
+                    if (bookedDateRoadTrip) {
+
+                        // Pulling Schedule from road trip, translate time slots data into minutes
+                        scheduleForDay = {
+                            startTime: timeToMinutes(bookedDateRoadTrip.timeSlot.startTime),
+                            endTime: timeToMinutes(bookedDateRoadTrip.timeSlot.endTime)
+                        };
+
+                        //console.log("City Schedule for day is: ", scheduleForDay);
+
+                        let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
+
+                        // If the date is fully booked, then push only the date to fullyBooked, if not push the array of free slots to partially booked
+                        isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
+
+                        //console.log(`bookedDateFreeSlots for ${bookedDateObj} in ${bookedDateRoadTrip.city} is: `, bookedDateFreeSlots);
+
+                    } else {
+                        //console.log("weeklySchedule object is: ", weeklyScheduleObject);
+                        
+                        // Find the correct weekday {day, endTime, startTime}
+                        weekdaysObject = weeklyScheduleObject.weekdays.find(s => s.day == bookedDateObj.getDay());
+
+                        scheduleForDay = {
+                            startTime: timeToMinutes(weekdaysObject.startTime),
+                            endTime: timeToMinutes(weekdaysObject.endTime)
+                        }
+
+                        let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
+
+                        isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
+
+                        //console.log("Home Schedule for day is: ", scheduleForDay);
+                        //console.log(`bookedDateFreeSlots for ${bookedDateObj} in Edmonton is: `, bookedDateFreeSlots);
+                    }
+                });
+
+                // remove duplicates from partiallyBooked by converting to a map, then convert it back
+                const tempMap = new Map();
+                partiallyBooked.forEach(obj => tempMap.set(obj.date, obj));
+                partiallyBooked = Array.from(tempMap.values());
+
+                //console.log("The array of fully booked dates is: ", fullyBooked);
+                console.log("The array of partially booked dates is: ", partiallyBooked);
+
+                // Dropdown menu event listener, The initialization for flatpickr is inside here
+                dropdown.addEventListener("change", () => {
+
+                    // Clear calendar
+                    calendarInstance.clear()
+
+                    // Clear grid
+                    const oldBlocks = grid.querySelectorAll(".time-block");
+                    oldBlocks.forEach(block => block.remove());
+
+                    // Dropdown option selected
+                    selectedValue = dropdown.value;
+
+                    //console log
+                    //console.log('selectedValue is: ', selectedValue);
+
+                    // If selected Value is home city, display schedule - (trip dates + bookedDays)
+                    // console log comparison
+                    /*
+                    console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
+                    console.log('The data type of selectedValue is: ', typeof selectedValue);
+                    console.log('The data type of homeCity is: ', typeof homeCity);*/
+                    
+                    const flatpickrArray = [];
+                    flatpickrArray.push(...fullyBooked);
+
+                    if (selectedValue === homeCity) {
+
+                        // Loop through road trips, and push a range object to disable array
+                        for (let i =  0; i < roadTrips.length; i++) {
+                            flatpickrArray.push({
+                                from: roadTrips[i].trip.startDate,
+                                to: roadTrips[i].trip.endDate
+                            })
+                        }
+
+                        //console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
+
+                        calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
+                        calendarInstance.set("minDate", today);
+
+                    } else {
+                        
+                        let startDateObj;
+
+                        // Find which trip is selected and disable today -> startOfTrip && endOfTrip -> 3 months
+                        for (let i = 0; i < roadTrips.length; i++) {
+                            if (roadTrips[i].trip.city === selectedValue) {
+
+                                console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
+                                //console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
+
+                                // today -> startOfTrip
+
+                                // randomly convert to dat obj
+                                startDateObj = new Date((roadTrips[i].trip.startDate));
+
+                                // from is inclusive, so go today -1
+                                today.setDate(today.getDate()-1);
+
+                                flatpickrArray.push({
+                                    from: today,
+                                    to: startDateObj
+                                });
+
+                                // endOfTrip -> 3 months
+                                const endDateObj = new Date(roadTrips[i].trip.endDate);
+                                endDateObj.setDate(endDateObj.getDate() + 1);
+
+                                flatpickrArray.push({
+                                    from: endDateObj,
+                                    to: twelveMonths
+                                });
+                            }
+                        }
+
+                        calendarInstance.set("disable", [...flatpickrArray]);
+                        calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate() + 1));
+                    }
+                });
+            }
+
+            main();
+
+            // VANILLA TEST FOR merged
+
+            // ----  test helpers ---- //
+            function test(name, fn) {
+                try {
+                    fn();
+                    console.log(`✅ ${name}`);
+                } catch (err) {
+                    console.error(`❌ ${name}`);
+                    console.error(err.message);
                 }
-            });
+            }
 
-        })
+            function assertEqual(actual, expected) {
+                const a = JSON.stringify(actual);
+                const e = JSON.stringify(expected);
+                if (a !== e) {
+                    throw new Error(`Expected ${e}, but got ${a}`);
+                }
+            }
+            // ----  test helpers ---- //
+
+            // ------ tests ------//
+             
+})

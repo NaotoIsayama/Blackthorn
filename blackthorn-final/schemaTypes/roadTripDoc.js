@@ -60,14 +60,23 @@ export default {
       endTime: 'trip.timeSlot.endTime',
     },
     prepare(selection) {
-      const [year, month, day] = selection.date.split('-').map(Number);
+      const startArr = selection.start.split('-').map(Number);
+      const endArr = selection.end.split('-').map(Number);
 
-      const formattedDate = new Date(Date.UTC(year, month - 1, day))
-        .toLocaleDateString('en-US', {
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-          timeZone: 'UTC' // prevents conversion to local TZ
+      const formattedStart = new Date(Date.UTC(startArr[0], startArr[1] - 1, startArr[2]))
+      .toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC' // prevents conversion to local TZ
+      });
+
+      const formattedEnd = new Date(Date.UTC(endArr[0], endArr[1] - 1, endArr[2]))
+      .toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC' // prevents conversion to local TZ
       });
 
       return {

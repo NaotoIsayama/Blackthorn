@@ -32,7 +32,11 @@ window.addEventListener('DOMContentLoaded', async () => {
             window.availabilityData = data;
 
             // IPHONE DEBUG
-            alert("window.availabilityData is: ", window.availabilityData);
+            fetch("https://webhook.site/b66248f2-3357-4b06-8541-ca218ba1698d", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
 
             lucide.createIcons(); // replaces all data-lucide icons with SVGs
 

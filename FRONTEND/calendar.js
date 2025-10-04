@@ -372,7 +372,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                     dateFormat: "Y-m-d",
                     minDate: "today",
                     wrap: true,
-                    disableMobile: true,
                     onChange: (selectedDates, dateStr, instance) => {
                         console.log('selectedDates[0] is: ', selectedDates[0]);
                         if (selectedDates[0]) {

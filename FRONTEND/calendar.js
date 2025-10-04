@@ -526,6 +526,26 @@ window.addEventListener('DOMContentLoaded', async () => {
                             })
                         }
 
+
+                        
+                        // SEND DEBUG INFO TO WEBHOOK.SITE on mobile
+                        fetch("https://webhook.site/b66248f2-3357-4b06-8541-ca218ba1698d", {
+                            method: "POST",
+                            headers:{
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                device: "iPhone",
+                                flatpickrArray,
+                                partiallyBooked,
+                                fullyBooked,
+                                time: new Date().toISOString()
+                            })
+                        })
+                        .catch(err => console.error("something failed", err));
+
+
+
                         console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
                         calendarInstance.set("minDate", today);
                         setTimeout(() => {

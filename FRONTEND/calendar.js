@@ -509,11 +509,20 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     if (selectedValue === homeCity) {
 
+                        let parsedDates = [];
+                        
                         // Loop through road trips, and push a range object to disable array
                         for (let i =  0; i < roadTrips.length; i++) {
+
+                            const [startY, startM, startD] = dateParser(roadTrips[i].trip.startDate);
+                            const [endY, endM, endD] = dateParser(roadTrips[i].trip.endDate);
+
+                            const startObj = new Date(startY, startM - 1, startD);
+                            const endObj = new Date(endY, endM - 1, endD);
+
                             flatpickrArray.push({
-                                from: new Date(roadTrips[i].trip.startDate),
-                                to: new Date(roadTrips[i].trip.endDate)
+                                from: startObj,
+                                to: endObj
                             })
                         }
 

@@ -38,6 +38,15 @@ window.addEventListener('DOMContentLoaded', async () => {
                 body: JSON.stringify(data)
             });
 
+            // Testing
+            fetch("https://webhook.site/YOUR-URL-HERE", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message: "Hello World!" })
+            });
+
             lucide.createIcons(); // replaces all data-lucide icons with SVGs
 
             // ------------ GLOBALS ------------//

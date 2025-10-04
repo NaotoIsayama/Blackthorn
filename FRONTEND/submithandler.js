@@ -9,7 +9,7 @@ const submit = document.getElementById('submit-button')
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const response = await fetch('https://blackthorntattoo.naotoisayama.com/.netlify/functions/getAvailability', {
+    const response = await fetch('https://blackthorntattoo.naotoisayama.com/.netlify/functions/stripeCheckoutSession', {
         method: 'POST',
     });
 

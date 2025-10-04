@@ -480,7 +480,7 @@ body:has(#hamburger-checkbox:checked) {
 
 /*------ hero section ------*/
 .hero {
-    background-color: var(--black);
+    background-image: url(images/newbg.jpg);
     display: flex;
     height: 95vh;
     box-sizing: border-box;
@@ -497,6 +497,10 @@ body:has(#hamburger-checkbox:checked) {
     height: max-content;
     gap: 6rem;
     transition: background-color 0.5s ease-in-out;
+}
+
+.nav-index {
+    justify-content: center;
 }
 
 .bg-dark {
@@ -526,9 +530,9 @@ body:has(#hamburger-checkbox:checked) {
 .hero__main-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 66.66%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: 90%;
 }
 
@@ -541,7 +545,8 @@ body:has(#hamburger-checkbox:checked) {
 }
 
 #home-link-logo {
-    width: 80%;
+    margin-top: 10rem;
+    width: 50%;
     max-width: none;
     animation: slideUpAndFade 0.75s forwards;
 }

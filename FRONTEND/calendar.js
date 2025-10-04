@@ -63,6 +63,13 @@ window.addEventListener('DOMContentLoaded', async () => {
             const dropdown = document.getElementById("tattoo-city");
 
             // ------------ GLOBALS ------------//
+
+            // IPHONE DEBUG LINE DELETE LATER
+                //
+                //
+                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
+                //
+                //
         
 
 
@@ -489,9 +496,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
-
-                // IPHONE DEBUG LINE DELETE LATER
-                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
 
                 /*// Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {

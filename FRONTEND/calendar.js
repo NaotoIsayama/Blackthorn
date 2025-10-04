@@ -491,7 +491,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
                 // IPHONE DEBUG LINE DELETE LATER
-                dropdown.addEventListener("change", alert("CHANGE EVENT FIRED"));
+                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
 
                 /*// Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {

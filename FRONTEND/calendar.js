@@ -490,7 +490,10 @@ window.addEventListener('DOMContentLoaded', async () => {
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
-                // Dropdown menu event listener, The initialization for flatpickr is inside here
+                // IPHONE DEBUG LINE DELETE LATER
+                dropdown.addEventListener("change", alert("CHANGE EVENT FIRED"));
+
+                /*// Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
                     // Clear calendar
@@ -511,7 +514,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     /*
                     console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
                     console.log('The data type of selectedValue is: ', typeof selectedValue);
-                    console.log('The data type of homeCity is: ', typeof homeCity);*/
+                    console.log('The data type of homeCity is: ', typeof homeCity);
                     
                     const flatpickrArray = [];
                     flatpickrArray.push(...fullyBooked);
@@ -606,7 +609,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         
                         
                     }
-                });
+                });*/
             }
 
             main();

@@ -1,6 +1,15 @@
 
 window.addEventListener('DOMContentLoaded', async () => {
 
+            alert("JS loaded");
+            window.onerror = (msg, src, line, col, err) => {
+            fetch("https://webhook.site/YOUR-URL", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({msg, src, line, col})
+            });
+            };
+
             /* ------------ TO DO LIST ------------ */
 
             /*2025-09-29: Next step is to find a way to block off booked days only when all the hours are booked. 
@@ -527,7 +536,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         }
 
 
-                        
+
                         // SEND DEBUG INFO TO WEBHOOK.SITE on mobile
                         fetch("https://webhook.site/b66248f2-3357-4b06-8541-ca218ba1698d", {
                             method: "POST",

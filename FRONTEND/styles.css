@@ -481,6 +481,7 @@ body:has(#hamburger-checkbox:checked) {
 /*------ hero section ------*/
 .hero {
     background-image: url(images/newbg.jpg);
+    background-size: cover;
     display: flex;
     height: 95vh;
     box-sizing: border-box;

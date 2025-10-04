@@ -64,12 +64,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // ------------ GLOBALS ------------//
 
-            // IPHONE DEBUG LINE DELETE LATER
-                //
-                //
-                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
-                //
-                //
+            
         
 
 
@@ -378,7 +373,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // ------------ END HELPER FUNCTIONS ------------ //
 
-
+// IPHONE DEBUG LINE DELETE LATER
+                //
+                //
+                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
+                //
+                //
 
             // ------------ BEGIN PROGRAM ------------ //
 

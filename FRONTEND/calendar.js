@@ -512,8 +512,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                         // Loop through road trips, and push a range object to disable array
                         for (let i =  0; i < roadTrips.length; i++) {
                             flatpickrArray.push({
-                                from: roadTrips[i].trip.startDate,
-                                to: roadTrips[i].trip.endDate
+                                from: new Date(roadTrips[i].trip.startDate),
+                                to: new Date(roadTrips[i].trip.endDate)
                             })
                         }
 
@@ -558,7 +558,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         }
 
                         console.log("flatpickrarray is: ", flatpickrArray);
-                        
+
                         calendarInstance.set("disable", [...flatpickrArray]);
                         calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate() + 1));
                     }

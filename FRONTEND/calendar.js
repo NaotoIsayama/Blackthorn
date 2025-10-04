@@ -31,15 +31,17 @@ window.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             window.availabilityData = data;
 
+            console.log(data);
+
             // IPHONE DEBUG
-            fetch("https://webhook.site/b66248f2-3357-4b06-8541-ca218ba1698d", {
+            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             });
 
             // Testing
-            fetch("https://webhook.site/YOUR-URL-HERE", {
+            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

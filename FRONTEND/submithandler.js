@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
 
     const { id } = await response.json();
 
-    const { error } = await stripe.redirectCheckout({sessionId: id});
+    const { error } = await stripe.redirectToCheckout({sessionId: id});
 
     if (error) {
         console.log("an error has occured: ", error);

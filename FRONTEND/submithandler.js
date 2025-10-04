@@ -13,11 +13,7 @@ form.addEventListener('submit', async (e) => {
         method: 'POST',
     });
 
-    const { id } = await response.json();
+    const data = await response.json();
 
-    const { error } = await stripe.redirectToCheckout({sessionId: id});
-
-    if (error) {
-        console.log("an error has occured: ", error);
-    }
+    window.location.href = data.url;
 }); 

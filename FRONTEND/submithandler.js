@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
 
     const data = await response.json();
 
-    console.log(data.url);
+    console.log(data);
 
     //window.location.href = data.url;
 }); 

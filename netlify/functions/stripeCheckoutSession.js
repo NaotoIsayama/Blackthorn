@@ -17,11 +17,21 @@ exports.handler = async function(event, context) {
                     quantity: 1
                     }
                 }
-            ]
-
-        })
+            ],
+            success_url: "https://blackthorntattoo.naotoisayama.com/depositsuccess?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url: "https://blackthorntattoo.naotoisayama.com/cancel",
+        });
+        
+        return {
+            statusCode: 200,
+            body: JSON.stringify({url: session.url})
+        };
 
     } catch (error) {
-        
+        // error handling code
+        return {
+            statusCode: 500,
+            body: JSON.stringify({error: error.message})
+        };
     }
 }

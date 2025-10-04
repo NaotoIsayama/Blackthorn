@@ -517,7 +517,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             })
                         }
 
-                        //console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
+                        console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
 
                         calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
                         calendarInstance.set("minDate", today);
@@ -557,6 +557,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                             }
                         }
 
+                        console.log("flatpickrarray is: ", flatpickrArray);
+                        
                         calendarInstance.set("disable", [...flatpickrArray]);
                         calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate() + 1));
                     }

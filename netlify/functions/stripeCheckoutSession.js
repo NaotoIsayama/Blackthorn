@@ -14,10 +14,9 @@ exports.handler = async function(event, context) {
                         description: "Flash Tattoo - Skeleton"
                     },
                     unit_amount: 100, //1 dollar for now
-                    quantity: 1
-                    }
-                }
-            ],
+                },
+                quantity: 1
+            }],
             success_url: "https://blackthorntattoo.naotoisayama.com/depositsuccess?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "https://blackthorntattoo.naotoisayama.com/cancel",
         });

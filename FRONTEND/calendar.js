@@ -411,6 +411,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                 bookedDateObjArr.forEach(obj => {
                     bookedDateObj = new Date(dateParser(obj.date));
 
+
+
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
                         headers: {
@@ -419,6 +421,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                         body: JSON.stringify(`obj.date is ${JSON.stringify(obj.date, null, 2)}`)
                     });
 
+
+
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
                         headers: {
@@ -426,6 +430,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                         },
                         body: JSON.stringify(`bookedDateObjArr is: ${JSON.stringify(bookedDateObjArr, null, 2)}`)
                     });
+
+
                 
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
@@ -463,18 +469,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                     //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
 
                     let scheduleForDay;
-
-
-                    // ------------------------REMOTE CONSOLE------------------------//
-                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({ message: bookedDateRoadTrip })
-                        });
-                    // ------------------------REMOTE CONSOLE------------------------//
-
 
                     // You can move out the shared code outside this if-else block
                     if (bookedDateRoadTrip) {

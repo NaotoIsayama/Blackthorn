@@ -411,20 +411,20 @@ window.addEventListener('DOMContentLoaded', async () => {
                 bookedDateObjArr.forEach(obj => {
                     bookedDateObj = new Date(dateParser(obj.date));
 
-                    alert("Program still works after converting bookedDateObj to Date()");
+        
                     
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
                     });
 
-                    alert("Program still works after finding bookedDate within road trips");
+                
 
                     // find all bookings on that day 
                     // bookingsOnDate is currently a array of objects
                     let bookingsOnDate = bookedDateObjArr.filter(b => b.date === obj.date);
                     //console.log("bookingsOnDate is: ", bookingsOnDate);
 
-                    alert("Program still works after finding all bookedDates on the day");
+        
 
 
                     // create array of 2d arrays, each of which is [startTime, endTime]
@@ -436,7 +436,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         intervals.push(item);
                     }
 
-                    alert("Program still works after creating intervals array");
+
 
 
                     //console.log("Intervals is: ", intervals);
@@ -445,12 +445,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     const mergedIntervals = mergeIntervals(intervals);
 
-                    alert("Program still works after calling mergedIntervals");
 
                     //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
 
                     let scheduleForDay;
 
+                    alert("BookedDateRoadTrip: ", bookedDateRoadTrip);
                     // You can move out the shared code outside this if-else block
                     if (bookedDateRoadTrip) {
 

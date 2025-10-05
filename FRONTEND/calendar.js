@@ -493,7 +493,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     // Alert
                     alert("change event fired!");
-                    
+
                     // Clear calendar
                     calendarInstance.clear()
 
@@ -539,8 +539,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                         setTimeout(() => {
                             calendarInstance.set("disable", [...flatpickrArray, recurringDisabledWeekdays]);
                         }, 0);
-                        
-                        
+
+                        //force redraw
+                        calendarInstance.redraw();
 
                     } else {
                         
@@ -580,7 +581,10 @@ window.addEventListener('DOMContentLoaded', async () => {
                         calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate() + 1));
                         setTimeout(() => {
                             calendarInstance.set("disable", [...flatpickrArray]);
-                        })     
+                        });
+                        
+                        //force redraw
+                        calendarInstance.redraw();
                     }
                 });
             }

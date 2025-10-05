@@ -180,11 +180,12 @@ a {
 
 .flatpickr-current-month {
     color: var(--tan) !important;
+    padding: 0 !important;
 }
 
 .flatpickr-weekday {
     color: var(--tan) !important;
-    padding: 0 !important;
+    
 }
 
 .date-picker {

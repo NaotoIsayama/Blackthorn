@@ -56,6 +56,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         product_card.append(img, h3, p);
 
+        switch (item.category) {
+            case 1:
+                cat_1.append(product_card);
+                break;
+
+            case 2:
+                cat_2.append(product_card);
+                break;
+
+            case 3:
+                cat_3.append(product_card);
+                break;
+
+            default:
+                console.warn("Error with category");
+                return;
+        }
     }
 
 })

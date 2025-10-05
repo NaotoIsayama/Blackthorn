@@ -1370,6 +1370,7 @@ footer {
 
 .active {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 /*.store__category-1.active, .store__category-2.active, .store__category-3.active {

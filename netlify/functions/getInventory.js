@@ -36,6 +36,8 @@ exports.handler = async function(event) {
 
         const inventory = await client.fetch(inventoryQuery);
 
+        console.log(inventory);
+
         // Return data as JSON
         return {
             statusCode: 200,

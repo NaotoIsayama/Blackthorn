@@ -563,7 +563,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                                 // randomly convert to date obj
                                 startDateObj = new Date((roadTrips[i].trip.startDate));
-                                startDateObj.setDate(startDateObj.getDate() - 1);
+
+                                // To correct for first date of trip not being included
+                                startDateObj.setDate(startDateObj.getDate() - 1); // 
 
                                 // from is inclusive, so go today -1
                                 today.setDate(today.getDate()-1);
@@ -589,7 +591,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             calendarInstance.set("disable", [...flatpickrArray]);
                         });
                         
-                        calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate() + 1));
+                        calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate()));
                         
                         //force redraw
                         calendarInstance.redraw();

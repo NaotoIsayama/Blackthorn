@@ -30,14 +30,14 @@ window.addEventListener('DOMContentLoaded', async () => {
             console.log(data);
 
             // IPHONE DEBUG
-            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
+            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             });
 
             // Testing
-            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
+            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

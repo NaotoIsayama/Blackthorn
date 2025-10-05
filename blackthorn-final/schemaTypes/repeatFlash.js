@@ -35,7 +35,7 @@ export default {
         {
             name: 'category',
             title: 'Category',
-            type: 'string',
+            type: 'number',
             validation: Rule =>
                 Rule.required()
         },

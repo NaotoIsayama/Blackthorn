@@ -409,9 +409,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
+
+                    alert("program works until bookedDateObj assignment");
                     bookedDateObj = new Date(dateParser(obj.date));
 
-
+                    alert("program works right before fetch requests");
 
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
@@ -422,6 +424,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         })
                     });
 
+
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -431,6 +434,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         })
                     });
 
+                    alert("program works right after fetch requests");
 
                 
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {

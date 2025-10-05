@@ -33,7 +33,7 @@ export default {
 
         // FLASH category
         {
-            name: 'Category',
+            name: 'category',
             title: 'Category',
             type: 'string',
             validation: Rule =>

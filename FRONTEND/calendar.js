@@ -388,8 +388,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                     }
                 });
 
-                alert("Program still works after calendar init");
-
                 // Loop through all roadtrips and extract out date ranges as Date() objects
                 roadTrips.forEach(t => {
                     roadTripRangesArr.push({
@@ -400,8 +398,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                     })
                 });
 
-                alert("Program still works after looping through road trips");
-
                 // console.log("roadTripRangesArr is: ", roadTripRangesArr);
                 bookedDateObjArr.forEach(obj => {
                     // Convert Time slots to minutes
@@ -411,22 +407,24 @@ window.addEventListener('DOMContentLoaded', async () => {
                     };
                 })
 
-                alert("Program still works after looping through bookedDateObjArr");
-
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
                     bookedDateObj = new Date(dateParser(obj.date));
 
-                    // console.log("bookedDateObj is: ", bookedDateObj);
+                    alert("Program still works after converting bookedDateObj to Date()");
                     
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
                     });
 
+                    alert("Program still works after finding bookedDate within road trips");
+
                     // find all bookings on that day 
                     // bookingsOnDate is currently a array of objects
                     let bookingsOnDate = bookedDateObjArr.filter(b => b.date === obj.date);
                     //console.log("bookingsOnDate is: ", bookingsOnDate);
+
+                    alert("Program still works after finding all bookedDates on the day");
 
 
                     // create array of 2d arrays, each of which is [startTime, endTime]
@@ -438,11 +436,16 @@ window.addEventListener('DOMContentLoaded', async () => {
                         intervals.push(item);
                     }
 
+                    alert("Program still works after creating intervals array");
+
+
                     //console.log("Intervals is: ", intervals);
 
                     // Merge all bookings on the same day into min amount of blocks
 
                     const mergedIntervals = mergeIntervals(intervals);
+
+                    alert("Program still works after calling mergedIntervals");
 
                     //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
 

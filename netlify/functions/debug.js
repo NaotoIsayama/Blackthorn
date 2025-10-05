@@ -2,6 +2,8 @@
 
 
 exports.handler = async function(event, context) {
+
+    console.log("hello world");
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

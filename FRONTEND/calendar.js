@@ -540,7 +540,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         }
 
                         // Testing
-                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
+                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

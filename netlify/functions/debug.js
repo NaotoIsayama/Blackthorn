@@ -16,7 +16,7 @@ exports.handler = async function(event, context) {
     const data = JSON.parse(event.body);
 
     // Log the request body to Netlify server logs
-    console.log("Received POST request:", data);
+    console.log("Received POST request:", JSON.stringify(data, null, 2));
 
     return {
       statusCode: 200,

@@ -511,10 +511,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
-                // Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
-                    // Alert
 
                     // Clear calendar
                     calendarInstance.clear()
@@ -565,7 +563,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                                 // today -> startOfTrip
 
                                 // randomly convert to date obj
-                                startDateObj = new Date((roadTrips[i].trip.startDate));
+                                startDateObj = new Date(...dateParser(roadTrips[i].trip.startDate));
+                                startDateObj.setDate(startDateObj.getDate() - 1);
 
                                 // To correct for first date of trip not being included // 
 
@@ -593,10 +592,12 @@ window.addEventListener('DOMContentLoaded', async () => {
                             calendarInstance.set("disable", [...flatpickrArray]);
                         });
 
-                        let newMinDate = startDateObj;
-                        newMinDate.setDate(newMinDate.getDate + 1);
+                        let minDate = new Date();
+                        minDate.setDate(startDateObj.getDate() + 1)
+                        console.log('startDateObj is: ', startDateObj);
+                        console.log('minDate is: ', minDate);
                         
-                        calendarInstance.set("minDate", newMinDate);
+                        calendarInstance.set("minDate", minDate);
                         
                         //force redraw
                         calendarInstance.redraw();

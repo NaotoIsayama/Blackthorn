@@ -1878,6 +1878,11 @@ footer {
         width: 50%;
     }
 
+    .product-card h3 {
+        text-align: center;
+        line-height: 1;
+    }
+
 }
 
 /*mobile landscapes*/

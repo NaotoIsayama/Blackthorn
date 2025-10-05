@@ -11,7 +11,7 @@ exports.handler = async function(event, context) {
                     currency: 'cad',
                     product_data: {
                         name: "Flash Tattoo",
-                        description: "Flash Tattoo - Skeleton"
+                        description: "Disclaimer. This payment page is in test mode, and will not accept real card info. You can use a test card number, 4242 4242 4242 4242, along with any valid future expiration date and cvc to simulate a purchase"
                     },
                     unit_amount: 100, //1 dollar for now
                 },

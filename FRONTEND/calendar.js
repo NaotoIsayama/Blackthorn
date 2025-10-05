@@ -415,20 +415,20 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(`obj.date is ${JSON.stringify(obj.date, null, 2)}`)
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            message: "obj.date",
+                            value: obj.date
+                        })
                     });
-
-
 
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(`bookedDateObjArr is: ${JSON.stringify(bookedDateObjArr, null, 2)}`)
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            message: "bookedDateObjArr",
+                            value: bookedDateObjArr
+                        })
                     });
 
 
@@ -511,10 +511,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                        // alert("Program still works after get freeslots call (when day is not on road trip)");
 
                         isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
-
-                        //alert("Program still works after get isFullyBooked call (when day is not on road trip)");
-                        //console.log("Home Schedule for day is: ", scheduleForDay);
-                        //console.log(`bookedDateFreeSlots for ${bookedDateObj} in Edmonton is: `, bookedDateFreeSlots);
                     }
                 });
 

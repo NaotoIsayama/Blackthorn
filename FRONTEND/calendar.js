@@ -409,24 +409,17 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
-
-                    // THIS LINE SEEMS TO BE AN ISSUE (TENTATIVE)
                     bookedDateObj = new Date(dateParser(obj.date));
 
-        
-                    
+                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(`obj.date is ${JSON.stringify(obj.date, null, 2)}`)
+                    });
+                
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {
-
-                        // ------------------------REMOTE CONSOLE------------------------//
-                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(`The value of t is ${JSON.stringify(data, null, 2)} and bookedDateObj is ${bookedDateObj}`)
-                        });
-                        // ------------------------REMOTE CONSOLE------------------------//
-
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
                     });
 
@@ -462,6 +455,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     //console.log("bookingsOnDate after minutes conversions is: ", bookingsOnDate);
 
                     let scheduleForDay;
+
 
                     // ------------------------REMOTE CONSOLE------------------------//
                         fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {

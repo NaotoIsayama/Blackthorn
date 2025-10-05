@@ -388,6 +388,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                     }
                 });
 
+                alert("Program still works after calendar init");
+
                 // Loop through all roadtrips and extract out date ranges as Date() objects
                 roadTrips.forEach(t => {
                     roadTripRangesArr.push({
@@ -398,6 +400,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                     })
                 });
 
+                alert("Program still works after looping through road trips");
+
                 // console.log("roadTripRangesArr is: ", roadTripRangesArr);
                 bookedDateObjArr.forEach(obj => {
                     // Convert Time slots to minutes
@@ -406,6 +410,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                         endTime: timeToMinutes(obj.timeSlot.endTime)
                     };
                 })
+
+                alert("Program still works after looping through bookedDateObjArr");
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
@@ -480,15 +486,19 @@ window.addEventListener('DOMContentLoaded', async () => {
                     }
                 });
 
+                alert("Program still works after the forEach on booked Date obj arr");
+
                 // remove duplicates from partiallyBooked by converting to a map, then convert it back
                 const tempMap = new Map();
                 partiallyBooked.forEach(obj => tempMap.set(obj.date, obj));
                 partiallyBooked = Array.from(tempMap.values());
 
+                alert("Program still works after removing duplicates");
+
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
-                // Dropdown menu event listener, The initialization for flatpickr is inside here
+                /* Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
                     // Alert
@@ -586,12 +596,12 @@ window.addEventListener('DOMContentLoaded', async () => {
                         //force redraw
                         calendarInstance.redraw();
                     }
-                });
+                });*/
             }
 
             main();
 
-            // VANILLA TEST FOR merged
+            /* VANILLA TEST FOR merged
 
             // ----  test helpers ---- //
             function test(name, fn) {
@@ -611,7 +621,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     throw new Error(`Expected ${e}, but got ${a}`);
                 }
             }
-            // ----  test helpers ---- //
+            // ----  test helpers ---- //*/
 
             // ------ tests ------//
              

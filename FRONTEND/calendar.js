@@ -451,6 +451,18 @@ window.addEventListener('DOMContentLoaded', async () => {
                     let scheduleForDay;
 
                     alert("BookedDateRoadTrip: ", bookedDateRoadTrip);
+
+                    // ------------------------REMOTE CONSOLE------------------------//
+                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ message: bookedDateRoadTrip })
+                        });
+                    // ------------------------REMOTE CONSOLE------------------------//
+
+
                     // You can move out the shared code outside this if-else block
                     if (bookedDateRoadTrip) {
 

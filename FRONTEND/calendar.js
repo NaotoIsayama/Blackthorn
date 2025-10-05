@@ -409,6 +409,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
+
+                    // THIS LINE SEEMS TO BE AN ISSUE (TENTATIVE)
                     bookedDateObj = new Date(dateParser(obj.date));
 
         
@@ -421,7 +423,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify(`The value of t is ${t} and bookedDateObj is ${bookedDateObj}`)
+                            body: JSON.stringify(`The value of t is ${JSON.stringify(data, null, 2)} and bookedDateObj is ${bookedDateObj}`)
                         });
                         // ------------------------REMOTE CONSOLE------------------------//
 

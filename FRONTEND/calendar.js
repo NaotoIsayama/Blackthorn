@@ -453,7 +453,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     alert("BookedDateRoadTrip: ", bookedDateRoadTrip);
 
                     // ------------------------REMOTE CONSOLE------------------------//
-                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
+                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

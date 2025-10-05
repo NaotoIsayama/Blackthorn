@@ -414,6 +414,17 @@ window.addEventListener('DOMContentLoaded', async () => {
         
                     
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {
+
+                        // ------------------------REMOTE CONSOLE------------------------//
+                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ message: `The value of t is ${t} and bookedDateObj is ${bookedDateObj}` })
+                        });
+                        // ------------------------REMOTE CONSOLE------------------------//
+
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
                     });
 
@@ -450,8 +461,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     let scheduleForDay;
 
-                    alert("BookedDateRoadTrip: ", bookedDateRoadTrip);
-
                     // ------------------------REMOTE CONSOLE------------------------//
                         fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                             method: "POST",
@@ -472,18 +481,18 @@ window.addEventListener('DOMContentLoaded', async () => {
                             endTime: timeToMinutes(bookedDateRoadTrip.timeSlot.endTime)
                         };
 
-                        alert("Program still works after creating scheduleforday (if bookedDateRoadTrip exists)");
+                        //alert("Program still works after creating scheduleforday (if bookedDateRoadTrip exists)");
 
                         //console.log("City Schedule for day is: ", scheduleForDay);
 
                         let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
 
-                        alert("Program still works after getFreeSlots call (if bookedDateRoadTrip exists)");
+                        //alert("Program still works after getFreeSlots call (if bookedDateRoadTrip exists)");
 
                         // If the date is fully booked, then push only the date to fullyBooked, if not push the array of free slots to partially booked
                         isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
 
-                        alert("Program still works after is fullyBooked ternary line (if bookedDateRoadTrip exists)");
+                        //alert("Program still works after is fullyBooked ternary line (if bookedDateRoadTrip exists)");
                         //console.log(`bookedDateFreeSlots for ${bookedDateObj} in ${bookedDateRoadTrip.city} is: `, bookedDateFreeSlots);
 
                     } else {
@@ -497,28 +506,28 @@ window.addEventListener('DOMContentLoaded', async () => {
                             endTime: timeToMinutes(weekdaysObject.endTime)
                         }
 
-                        alert("Program still works after creating scheduleforday (when day is not on road trip)");
+                        //alert("Program still works after creating scheduleforday (when day is not on road trip)");
 
                         let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
 
-                        alert("Program still works after get freeslots call (when day is not on road trip)");
+                       // alert("Program still works after get freeslots call (when day is not on road trip)");
 
                         isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
 
-                        alert("Program still works after get isFullyBooked call (when day is not on road trip)");
+                        //alert("Program still works after get isFullyBooked call (when day is not on road trip)");
                         //console.log("Home Schedule for day is: ", scheduleForDay);
                         //console.log(`bookedDateFreeSlots for ${bookedDateObj} in Edmonton is: `, bookedDateFreeSlots);
                     }
                 });
 
-                alert("Program still works after the forEach on booked Date obj arr");
+                //alert("Program still works after the forEach on booked Date obj arr");
 
                 // remove duplicates from partiallyBooked by converting to a map, then convert it back
                 const tempMap = new Map();
                 partiallyBooked.forEach(obj => tempMap.set(obj.date, obj));
                 partiallyBooked = Array.from(tempMap.values());
 
-                alert("Program still works after removing duplicates");
+                //alert("Program still works after removing duplicates");
 
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);

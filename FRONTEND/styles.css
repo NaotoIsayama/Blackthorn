@@ -1876,6 +1876,7 @@ footer {
 
     .product-card {
         width: 50%;
+        border: solid 3px var(--black);
     }
 
     .product-card h3 {

@@ -23,7 +23,7 @@ exports.handler = async function(event) {
     // Main Try-Catch Block
     try {
         // Build GROQ queries here
-        const inventoryQuery = `*[_type == "repeatFlash"]{
+        const inventoryQuery = `*[_type == "repeatFlash"] | order(flashName asc){
         _id,
         flashName,
         description,

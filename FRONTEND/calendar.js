@@ -4,8 +4,6 @@
 
 window.addEventListener('DOMContentLoaded', async () => {
 
-            alert("JS loaded");
-
             /* ------------ TO DO LIST ------------ */
 
             /*2025-09-29: Next step is to find a way to block off booked days only when all the hours are booked. 
@@ -50,8 +48,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             // Date Variables, used for min in flatpickr and upperbound
             let today = new Date();
+
+            // 12 months in future for upperbound
             let twelveMonths = new Date();
             twelveMonths.setMonth(today.getMonth() + 6);
+
+            // 12 months behind for lower bound
+            let twelveMonthsBefore = new Date();
+            twelveMonthsBefore.setMonth(today.getMonth() - 6);
             
 
             // DOM elements
@@ -375,7 +379,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             function main() {
 
-                //alert("main successfully called");
+
 
                 //init flatpickr first
                 const calendarInstance = flatpickr("#date-picker-el", {
@@ -511,7 +515,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 dropdown.addEventListener("change", () => {
 
                     // Alert
-                    alert("change event fired!");
 
                     // Clear calendar
                     calendarInstance.clear()
@@ -564,14 +567,13 @@ window.addEventListener('DOMContentLoaded', async () => {
                                 // randomly convert to date obj
                                 startDateObj = new Date((roadTrips[i].trip.startDate));
 
-                                // To correct for first date of trip not being included
-                                startDateObj.setDate(startDateObj.getDate() - 1); // 
+                                // To correct for first date of trip not being included // 
 
                                 // from is inclusive, so go today -1
                                 today.setDate(today.getDate()-1);
 
                                 flatpickrArray.push({
-                                    from: today,
+                                    from: twelveMonthsBefore,
                                     to: startDateObj
                                 });
 
@@ -591,7 +593,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             calendarInstance.set("disable", [...flatpickrArray]);
                         });
                         
-                        calendarInstance.set("minDate", startDateObj.setDate(startDateObj.getDate()));
+                        calendarInstance.set("minDate", startDateObj.getDate() + 1);
                         
                         //force redraw
                         calendarInstance.redraw();

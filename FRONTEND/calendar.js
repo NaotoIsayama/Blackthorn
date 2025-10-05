@@ -433,8 +433,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                         })
                     });
 
-
-
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -444,13 +442,12 @@ window.addEventListener('DOMContentLoaded', async () => {
                         })
                     });
 
-
                     fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            message: "bookedDateObjArr",
-                            value: bookedDateObjArr
+                            message: "creating a new date() obj with this results in",
+                            value: bookedDateObj,
                         })
                     });
 

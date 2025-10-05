@@ -184,6 +184,7 @@ a {
 
 .flatpickr-weekday {
     color: var(--tan) !important;
+    padding: 0 !important;
 }
 
 .date-picker {

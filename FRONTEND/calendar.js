@@ -374,6 +374,9 @@ window.addEventListener('DOMContentLoaded', async () => {
             // ------------ BEGIN PROGRAM ------------ //
 
             function main() {
+
+                alert("main successfully called");
+
                 //init flatpickr first
                 const calendarInstance = flatpickr("#date-picker-el", {
                     dateFormat: "Y-m-d",
@@ -388,6 +391,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                     }
                 });
 
+                alert("init flatpickr succ");
+
                 // Loop through all roadtrips and extract out date ranges as Date() objects
                 roadTrips.forEach(t => {
                     roadTripRangesArr.push({
@@ -398,14 +403,18 @@ window.addEventListener('DOMContentLoaded', async () => {
                     })
                 });
 
+                alert("roadtrips.foreach succ");
+
                 // console.log("roadTripRangesArr is: ", roadTripRangesArr);
                 bookedDateObjArr.forEach(obj => {
                     // Convert Time slots to minutes
                     obj.timeSlot = {
                         startTime: timeToMinutes(obj.timeSlot.startTime),
                         endTime: timeToMinutes(obj.timeSlot.endTime)
-                    };F
+                    };
                 })
+
+                alert("bookedDateObjArr succ");
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {

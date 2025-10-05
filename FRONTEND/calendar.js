@@ -516,7 +516,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
-                /* Dropdown menu event listener, The initialization for flatpickr is inside here
+                // Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
                     // Alert
@@ -538,29 +538,14 @@ window.addEventListener('DOMContentLoaded', async () => {
                     if (selectedValue === homeCity) {
                         
                         // Loop through road trips, and push a range object to disable array
-                        for (let i =  0; i < roadTrips.length; i++) {
-
-                            const [startY, startM, startD] = dateParser(roadTrips[i].trip.startDate);
-                            const [endY, endM, endD] = dateParser(roadTrips[i].trip.endDate);
-
-                            const startObj = new Date(startY, startM - 1, startD);
-                            const endObj = new Date(endY, endM - 1, endD);
+                        for (let i =  0; i < roadTrips.length; i++)  {
 
                             flatpickrArray.push({
-                                from: startObj,
-                                to: endObj
+                                from: dateParser(roadTrips[i].trip.startDate),
+                                to: dateParser(roadTrips[i].trip.endDate)
                             })
                         }
 
-                        // ------------------------REMOTE CONSOLE------------------------//
-                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({ message: flatpickrArray })
-                        });
-                        // ------------------------REMOTE CONSOLE------------------------//
 
                         console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
                         calendarInstance.set("minDate", today);
@@ -614,7 +599,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         //force redraw
                         calendarInstance.redraw();
                     }
-                });*/
+                });
             }
 
             main();

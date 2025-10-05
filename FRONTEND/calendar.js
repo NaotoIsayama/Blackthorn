@@ -592,8 +592,11 @@ window.addEventListener('DOMContentLoaded', async () => {
                         setTimeout(() => {
                             calendarInstance.set("disable", [...flatpickrArray]);
                         });
+
+                        let newMinDate = startDateObj;
+                        newMinDate.setDate(newMinDate.getDate + 1);
                         
-                        calendarInstance.set("minDate", startDateObj.getDate() + 1);
+                        calendarInstance.set("minDate", newMinDate);
                         
                         //force redraw
                         calendarInstance.redraw();

@@ -1904,6 +1904,10 @@ footer {
         align-items: center;
     }
 
+    .flashButton {
+        margin-top: 2rem;
+    }
+
 }
 
 /*mobile landscapes*/

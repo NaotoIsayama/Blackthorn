@@ -1861,6 +1861,10 @@ footer {
         text-align: center;
     }
 
+    .store__categories-menu {
+        width: 100%;
+    }
+
     .categories-menu__ul {
         gap: 1rem;
     }
@@ -1868,6 +1872,10 @@ footer {
     .categories-menu__btn {
         display: inline-block;
         width: max-content;
+    }
+
+    .product-card {
+        width: 50%;
     }
 
 }

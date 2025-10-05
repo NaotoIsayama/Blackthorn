@@ -421,7 +421,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             headers: {
                                 "Content-Type": "application/json"
                             },
-                            body: JSON.stringify({ message: `The value of t is ${t} and bookedDateObj is ${bookedDateObj}` })
+                            body: JSON.stringify(`The value of t is ${t} and bookedDateObj is ${bookedDateObj}`)
                         });
                         // ------------------------REMOTE CONSOLE------------------------//
 

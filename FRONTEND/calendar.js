@@ -556,13 +556,14 @@ window.addEventListener('DOMContentLoaded', async () => {
                         for (let i = 0; i < roadTrips.length; i++) {
                             if (roadTrips[i].trip.city === selectedValue) {
 
-                                console.log("The Start of the strip is: ", roadTrips[i].trip.startDate);
+                                console.log("The Start of the trip is: ", roadTrips[i].trip.startDate);
                                 //console.log("The End of the strip is: ", roadTrips[i].trip.endDate);
 
                                 // today -> startOfTrip
 
-                                // randomly convert to dat obj
+                                // randomly convert to date obj
                                 startDateObj = new Date((roadTrips[i].trip.startDate));
+                                startDateObj.setDate(startDateObj.getDate() - 1);
 
                                 // from is inclusive, so go today -1
                                 today.setDate(today.getDate()-1);

@@ -3,7 +3,6 @@
 
 exports.handler = async function(event, context) {
 
-    console.log("hello world");
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -12,6 +11,8 @@ exports.handler = async function(event, context) {
   }
 
   try {
+    console.log("REQUEST RECIEVED");
+    
     // Parse JSON body
     const data = JSON.parse(event.body);
 

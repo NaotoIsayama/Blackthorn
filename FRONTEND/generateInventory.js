@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             minSize: item.minSize,
             price: item.price,
             placement: item.placementAreas.toString(),
-            image: item.flashImage,
+            image: item.imageUrl,
             //time: item.time
         }
 
@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         // create img tag
+        const img = document.createElement("img");
+        img.src = item.imageUrl;
+
+        // create h3
+        const h3 = document.createElement("h3");
+        h3.textContent = item.flashName;
+        h3.classList.add("product-card__title", "sc-body", "dark");
+
+        // create price
+        const p = document.createElement("p");
+        p.textContent = `$${item.price}`;
+        p.classList.add("product-price", "sc-body", "dark");
+
+        product_card.append(img, h3, p);
 
     }
 

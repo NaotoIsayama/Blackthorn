@@ -419,7 +419,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
 
-                    alert("program works until bookedDateObj assignment");
                     bookedDateObj = new Date(...dateParser(obj.date));
 
                 
@@ -427,15 +426,10 @@ window.addEventListener('DOMContentLoaded', async () => {
                         return bookedDateObj >= t.start && bookedDateObj <= t.end
                     });
 
-                
-
                     // find all bookings on that day 
                     // bookingsOnDate is currently a array of objects
                     let bookingsOnDate = bookedDateObjArr.filter(b => b.date === obj.date);
                     //console.log("bookingsOnDate is: ", bookingsOnDate);
-
-        
-
 
                     // create array of 2d arrays, each of which is [startTime, endTime]
                     let intervals = [];
@@ -445,9 +439,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                         item.push(obj.timeSlot.startTime, obj.timeSlot.endTime);
                         intervals.push(item);
                     }
-
-
-
 
                     //console.log("Intervals is: ", intervals);
 

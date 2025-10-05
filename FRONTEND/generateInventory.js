@@ -6,5 +6,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const data = await response.json();
+
     console.log(data);
+
+   const inventory = data.inventory
+
+   console.log(inventory);
+
+    // DOM elements
+    const cat_1 = document.querySelector(".store__category-1");
+    const cat_2 = document.querySelector(".store__category-2");
+    const cat_3 = document.querySelector(".store__category-3");
+
+    for (let item of inventory) {
+        console.log("item name is: ", item.flashName);
+
+        // create top level a tag
+        const product_card = document.createElement("a");
+        product_card.classList.add("product-card");
+        product_card.href = "flashstore.html";
+
+        const dataAttributes = {
+            name: item.flashName,
+            description: item.description,
+            minSize: item.minSize,
+            price: item.price,
+            placement: item.placementAreas.toString(),
+            image: item.flashImage,
+            //time: item.time
+        }
+
+        for (const key in dataAttributes) {
+            product_card.dataset[key] = dataAttributes[key];
+        }
+
+        // create img tag
+
+    }
+
 })

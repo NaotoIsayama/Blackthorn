@@ -31,7 +31,7 @@ exports.handler = async function(event) {
         minSize,
         price,
         placementAreas[],
-        flashImage
+        "imageUrl": flashImage.asset->url
         }`
 
         const inventory = await client.fetch(inventoryQuery);

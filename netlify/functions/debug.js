@@ -1,5 +1,7 @@
 // debugConsole.js
-export async function handler(event, context) {
+
+
+exports.handler = async function(event, context) {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

@@ -5,13 +5,6 @@
 window.addEventListener('DOMContentLoaded', async () => {
 
             alert("JS loaded");
-            window.onerror = (msg, src, line, col, err) => {
-            fetch("https://webhook.site/b66248f2-3357-4b06-8541-ca218ba1698d", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({msg, src, line, col})
-            });
-            };
 
             /* ------------ TO DO LIST ------------ */
 
@@ -513,12 +506,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 //console.log("The array of fully booked dates is: ", fullyBooked);
                 console.log("The array of partially booked dates is: ", partiallyBooked);
 
-// IPHONE DEBUG LINE DELETE LATER
-                //
-                //
-                dropdown.addEventListener("change", () => {alert("CHANGE EVENT FIRED")});
-                //
-                //
                 // Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
@@ -531,23 +518,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
                     // Dropdown option selected
                     selectedValue = dropdown.value;
-
-                    //console log
-                    //console.log('selectedValue is: ', selectedValue);
-
-                    // If selected Value is home city, display schedule - (trip dates + bookedDays)
-                    // console log comparison
-                    /*
-                    console.log('The truth value of selectedValue = homeCity is: ', selectedValue === homeCity);
-                    console.log('The data type of selectedValue is: ', typeof selectedValue);
-                    console.log('The data type of homeCity is: ', typeof homeCity);*/
                     
                     const flatpickrArray = [];
                     flatpickrArray.push(...fullyBooked);
 
                     if (selectedValue === homeCity) {
-
-                        let parsedDates = [];
                         
                         // Loop through road trips, and push a range object to disable array
                         for (let i =  0; i < roadTrips.length; i++) {
@@ -564,7 +539,14 @@ window.addEventListener('DOMContentLoaded', async () => {
                             })
                         }
 
-
+                        // Testing
+                        fetch("https://blackthorntattoo.naotoisayama.com/.netlify/debug", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ message: flatpickrArray })
+                        });
 
                         console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
                         calendarInstance.set("minDate", today);

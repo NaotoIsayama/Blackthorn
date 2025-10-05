@@ -10,7 +10,7 @@ const client = createClient({
 exports.handler = async function(event) {
 
     // Filter out Non Post requests and requests not from blackthorn
-    if (event.httpMethod !== 'POST' && event.headers.origin !== "https://blackthorntattoo.naotoisayama.com/form") {
+    if (event.httpMethod !== 'POST' && event.headers.origin !== "https://blackthorntattoo.naotoisayama.com/flashstore") {
         return {
             statusCode: 405,
             headers: {
@@ -23,9 +23,18 @@ exports.handler = async function(event) {
     // Main Try-Catch Block
     try {
         // Build GROQ queries here
-        
+        const inventoryQuery = `*[_type == "repeatFlash"]{
+        _id,
+        flashName,
+        description,
+        category,
+        minSize,
+        price,
+        placementAreas[],
+        flashImage
+        }`
 
-        // Query for road trip data
+        const inventory = await client.fetch(inventoryQuery);
 
         // Return data as JSON
         return {
@@ -35,9 +44,7 @@ exports.handler = async function(event) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                roadTrips,
-                weeklySchedule,
-                bookedDays
+                inventory
             })
         };
     } catch (err) {

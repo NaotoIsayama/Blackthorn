@@ -1857,8 +1857,16 @@ footer {
         width: 100%;
     }
 
+    .store__description-container h1 {
+        text-align: center;
+    }
+
     .categories-menu__ul {
         gap: 3rem;
+    }
+
+    .categories-menu__btn {
+        width: max-content;
     }
 
 }

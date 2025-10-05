@@ -460,13 +460,18 @@ window.addEventListener('DOMContentLoaded', async () => {
                             endTime: timeToMinutes(bookedDateRoadTrip.timeSlot.endTime)
                         };
 
+                        alert("Program still works after creating scheduleforday (if bookedDateRoadTrip exists)");
+
                         //console.log("City Schedule for day is: ", scheduleForDay);
 
                         let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
 
+                        alert("Program still works after getFreeSlots call (if bookedDateRoadTrip exists)");
+
                         // If the date is fully booked, then push only the date to fullyBooked, if not push the array of free slots to partially booked
                         isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
 
+                        alert("Program still works after is fullyBooked ternary line (if bookedDateRoadTrip exists)");
                         //console.log(`bookedDateFreeSlots for ${bookedDateObj} in ${bookedDateRoadTrip.city} is: `, bookedDateFreeSlots);
 
                     } else {
@@ -480,10 +485,15 @@ window.addEventListener('DOMContentLoaded', async () => {
                             endTime: timeToMinutes(weekdaysObject.endTime)
                         }
 
+                        alert("Program still works after creating scheduleforday (when day is not on road trip)");
+
                         let bookedDateFreeSlots = getFreeSlots(scheduleForDay, mergedIntervals);
+
+                        alert("Program still works after get freeslots call (when day is not on road trip)");
 
                         isFullyBooked(bookedDateFreeSlots, n) ? fullyBooked.push(bookedDateObj) : partiallyBooked.push({date: obj.date, slots : bookedDateFreeSlots});
 
+                        alert("Program still works after get isFullyBooked call (when day is not on road trip)");
                         //console.log("Home Schedule for day is: ", scheduleForDay);
                         //console.log(`bookedDateFreeSlots for ${bookedDateObj} in Edmonton is: `, bookedDateFreeSlots);
                     }

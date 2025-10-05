@@ -1866,6 +1866,7 @@ footer {
     }
 
     .categories-menu__btn {
+        display: inline-block;
         width: max-content;
     }
 

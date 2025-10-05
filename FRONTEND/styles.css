@@ -1886,6 +1886,24 @@ footer {
         padding: 0.25rem;
     }
 
+    /* product page */
+
+    .product__flex-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .product__image-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product__details-container {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
 }
 
 /*mobile landscapes*/

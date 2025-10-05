@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             function dateParser(dateStr) {
                 // Expecting format YYYY-MM-DD
                 const [year, month, day] = dateStr.split("-").map(Number);
-                return [year, month, day];
+                return [year, month - 1, day];
             }
 
             // translate 24hr format into minutes
@@ -397,8 +397,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                 roadTrips.forEach(t => {
                     roadTripRangesArr.push({
                         city: t.trip.city,
-                        start: new Date(dateParser(t.trip.startDate)), 
-                        end: new Date(dateParser(t.trip.endDate)),
+                        start: new Date(...dateParser(t.trip.startDate)), 
+                        end: new Date(...dateParser(t.trip.endDate)),
                         timeSlot: t.trip.timeSlot
                     })
                 });
@@ -420,38 +420,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 bookedDateObjArr.forEach(obj => {
 
                     alert("program works until bookedDateObj assignment");
-                    bookedDateObj = new Date(dateParser(obj.date));
-
-                    alert("program works right before fetch requests");
-
-                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            message: "obj.date",
-                            value: obj.date
-                        })
-                    });
-
-                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            message: "obj.date after doing dateParser",
-                            value: dateParser(obj.date),
-                        })
-                    });
-
-                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            message: "creating a new date() obj with this results in",
-                            value: bookedDateObj,
-                        })
-                    });
-
-                    alert("program works right after fetch requests");
+                    bookedDateObj = new Date(...dateParser(obj.date));
 
                 
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {

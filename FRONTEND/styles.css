@@ -1984,6 +1984,11 @@ footer {
     #quotes {
         width: 25%;
     }
+
+    /* Flash Store */
+    .store__description-container h1 {
+        margin-top: 3rem;
+    }
 }
 
 

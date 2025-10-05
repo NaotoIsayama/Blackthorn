@@ -375,7 +375,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             function main() {
 
-                alert("main successfully called");
+                //alert("main successfully called");
 
                 //init flatpickr first
                 const calendarInstance = flatpickr("#date-picker-el", {
@@ -391,7 +391,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     }
                 });
 
-                alert("init flatpickr succ");
+                //alert("init flatpickr succ");
 
                 // Loop through all roadtrips and extract out date ranges as Date() objects
                 roadTrips.forEach(t => {
@@ -403,7 +403,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     })
                 });
 
-                alert("roadtrips.foreach succ");
+                //alert("roadtrips.foreach succ");
 
                 // console.log("roadTripRangesArr is: ", roadTripRangesArr);
                 bookedDateObjArr.forEach(obj => {
@@ -414,7 +414,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     };
                 })
 
-                alert("bookedDateObjArr succ");
+                //alert("bookedDateObjArr succ");
 
                 // Loop through all booked Dates and check each one for which range they fit into
                 bookedDateObjArr.forEach(obj => {
@@ -430,6 +430,17 @@ window.addEventListener('DOMContentLoaded', async () => {
                         body: JSON.stringify({
                             message: "obj.date",
                             value: obj.date
+                        })
+                    });
+
+
+
+                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            message: "obj.date after doing dateParser",
+                            value: dateParser(obj.date),
                         })
                     });
 

@@ -31,6 +31,15 @@ export default {
                 Rule.required()
         },
 
+        // FLASH category
+        {
+            name: 'Category',
+            title: 'Category',
+            type: 'string',
+            validation: Rule =>
+                Rule.required()
+        },
+
         // FLASH MINSIZE
         {
             name: 'minSize',

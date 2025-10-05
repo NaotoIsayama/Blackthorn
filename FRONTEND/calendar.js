@@ -27,24 +27,6 @@ window.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             window.availabilityData = data;
 
-            console.log(data);
-
-            // IPHONE DEBUG
-            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(data)
-            });
-
-            // Testing
-            fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ message: "Hello World!" })
-            });
-
             lucide.createIcons(); // replaces all data-lucide icons with SVGs
 
             // ------------ GLOBALS ------------//
@@ -539,7 +521,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             })
                         }
 
-                        // Testing
+                        // REMOTE CONSOLE
                         fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
                             method: "POST",
                             headers: {
@@ -547,6 +529,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             },
                             body: JSON.stringify({ message: flatpickrArray })
                         });
+                        // REMOTE CONSOLE
 
                         console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
                         calendarInstance.set("minDate", today);

@@ -404,7 +404,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     obj.timeSlot = {
                         startTime: timeToMinutes(obj.timeSlot.startTime),
                         endTime: timeToMinutes(obj.timeSlot.endTime)
-                    };
+                    };F
                 })
 
                 // Loop through all booked Dates and check each one for which range they fit into
@@ -417,6 +417,14 @@ window.addEventListener('DOMContentLoaded', async () => {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify(`obj.date is ${JSON.stringify(obj.date, null, 2)}`)
+                    });
+
+                    fetch("https://blackthorntattoo.naotoisayama.com/.netlify/functions/debug", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(`bookedDateObjArr is: ${JSON.stringify(bookedDateObjArr, null, 2)}`)
                     });
                 
                     let bookedDateRoadTrip = roadTripRangesArr.find(t => {

@@ -3,6 +3,8 @@ const products = document.querySelectorAll(".product-card"); // These are anchor
 
 products.forEach(p => {
     p.addEventListener("click", (e) => {
+
+        console.log("event listener attached");
         e.preventDefault(); //Prevent default nav behaviour
         
         // access each products metadata via dataset and save to sessionStorage

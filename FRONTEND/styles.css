@@ -1369,7 +1369,8 @@ footer {
 }
 
 .active {
-    display: block;
+    display: flex;
+    gap: 2rem;
 }
 /*.store__category-1.active, .store__category-2.active, .store__category-3.active {
     display: block;
@@ -1875,7 +1876,7 @@ footer {
     }
 
     .product-card {
-        width: 50%;
+        width: 45%;
         border: solid 3px var(--black);
     }
 

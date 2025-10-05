@@ -592,8 +592,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                             calendarInstance.set("disable", [...flatpickrArray]);
                         });
 
-                        let minDate = new Date();
-                        minDate.setDate(startDateObj.getDate() + 1)
+                        let minDate = new Date(startDateObj);
+                        minDate.setDate(startDateObj.getDate() + 1);
                         console.log('startDateObj is: ', startDateObj);
                         console.log('minDate is: ', minDate);
                         

@@ -185,7 +185,6 @@ a {
 
 .flatpickr-weekday {
     color: var(--tan) !important;
-    
 }
 
 .date-picker {
@@ -1852,6 +1851,15 @@ footer {
         display: none;
     }
 
+    /* Flash Store Styles */
+
+    .store__description-container {
+        width: 100%;
+    }
+
+    .categories-menu__ul {
+        gap: 3rem;
+    }
 
 }
 

@@ -1258,7 +1258,7 @@ footer {
     transform: translateY(-50%);
     z-index: 0;
     position: absolute;
-    left: 25%;
+    left: 60%;
     height: 90%;
     opacity: 0.25;
 }

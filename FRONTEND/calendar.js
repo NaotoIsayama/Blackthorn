@@ -491,6 +491,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                 // Dropdown menu event listener, The initialization for flatpickr is inside here
                 dropdown.addEventListener("change", () => {
 
+                    // Alert
+                    alert("change event fired!");
+                    
                     // Clear calendar
                     calendarInstance.clear()
 
@@ -521,7 +524,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             })
                         }
 
-                        // REMOTE CONSOLE
+                        // ------------------------REMOTE CONSOLE------------------------//
                         fetch("https://blackthorntattoo.naotoisayama.com/.netlify/function/debug", {
                             method: "POST",
                             headers: {
@@ -529,7 +532,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                             },
                             body: JSON.stringify({ message: flatpickrArray })
                         });
-                        // REMOTE CONSOLE
+                        // ------------------------REMOTE CONSOLE------------------------//
 
                         console.log('The Disabled array, after adding trips and booked dates is: ', flatpickrArray); 
                         calendarInstance.set("minDate", today);

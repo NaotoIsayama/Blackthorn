@@ -1274,6 +1274,14 @@ footer {
 .store-section {
     background-color: var(--tan);
     height: max-content;
+    position: relative;
+}
+
+#store-overlay {
+    opacity: 25%;
+    position: absolute;
+    left: 55%;
+    top: 5%;
 }
 
 .product-card {

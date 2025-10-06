@@ -1420,6 +1420,11 @@ footer {
     justify-content: center;
 }
 
+.product__details-container h2 {
+    text-decoration: underline;
+    text-decoration-color: var(--rose);
+}
+
 
 /*--- END Product page ---*/
 

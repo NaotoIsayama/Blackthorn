@@ -1873,6 +1873,10 @@ footer {
         width: 100%;
     }
 
+    #store-overlay {
+        display: none;
+    }
+
     .store__description-container h1 {
         text-align: center;
     }
@@ -1883,6 +1887,10 @@ footer {
 
     .categories-menu__ul {
         gap: 1rem;
+    }
+
+    .categories-menu__li {
+        font-size: var(--body);
     }
 
     .categories-menu__btn {
